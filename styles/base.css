@@ -1,36 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "./tailwind/output.css";
 
 :root {
-  --primary: #5965d1;
-
-  --fs-h1: clamp(32px, 3.33vw, 4rem);
-  --fs-h2: clamp(32px, 2.5vw, 3rem);
-  --fs-h3: clamp(24px, 2.08vw, 2.5rem);
-  --fs-h4: clamp(24px, 1.9vw, 2.25rem);
-  --fs-h5: max(1.5rem, 18px);
+  --primary: #74045f;
+  --yellow: #c7911b;
+  --dark-teal: #04303b;
+  --background-primary: #e3e4d4;
+  --background-secondary: #f2f3ee;
+  --fs-h1: clamp(38px, 3.33vw, 3.875rem);
+  --fs-h2: clamp(36px, 2.5vw, 3.25rem);
+  --fs-h3: clamp(28px, 2.08vw, 2.625rem);
+  --fs-h4: clamp(26px, 1.9vw, 2rem);
+  --fs-h5: max(1.5rem, 20px);
   --fs-h6: max(1.25rem, 16px);
 }
 
-/* @font-face {
-  font-family: "";
-  font-weight: 300;
-  src: url("../fonts/") format("woff2");
-} */
-
 html {
-  font-size: clamp(14px, 0.84vw, 16px);
+  /* font-size: clamp(14px, 0.84vw, 16px); */
   scroll-behavior: smooth;
+  font-family: "IBM Plex Sans Thai", sans-serif;
 }
 
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  color: #fff;
-  background: #050505;
+  color: #04303b;
+  background: var(--background-primary);
   animation: fade-in 0.35s forwards;
   background-repeat: no-repeat;
   position: relative;
+  letter-spacing: -0.5px;
 }
 
 @keyframes fade-in {
@@ -54,31 +54,51 @@ body {
 
 h1 {
   font-size: var(--fs-h1);
+  line-height: 1.2;
 }
 
 h2 {
   font-size: var(--fs-h2);
+  line-height: 1.2;
+  letter-spacing: -1.75px;
 }
 
 h3 {
   font-size: var(--fs-h3);
+  letter-spacing: -1.5px;
 }
 
 h4 {
   font-size: var(--fs-h4);
+  letter-spacing: -1.5px;
 }
 
 h5 {
   font-size: var(--fs-h5);
+  letter-spacing: -1.5px;
 }
 
 h6 {
   font-size: var(--fs-h6);
+  letter-spacing: -1.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
 }
 
 button:disabled {
   opacity: 0.4;
   pointer-events: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 ul li {
@@ -112,4 +132,120 @@ ol li {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.svg-icon {
+  -webkit-mask: var(--src) no-repeat center;
+  mask: var(--src) no-repeat center;
+  mask-size: contain;
+  pointer-events: none;
+  transition:
+    background-color 0.2s,
+    opacity 0.2s;
+
+  &:not([style]) {
+    opacity: 0;
+  }
+}
+
+.mobile-nav-toggle {
+  width: 1.5rem;
+  aspect-ratio: 1.33;
+  position: relative;
+  color: var(--dark-teal);
+
+  & span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    left: 0;
+    top: 50%;
+    transform-origin: left center;
+    transition:
+      transform 0.3s,
+      opacity 0.3s;
+    border-radius: 9999px;
+
+    &:nth-child(1) {
+      top: 5%;
+    }
+
+    &:nth-child(3) {
+      top: 95%;
+    }
+  }
+
+  &.active {
+    & span {
+      &:nth-child(1) {
+        transform: translateX(2px) rotate(41deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+        transform: translateX(2px);
+      }
+
+      &:nth-child(3) {
+        transform: translateX(2px) rotate(-41deg);
+      }
+    }
+  }
+}
+
+nav {
+  & > .inner {
+    transition: border-radius 1s;
+    border-radius: 2rem;
+    &:has(#mobile-nav.active) {
+      @media (width <= 1024px) {
+        border-radius: 1.25rem;
+      }
+    }
+  }
+
+  & #mobile-nav {
+    transition: 0.2s;
+    padding: 0;
+    grid-template-rows: 0fr;
+    transition:
+      grid-template-rows 0.3s,
+      padding 0.3s;
+
+    & .inner {
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &.active {
+      padding: 24px 0;
+      grid-template-rows: 1fr;
+    }
+  }
+}
+
+footer {
+  & .link {
+    position: relative;
+    width: fit-content;
+
+    &:hover::after {
+      width: 100%;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0%;
+      height: 2px;
+      background-color: currentColor;
+
+      transform-origin: left center;
+      transition: width 0.3s;
+    }
+  }
 }

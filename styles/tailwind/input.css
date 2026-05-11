@@ -2,12 +2,20 @@
 
 @theme inline {
   --color-primary: var(--primary);
-
+  --color-yellow: var(--yellow);
+  --color-dark-teal: var(--dark-teal);
+  --color-background-primary: var(--background-primary);
+  --color-background-secondary: var(--background-secondary);
   --breakpoint-sm: 641px;
   --breakpoint-md: 769px;
   --breakpoint-lg: 1025px;
   --breakpoint-xl: 1281px;
   --breakpoint-2xl: 1537px;
+}
+
+@theme {
+  --radius-3xl: 1.25rem;
+  --radius-4xl: 1.5rem;
 }
 
 @utility prose {
@@ -112,10 +120,10 @@
 @utility container {
   padding-inline: 1.25rem;
   margin-inline: auto;
-  max-width: 1320px;
+  max-width: 1360px;
 
   @variant max-2xl {
-    max-width: 1240px;
+    max-width: 1360px;
   }
 
   @variant max-xl {
@@ -128,5 +136,136 @@
 
   @variant max-md {
     padding-inline: 1.25rem;
+  }
+}
+
+@layer components {
+  [class*="btn-"],
+  .btn {
+    padding: 0.625rem 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.625rem;
+    border-radius: 99999px;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+
+    &:hover {
+      background-color: var(--yellow);
+      color: #fff;
+    }
+
+    & .svg-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      position: relative;
+    }
+  }
+
+  .btn-primary {
+    --arrow-color: red;
+    background-color: var(--color-primary);
+    color: #fff;
+    & .svg-icon {
+      background-color: #fff;
+    }
+  }
+
+  .btn-yellow {
+    background-color: var(--color-yellow);
+    color: #fff;
+    & .svg-icon {
+      background-color: #fff;
+    }
+
+    &:hover {
+      background-color: var(--color-dark-teal);
+    }
+  }
+
+  .btn-blur {
+    border-radius: 9999px;
+    background-color: rgba(64, 64, 64, 0.3);
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px);
+    color: #fff;
+    padding: 0.625rem 1.75rem;
+    border: 1px solid rgba(187, 187, 187, 0.15);
+    font-family: "Inter", "IBM Plex Sans Thai", sans-serif;
+    transition: scale 0.3s;
+    overflow: hidden;
+    z-index: 1;
+
+    &:hover {
+      background-color: rgba(64, 64, 64, 0.1);
+    }
+    &:hover&::before {
+      transform: translateY(0);
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform: translateY(100%);
+      background-color: var(--primary);
+      z-index: -1;
+      transition: transform 0.3s;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .glass-element {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    /* -webkit-backdrop-filter: blur(1px); */
+    border: 1px solid rgba(187, 187, 187, 0.15);
+  }
+}
+
+.arrow-btn {
+  --arrow-color: currentColor;
+  position: relative;
+  padding-right: calc(var(--arrow-size, 1.25rem) * 2.5);
+
+  &:hover {
+    &::before {
+      transform: translateX(100%);
+      opacity: 1;
+    }
+    &::after {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: var(--arrow-size, 1.25rem);
+    height: var(--arrow-size, 1.25rem);
+    background-color: var(--arrow-color, currentColor);
+    -webkit-mask: url("../../icons/arrows-button.svg") no-repeat center;
+    mask: url("../../icons/arrows-button.svg") no-repeat center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    top: 50%;
+    translate: -50% -50%;
+    transition:
+      transform 0.3s,
+      opacity 0.15s;
+  }
+
+  &::after {
+    right: calc(var(--arrow-size, 1.25rem) / 2);
+  }
+
+  &::before {
+    right: calc(var(--arrow-size, 1.25rem) * 1.5);
+    opacity: 0;
   }
 }

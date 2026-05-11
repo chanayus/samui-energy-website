@@ -7,18 +7,342 @@
 
     <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
     <link rel="stylesheet" href="./styles/base.css" />
-    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/pages/index.css" />
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css" />
 
     <!-- Component -->
     <script src="./components/navbar.js"></script>
     <script src="./components/footer.js"></script>
 
-    <script type="module" src="./scripts/index.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+    <script type="module" src="./scripts/pages/index.js"></script>
     <script type="module" src="./scripts/main.js"></script>
   </head>
   <body>
     <navbar-component></navbar-component>
-    <main class="flex-1 container w-full h-full flex bg-primary flex-col"></main>
+    <main class="flex-1 w-full h-full flex flex-col">
+      <header id="hero-section" class="z-1 relative gap-y-10 overflow-hidden text-white bg-black min-h-max lg:h-screen max-lg:max-h-206 flex flex-col lg:py-26 max-lg:pt-32 max-lg:pb-16">
+        <hgroup class="container flex-1 flex flex-col justify-center space-y-4">
+          <span class="glass-element px-4 rounded-full w-fit text-sm py-0.5 text-white/75">ยิ่งประหยัดได้มาก ยิ่งได้รับการสนับสนุนมาก</span>
+          <h1 class="max-w-152 leading-[1.2] tracking-tighter">ลดค่าไฟธุรกิจของคุณ พร้อมรับเงินสนับสนุนสูงสุด 2 ล้านบาท</h1>
+        </hgroup>
+        <section class="flex max-md:flex-col justify-between gap-6 md:items-end container">
+          <div id="video-card" class="glass-element p-2.5 max-w-60 rounded-2xl">
+            <video width="230" height="133" autoplay muted loop playsinline class="rounded-xl aspect-video w-full object-cover">
+              <source src="./images/pages/index/oppotunity.mp4" type="video/mp4" />
+            </video>
+            <h6 class="mt-2.5 mb-1.5">โอกาสมีจำนวนจำกัด</h6>
+            <p class="max-w-64">รับจำนวนจำกัดเพียง 20 แห่งในพื้นที่เกาะสมุย แนะนำให้สมัครล่วงหน้าเพื่อไม่พลาดสิทธิ์</p>
+          </div>
+          <div id="info" class="md:max-w-68 space-y-5">
+            <p class="text-lg">โครงการสนับสนุนการปรับปรุงระบบพลังงานสำหรับสถานประกอบการในเกาะสมุย รับเงินสนับสนุนสูงสุด 4 บาทต่อหน่วย จากผลการประหยัดพลังงานจริง</p>
+            <a href="" class="btn-primary max-w-fit arrow-btn"> สมัครเข้าร่วมโครงการ </a>
+          </div>
+        </section>
+
+        <img id="hero-bg" class="absolute w-full h-full object-cover -z-1 top-0 left-0" src="./images/pages/index/hero.avif" alt="" />
+        <div style="background: #061a04" class="absolute -z-1 w-full h-full top-0 left-0 opacity-45"></div>
+      </header>
+
+      <section class="py-28 space-y-20">
+        <div class="flex container gap-5 max-lg:flex-col">
+          <p data-reveal class="text-xl flex-1">เกี่ยวกับ</p>
+          <div class="flex-1 space-y-4">
+            <h2 data-reveal data-text-split>ลดต้นทุน เพิ่มกำไร และยก ระดับธุรกิจของคุณไปพร้อมกัน</h2>
+            <div>
+              <h5 data-reveal>- โครงการส่งเสริมการปรับปรุงประสิทธิภาพการใช้พลังงาน</h5>
+              <h5 data-reveal data-delay="0.1">- สำหรับสถานประกอบการในพื้นที่เกาะสมุย</h5>
+            </div>
+          </div>
+        </div>
+        <div class="about-stat grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-8 container">
+          <section data-reveal class="px-6">
+            <h3>2M</h3>
+            <p>สนับสนุนสูงสุด / แห่ง</p>
+          </section>
+          <section data-reveal class="px-6">
+            <h3>4</h3>
+            <p>บาท / หน่วยที่ประหยัดได้</p>
+          </section>
+          <section data-reveal class="px-6">
+            <h3>20</h3>
+            <p>โครงการเปิดรับจำนวน</p>
+          </section>
+          <section data-reveal class="px-6">
+            <h3>เกาะสมุย</h3>
+            <p>โครงการเฉพาะพื้นที่ ยกระดับธุรกิจ</p>
+          </section>
+        </div>
+      </section>
+
+      <section class="lg:space-y-32 space-y-24 pb-24 pt-8 bg-background-secondary">
+        <figure class="container">
+          <picture>
+            <source media="(min-width: 768px)" srcset="./images/pages/index/campaign-banner.avif" />
+            <source media="(min-width: 640px)" srcset="./images/pages/index/campaign-banner-mobile.avif" />
+            <img src="./images/pages/index/campaign-banner-mobile.avif" alt="" class="rounded-2xl" />
+          </picture>
+        </figure>
+        <div class="container relative max-lg:space-y-12">
+          <hgroup class="max-w-148 space-y-4 lg:absolute">
+            <p data-reveal>ธุรกิจแบบไหนที่ควรเข้าร่วม</p>
+            <h4 data-reveal data-text-split>หากธุรกิจของคุณมีค่าไฟสูง หรือใช้ระบบปรับ อากาศและเครื่องจักรจำนวนมาก โครงการนี้จะ ช่วยให้คุณลดต้นทุนได้อย่างชัดเจน</h4>
+
+            <a data-reveal href="" class="btn-primary max-w-fit arrow-btn"> อ่านรายละเอียดโครงการ </a>
+          </hgroup>
+
+          <section class="grid lg:grid-cols-3 md:grid-cols-2 gap-6 items-end">
+            <div data-reveal data-type="card" class=" bottom-0 lg:p-8 p-6 rounded-3xl relative z-1 overflow-hidden min-h-72 lg:h-96 flex flex-col justify-between">
+              <hgroup class="space-y-4">
+                <h4 class="text-white">ระบบหลักที่สามารถปรับปรุงเพื่อเพิ่มประสิทธิภาพ</h4>
+                <p class="text-background-primary">โรงแรม, รีสอร์ท, อาคารพาณิชย์, ธุรกิจบริการ</p>
+              </hgroup>
+
+              <div class="flex gap-2">
+                <div class="bg-background-primary px-4 py-1 text-xs rounded-full">Data insights</div>
+                <div class="bg-background-primary px-4 py-1 text-xs rounded-full">Smart Monitoring</div>
+              </div>
+
+              <div style="background: linear-gradient(180deg, #052602 14%, rgba(0, 0, 0, 0) 59%)" class="absolute -z-1 w-full h-full top-0 left-0"></div>
+              <img src="./images/pages/index/card-1.avif" alt="" class="absolute -z-2 w-full h-full top-0 left-0 object-cover" />
+            </div>
+            <div data-reveal data-type="card" class=" bottom-0 lg:p-8 p-6 rounded-3xl relative z-1 overflow-hidden min-h-72 lg:h-126 flex flex-col justify-between">
+              <hgroup class="space-y-4">
+                <h4 class="text-white">ระบบหลักที่สามารถปรับปรุงเพื่อเพิ่มประสิทธิภาพ</h4>
+                <p class="text-background-primary">Chiller, VRF, Heat Pump, VSD, Air Conditioning</p>
+              </hgroup>
+
+              <div class="flex gap-2">
+                <div class="bg-background-primary px-4 py-1 text-xs rounded-full">Time Efficiency</div>
+                <div class="bg-background-primary px-4 py-1 text-xs rounded-full">Digital Control</div>
+              </div>
+
+              <div style="background: linear-gradient(180deg, #052602 14%, rgba(0, 0, 0, 0) 59%)" class="absolute -z-1 w-full h-full top-0 left-0"></div>
+              <img src="./images/pages/index/card-2.avif" alt="" class="absolute -z-2 w-full h-full top-0 left-0 object-cover" />
+            </div>
+            <div data-reveal data-type="card" class=" bottom-0 lg:p-8 p-6 rounded-3xl relative z-1 overflow-hidden min-h-72 lg:h-187 flex flex-col justify-between">
+              <h4 class="text-white">หากคุณมีค่าไฟตั้งแต่ 50,000 บาท/เดือนขึ้นไป คุณมีโอกาสลดต้นทุนได้อย่างมีนัยสำคัญ</h4>
+
+              <div class="flex gap-2">
+                <div class="bg-background-primary px-4 py-1 text-xs rounded-full">Sustainability</div>
+                <div class="bg-background-primary px-4 py-1 text-xs rounded-full">Smart Practices</div>
+              </div>
+
+              <div style="background: linear-gradient(180deg, #052602 14%, rgba(0, 0, 0, 0) 59%)" class="absolute -z-1 w-full h-full top-0 left-0"></div>
+              <img src="./images/pages/index/card-3.avif" alt="" class="absolute -z-2 w-full h-full top-0 left-0 object-cover" />
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section id="services-section" class="relative md:h-[500vh]">
+        <div class="sticky w-full md:h-screen top-0 left-0 z-1">
+          <div class="container space-y-16 md:h-screen w-full flex flex-col pt-32 top-0 left-0">
+            <hgroup class="text-center space-y-4 md:text-white text-dark-teal">
+              <p data-reveal data-text-split class="text-lg">เราช่วยอะไรธุรกิจของคุณได้บ้าง</p>
+              <h3 data-reveal data-text-split class="text-balance max-w-[32ch] mx-auto">เราช่วยคุณตั้งแต่การวิเคราะห์ ปรับปรุง เพื่อให้คุณลดค่าไฟได้จริง</h3>
+            </hgroup>
+            <section class="md:grid max-md:space-y-4">
+              <div class="service-card max-md:border border-white row-1 col-1 p-3 pb-6 rounded-3xl bg-background-primary max-w-164 mx-auto text-center md:space-y-4 space-y-2.5">
+                <figure id="img-card" class="rounded-2xl aspect-video w-full overflow-hidden">
+                  <div id="inner-img-card" class="">
+                    <img src="./images/pages/index/help-1.avif" alt="" class="img-container object-cover" />
+                  </div>
+                </figure>
+                <h4>วิเคราะห์ระบบพลังงานแบบมืออาชีพ</h4>
+                <p class="md:text-xl">ประเมินการใช้พลังงานของธุรกิจคุณ เพื่อค้นหาโอกาสในการลดค่าไฟและเพิ่มประสิทธิภาพในจุดที่สำคัญที่สุด</p>
+              </div>
+              <div class="service-card max-md:border border-white row-1 col-1 p-3 pb-6 rounded-3xl bg-background-primary max-w-164 mx-auto text-center md:space-y-4 space-y-2.5">
+                <figure id="img-card" class="rounded-2xl aspect-video w-full overflow-hidden">
+                  <div id="inner-img-card" class="">
+                    <img src="./images/pages/index/help-2.avif" alt="" class="img-container object-cover" />
+                  </div>
+                </figure>
+                <h4>วางแผนปรับปรุงระบบอย่างตรงจุด</h4>
+                <p class="md:text-xl">ออกแบบแนวทางการปรับปรุงระบบพลังงานให้เหมาะกับธุรกิจของคุณ ทั้งด้านเทคนิคและความคุ้มค่าในการลงทุน</p>
+              </div>
+              <div class="service-card max-md:border border-white row-1 col-1 p-3 pb-6 rounded-3xl bg-background-primary max-w-164 mx-auto text-center md:space-y-4 space-y-2.5">
+                <figure id="img-card" class="rounded-2xl aspect-video w-full overflow-hidden">
+                  <div id="inner-img-card" class="">
+                    <img src="./images/pages/index/help-3.avif" alt="" class="img-container object-cover" />
+                  </div>
+                </figure>
+                <h4>ช่วยให้คุณลงทุนได้ง่ายขึ้น</h4>
+                <p class="md:text-xl">รับเงินสนับสนุนจากโครงการ เพื่อลดภาระค่าใช้จ่ายในการปรับปรุงหรือเปลี่ยนอุปกรณ์</p>
+              </div>
+              <div class="service-card max-md:border border-white row-1 col-1 p-3 pb-6 rounded-3xl bg-background-primary max-w-164 mx-auto text-center md:space-y-4 space-y-2.5">
+                <figure id="img-card" class="rounded-2xl aspect-video w-full overflow-hidden">
+                  <div id="inner-img-card" class="">
+                    <img src="./images/pages/index/help-4.avif" alt="" class="img-container object-cover" />
+                  </div>
+                </figure>
+                <h4>วัดผลจริง เห็นผลจริง</h4>
+                <p class="md:text-xl">ตรวจสอบและประเมินผลการประหยัดพลังงานหลังดำเนินการ เพื่อให้มั่นใจว่าคุณลดค่าไฟได้ตามเป้าหมาย</p>
+              </div>
+              <div class="service-card max-md:border border-white row-1 col-1 p-3 pb-6 rounded-3xl bg-background-primary max-w-164 mx-auto text-center md:space-y-4 space-y-2.5">
+                <figure id="img-card" class="rounded-2xl aspect-video w-full overflow-hidden">
+                  <div id="inner-img-card" class="">
+                    <img src="./images/pages/index/help-5.avif" alt="" class="img-container object-cover" />
+                  </div>
+                </figure>
+                <h4>เปลี่ยนการประหยัดเป็นรายได้</h4>
+                <p class="md:text-xl">รับเงินสนับสนุนตามผลการประหยัดพลังงานจริง สูงสุด 4 บาทต่อหน่วย ตามเงื่อนไขของโครงการ</p>
+              </div>
+            </section>
+            <div></div>
+          </div>
+
+          <figure id="bg-card-container" class="max-md:hidden absolute w-full h-screen top-0 left-0 -z-1">
+            <img src="./images/pages/index/help-1.avif" alt="" class="z-5 bg-card absolute object-cover h-full w-full bg-red-500" />
+            <img src="./images/pages/index/help-2.avif" alt="" class="z-4 bg-card absolute object-cover h-full w-full bg-emerald-500" />
+            <img src="./images/pages/index/help-3.avif" alt="" class="z-3 bg-card absolute object-cover h-full w-full bg-blue-500" />
+            <img src="./images/pages/index/help-4.avif" alt="" class="z-2 bg-card absolute object-cover h-full w-full bg-orange-500" />
+            <img src="./images/pages/index/help-5.avif" alt="" class="z-1 bg-card absolute object-cover h-full w-full bg-violet-500" />
+          </figure>
+
+          <div class="max-md:hidden bg-black/70 absolute size-full top-0 left-0 -z-1"></div>
+        </div>
+      </section>
+
+      <section class="bg-background-secondary py-32 space-y-12">
+        <hgroup class="container text-center">
+          <p data-reveal>ตั้งแต่สมัครจนได้รับเงินสนับสนุน</p>
+          <h3 data-reveal data-text-split>ขั้นตอนง่าย ชัดเจน พร้อมทีมงานดูแล</h3>
+        </hgroup>
+        <div class="grid lg:grid-cols-3 sm:grid-cols-2 gap-6 container">
+          <div data-reveal class="bg-background-primary p-6 rounded-3xl space-y-8">
+            <h4>ขั้นตอนที่ 1</h4>
+            <div class="bg-white rounded-2xl p-6 space-y-4">
+              <h5>สมัครเข้าร่วม</h5>
+              <p>เริ่มต้นด้วยการกรอกข้อมูลเบื้องต้น</p>
+            </div>
+          </div>
+          <div data-reveal class="bg-background-primary p-6 rounded-3xl space-y-8">
+            <h4>ขั้นตอนที่ 2</h4>
+            <div class="bg-white rounded-2xl p-6 space-y-4">
+              <h5>ตรวจสอบคุณสมบัติ</h5>
+              <p>ประเมินสิทธิ์ตามเกณฑ์โครงการ</p>
+            </div>
+          </div>
+          <div data-reveal class="bg-background-primary p-6 rounded-3xl space-y-8">
+            <h4>ขั้นตอนที่ 3</h4>
+            <div class="bg-white rounded-2xl p-6 space-y-4">
+              <h5>อนุมัติเข้าร่วม</h5>
+              <p>รับสิทธิ์เข้าร่วมโครงการ</p>
+            </div>
+          </div>
+          <div data-reveal class="bg-background-primary p-6 rounded-3xl space-y-8">
+            <h4>ขั้นตอนที่ 4</h4>
+            <div class="bg-white rounded-2xl p-6 space-y-4">
+              <h5>ปรับปรุงระบบ</h5>
+              <p>ดำเนินการอัปเกรดระบบพลังงาน</p>
+            </div>
+          </div>
+          <div data-reveal class="bg-background-primary p-6 rounded-3xl space-y-8">
+            <h4>ขั้นตอนที่ 5</h4>
+            <div class="bg-white rounded-2xl p-6 space-y-4">
+              <h5>ตรวจวัดผล</h5>
+              <p>วัดผลการประหยัดพลังงาน</p>
+            </div>
+          </div>
+          <div data-reveal class="bg-background-primary p-6 rounded-3xl space-y-8">
+            <h4>ขั้นตอนที่ 6</h4>
+            <div class="bg-white rounded-2xl p-6 space-y-4">
+              <h5>รับเงินสนับสนุน</h5>
+              <p>รับเงินตามผลลัพธ์ที่เกิดขึ้น</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-28 space-y-20">
+        <hgroup class="flex container justify-between lg:items-center gap-6 max-lg:flex-col">
+          <h2 data-reveal>ข่าวสารและความรู้ด้านพลังงาน</h2>
+
+          <a data-reveal href="" class="btn-primary max-w-fit arrow-btn"> ดูทั้งหมด </a>
+        </hgroup>
+
+        <div class="container space-y-6">
+          <section class="blog-card-highlight">
+            <div class="image">
+              <figure>
+                <img src="./images/pages/index/news-1.avif" alt="" />
+              </figure>
+              <div class="overlay">
+                <a href="" class="btn-blur">See Blog</a>
+              </div>
+            </div>
+            <div class="content">
+              <p class="date">3 ธ.ค. 2568</p>
+              <h3>เปิดรับสมัครโครงการ Samui Energy Save</h3>
+              <p>รายละเอียดการเปิดรับสมัคร เงื่อนไข และระยะเวลาเข้าร่วมโครงการ สำหรับสถานประกอบการในพื้นที่เกาะสมุย</p>
+              <a href="" class="arrow-btn">อ่านเพิ่มเติม</a>
+            </div>
+          </section>
+
+          <section class="grid lg:grid-cols-3 sm:grid-cols-2 gap-6">
+            <div class="blog-card">
+              <div class="image">
+                <figure>
+                  <img src="./images/pages/index/news-1.avif" alt="" />
+                </figure>
+                <div class="overlay">
+                  <a href="" class="btn-blur">See Blog</a>
+                </div>
+              </div>
+              <div class="content">
+                <p class="date">3 ธ.ค. 2568</p>
+                <h5>เปิดรับสมัครโครงการ Samui Energy Save</h5>
+                <p>รายละเอียดการเปิดรับสมัคร เงื่อนไข และระยะเวลาเข้าร่วมโครงการ สำหรับสถานประกอบการในพื้นที่เกาะสมุย</p>
+                <a href="" class="arrow-btn">อ่านเพิ่มเติม </a>
+              </div>
+            </div>
+
+            <div class="blog-card">
+              <div class="image">
+                <figure>
+                  <img src="./images/pages/index/news-1.avif" alt="" />
+                </figure>
+                <div class="overlay">
+                  <a href="" class="btn-blur">See Blog</a>
+                </div>
+              </div>
+              <div class="content">
+                <p class="date">3 ธ.ค. 2568</p>
+                <h5>เปิดรับสมัครโครงการ Samui Energy Save</h5>
+                <p>รายละเอียดการเปิดรับสมัคร เงื่อนไข และระยะเวลาเข้าร่วมโครงการ สำหรับสถานประกอบการในพื้นที่เกาะสมุย</p>
+                <a href="" class="arrow-btn">อ่านเพิ่มเติม </a>
+              </div>
+            </div>
+
+            <div class="blog-card">
+              <div class="image">
+                <figure>
+                  <img src="./images/pages/index/news-1.avif" alt="" />
+                </figure>
+                <div class="overlay">
+                  <a href="" class="btn-blur">See Blog</a>
+                </div>
+              </div>
+              <div class="content">
+                <p class="date">3 ธ.ค. 2568</p>
+                <h5>เปิดรับสมัครโครงการ Samui Energy Save</h5>
+                <p>รายละเอียดการเปิดรับสมัคร เงื่อนไข และระยะเวลาเข้าร่วมโครงการ สำหรับสถานประกอบการในพื้นที่เกาะสมุย</p>
+                <a href="" class="arrow-btn">อ่านเพิ่มเติม </a>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <figure class="container">
+          <picture>
+            <source media="(min-width: 768px)" srcset="./images/pages/index/campaign-banner-2.avif" />
+            <source media="(min-width: 640px)" srcset="./images/pages/index/campaign-banner-2-mobile.avif" />
+            <img src="./images/pages/index/campaign-banner-2-mobile.avif" alt="" class="rounded-2xl w-full" />
+          </picture>
+        </figure>
+      </section>
+    </main>
     <footer-component></footer-component>
   </body>
 </html>

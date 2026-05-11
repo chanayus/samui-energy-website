@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15" height="13" fill="none">
+    <path
+        d="M 1.875 7 L 3.698 7 M 13.542 7 L 9.167 2.625 M 13.542 7 L 9.167 11.375 M 13.542 7 L 5.885 7"
+        fill="transparent" stroke-width="1.31" stroke="var(--arrow-color, currentColor)" stroke-linecap="round"
+        stroke-linejoin="round" stroke-dasharray=""></path>
+</svg>
