@@ -54,7 +54,6 @@ resizeObserver.observe(servicesSection);
 // Reveal Section Animation
 
 const heroSection = document.querySelector("#hero-section");
-console.log(heroSection.querySelector("#hero-bg"));
 
 const sequence = [
   [heroSection.querySelector("#hero-bg"), { scale: [1.35, 1] }, { at: "+0.5", duration: 3 }],

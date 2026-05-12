@@ -47,9 +47,7 @@ body {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
-  font-smooth: always;
   text-rendering: optimizeLegibility;
-  touch-action: manipulation;
 }
 
 h1 {

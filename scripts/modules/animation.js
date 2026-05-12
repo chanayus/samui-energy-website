@@ -35,6 +35,20 @@ function segmentCharacters(text) {
   return Array.from(text);
 }
 
+function segmentWords(text) {
+  if (typeof Intl !== "undefined" && Intl.Segmenter) {
+    return Array.from(new Intl.Segmenter(undefined, { granularity: "word" }).segment(text), ({ segment, isWordLike }) => ({
+      segment,
+      isWordLike,
+    }));
+  }
+
+  return text.split(/(\s+)/).filter(Boolean).map((segment) => ({
+    segment,
+    isWordLike: !/\s+/.test(segment),
+  }));
+}
+
 function splitTextContent(element, mode = "words") {
   if (element.dataset.textSplitReady === "true") {
     return Array.from(element.querySelectorAll("[data-text-split-part]"));
@@ -47,24 +61,24 @@ function splitTextContent(element, mode = "words") {
   }
 
   const fragment = document.createDocumentFragment();
-  const parts = sourceText.split(/(\s+)/);
+  const parts = segmentWords(sourceText);
 
   element.textContent = "";
 
   parts.forEach((part) => {
-    if (!part) {
+    if (!part?.segment) {
       return;
     }
 
-    if (/\s+/.test(part)) {
-      fragment.append(document.createTextNode(part));
+    if (!part.isWordLike) {
+      fragment.append(document.createTextNode(part.segment));
       return;
     }
 
     if (mode === "chars") {
       const word = createSplitWord();
 
-      segmentCharacters(part).forEach((character) => {
+      segmentCharacters(part.segment).forEach((character) => {
         word.append(createSplitPart(character));
       });
 
@@ -72,7 +86,7 @@ function splitTextContent(element, mode = "words") {
       return;
     }
 
-    fragment.append(createSplitPart(part));
+    fragment.append(createSplitPart(part.segment));
   });
 
   element.append(fragment);
@@ -82,7 +96,7 @@ function splitTextContent(element, mode = "words") {
 }
 
 sections.forEach((section) => {
-  const amount = Number(section.getAttribute("data-amount")) || 1;
+  const amount = Number(section.getAttribute("data-amount")) || 0.25;
   const delay = Number(section.getAttribute("data-delay")) || 0;
   const duration = Number(section.getAttribute("data-duration")) || 1;
   const type = section.getAttribute("data-type") || "default";
@@ -162,10 +176,8 @@ export function animateBreakpoint(query, callback) {
 
   function onChange(e) {
     if (e.matches) {
-      console.log("match");
       enable();
     } else {
-      console.log("unmatch");
       disable();
     }
   }

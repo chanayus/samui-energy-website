@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>หลักเกณฑ์และเงื่อนไขการเข้าร่วมโครงการ — Samui Energy Save</title>
+
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/pages/eligibility.css" />
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css" />
+
+    <script src="./components/navbar.js"></script>
+    <script src="./components/footer.js"></script>
+
+    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+    <script type="module" src="./scripts/pages/eligibility.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
+  </head>
+  <body>
+    <navbar-component></navbar-component>
+    <main class="flex-1 w-full h-full flex flex-col">
+      <!-- Page Header -->
+      <header class="bg-background-secondary pt-44 pb-20 text-center">
+        <div class="container space-y-4">
+          <p data-reveal class="text-sm uppercase tracking-widest text-dark-teal/50">ตรวจสอบคุณสมบัติ</p>
+          <h1 data-reveal data-text-split data-delay="0.5" class="mx-auto max-w-3xl">หลักเกณฑ์และเงื่อนไขการเข้าร่วมโครงการ</h1>
+        </div>
+      </header>
+
+      <!-- Section 01: คุณสมบัติผู้สมัคร -->
+      <section class="bg-background-secondary pb-28 space-y-12">
+        <div class="container space-y-3">
+          <h3 data-reveal class="font-medium">01. คุณสมบัติผู้สมัคร</h3>
+          <p data-reveal class="max-w-2xl">สถานประกอบการที่มีคุณสมบัติตามหลักเกณฑ์ของโครงการ และตั้งอยู่ในพื้นที่อำเภอเกาะสมุย จังหวัดสุราษฎร์ธานี</p>
+        </div>
+        <div class="container">
+          <div class="biz-cards">
+            <div data-reveal data-amount="0.1" class="biz-card">
+              <img src="./images/pages/eligibility/biz-hotel.avif" alt="โรงแรม รีสอร์ท" />
+              <div class="biz-card__overlay">
+                <h5>โรงแรม / รีสอร์ท</h5>
+                <p>สถานประกอบการด้านการท่องเที่ยวและที่พัก</p>
+              </div>
+            </div>
+            <div data-reveal data-amount="0.1" data-delay="0.1" class="biz-card">
+              <img src="./images/pages/eligibility/biz-office.avif" alt="อาคารธุรกิจ" />
+              <div class="biz-card__overlay">
+                <h5>อาคารธุรกิจ</h5>
+                <p>สำนักงาน อาคารพาณิชย์ ศูนย์บริการ</p>
+              </div>
+            </div>
+            <div data-reveal data-amount="0.1" data-delay="0.2" class="biz-card">
+              <img src="./images/pages/eligibility/biz-industrial.avif" alt="สถานประกอบการอื่นๆ" />
+              <div class="biz-card__overlay">
+                <h5>สถานประกอบการอื่นๆ</h5>
+                <p>ธุรกิจที่มีการใช้ไฟฟ้าและมีศักยภาพในการลดการใช้พลังงาน</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 02: ประเภทอุปกรณ์ -->
+      <section class="equipment-section py-24 space-y-12">
+        <img class="absolute size-full object-cover top-0 left-0 opacity-25" src="./images/pages/eligibility/section2-bg.avif" alt="" />
+        <div class="container space-y-3 relative z-1">
+          <h3 data-reveal class="font-medium">02. ประเภทอุปกรณ์และมาตรการที่ได้รับการสนับสนุน</h3>
+          <p data-reveal class="max-w-2xl">อุปกรณ์และมาตรการประหยัดพลังงานที่ได้รับการสนับสนุนภายใต้โครงการ</p>
+        </div>
+        <div class="container relative z-1">
+          <div class="grid lg:grid-cols-3 sm:grid-cols-2 gap-6">
+            <div data-reveal class="equipment-card">
+              <div class="equipment-card__header">
+                <p class="equipment-card__name">Air Conditioning</p>
+                <p class="equipment-card__desc">ระบบปรับอากาศประสิทธิภาพสูง</p>
+              </div>
+              <div class="equipment-card__img">
+                <img src="./images/pages/eligibility/eq-ac.avif" alt="Air Conditioning" />
+              </div>
+            </div>
+
+            <div data-reveal data-delay="0.07" class="equipment-card">
+              <div class="equipment-card__header">
+                <p class="equipment-card__name">HEM</p>
+                <p class="equipment-card__desc">มอเตอร์ประสิทธิภาพสูง</p>
+              </div>
+              <div class="equipment-card__img">
+                <img src="./images/pages/eligibility/eq-hem.avif" alt="HEM" />
+              </div>
+            </div>
+
+            <div data-reveal data-delay="0.14" class="equipment-card">
+              <div class="equipment-card__header">
+                <p class="equipment-card__name">VSD</p>
+                <p class="equipment-card__desc">Variable Speed Drive</p>
+              </div>
+              <div class="equipment-card__img">
+                <img src="./images/pages/eligibility/eq-vsd.avif" alt="VSD" />
+              </div>
+            </div>
+
+            <div data-reveal data-delay="0.07" class="equipment-card">
+              <div class="equipment-card__header">
+                <p class="equipment-card__name">LED Lighting</p>
+                <p class="equipment-card__desc">ระบบแสงสว่าง LED</p>
+              </div>
+              <div class="equipment-card__img">
+                <img src="./images/pages/eligibility/eq-led.avif" alt="LED Lighting" />
+              </div>
+            </div>
+
+            <div data-reveal data-delay="0.14" class="equipment-card">
+              <div class="equipment-card__header">
+                <p class="equipment-card__name">Magnetic Bearing Chiller</p>
+                <p class="equipment-card__desc">เครื่องทำน้ำเย็นประสิทธิภาพสูง</p>
+              </div>
+              <div class="equipment-card__img">
+                <img src="./images/pages/eligibility/eq-chiller.avif" alt="Magnetic Bearing Chiller" />
+              </div>
+            </div>
+
+            <div data-reveal data-delay="0.21" class="equipment-card">
+              <div class="equipment-card__header">
+                <p class="equipment-card__name">Other Measures</p>
+                <p class="equipment-card__desc">มาตรการอื่นๆ</p>
+              </div>
+              <div class="equipment-card__img equipment-card__img--icon rounded-full">
+                <div style="color: #0b692e" class="border-4 rounded-full p-6 max-w-42">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" />
+                    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Section 03: วิธีการคำนวณ -->
+      <section class="bg-background-secondary py-24 space-y-12">
+        <div class="container space-y-4">
+          <h3 data-reveal class="font-medium">03. วิธีการคำนวณเงินสนับสนุน</h3>
+          <p data-reveal class="max-w-2xl" style="color: rgba(4, 48, 59, 0.55)">กฟภ. สนับสนุนเงินตามปริมาณพลังงานไฟฟ้าที่ประหยัดได้จริงภายในเงื่อนไขของโครงการ เพื่อให้เงินสนับสนุนสะท้อนผลลัพธ์จริง</p>
+          <div data-reveal class="flex items-center flex-wrap gap-3 pt-1">
+            <p class="text-sm font-medium">ดาวน์โหลดเอกสาร</p>
+            <a href="" class="download-btn download-btn--green">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="18" height="18" x="3" y="3" rx="2" />
+                <path d="M3 9h18M3 15h18M9 3v18" />
+              </svg>
+              Excel คำนวณเงินสนับสนุน
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" x2="12" y1="15" y2="3" />
+              </svg>
+            </a>
+            <a href="" class="download-btn download-btn--neutral">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" x2="8" y1="13" y2="13" />
+                <line x1="16" x2="8" y1="17" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
+              </svg>
+              แบบฟอร์มส่งข้อมูลผลการดำเนินงาน
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" x2="12" y1="15" y2="3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Calculator Mockup -->
+        <figure class="container">
+          <img data-reveal class="object-contain w-full rounded-3xl" src="./images/pages/eligibility/banner.avif" alt="" />
+        </figure>
+      </section>
+    </main>
+    <footer-component></footer-component>
+  </body>
+</html>
