@@ -247,3 +247,7 @@ footer {
     }
   }
 }
+
+[data-reveal]:not([data-text-split]) {
+  opacity: 0;
+}

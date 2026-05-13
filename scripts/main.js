@@ -1,4 +1,5 @@
 import "./modules/navbar.js";
+import "./modules/animation.js";
 
 document.querySelectorAll(".svg-icon")?.forEach((el) => {
   const src = el.getAttribute("data-src");
