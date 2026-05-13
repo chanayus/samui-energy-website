@@ -35,18 +35,33 @@ function segmentCharacters(text) {
   return Array.from(text);
 }
 
+function hasWordContent(segment) {
+  if (!segment || /^\s+$/u.test(segment)) {
+    return false;
+  }
+
+  try {
+    return /[\p{L}\p{N}]/u.test(segment);
+  } catch {
+    return /[A-Za-z0-9\u0E00-\u0E7F]/.test(segment);
+  }
+}
+
 function segmentWords(text) {
   if (typeof Intl !== "undefined" && Intl.Segmenter) {
     return Array.from(new Intl.Segmenter(undefined, { granularity: "word" }).segment(text), ({ segment, isWordLike }) => ({
       segment,
-      isWordLike,
+      isWordLike: isWordLike || hasWordContent(segment),
     }));
   }
 
-  return text.split(/(\s+)/).filter(Boolean).map((segment) => ({
-    segment,
-    isWordLike: !/\s+/.test(segment),
-  }));
+  return text
+    .split(/(\s+)/)
+    .filter(Boolean)
+    .map((segment) => ({
+      segment,
+      isWordLike: hasWordContent(segment),
+    }));
 }
 
 function splitTextContent(element, mode = "words") {
@@ -82,6 +97,8 @@ function splitTextContent(element, mode = "words") {
         word.append(createSplitPart(character));
       });
 
+      console.log(word);
+
       fragment.append(word);
       return;
     }
@@ -106,7 +123,10 @@ sections.forEach((section) => {
       { opacity: 0, y: 18, filter: "blur(2px)" },
       { opacity: [0, 1], y: [18, 0], filter: ["blur(2px)", "blur(0px)"] },
     ],
-    card: [{ opacity: 0, scaleY: 0.7 }, { opacity: [0, 1], scaleY: [0.7, 1] }],
+    card: [
+      { opacity: 0, scaleY: 0.7 },
+      { opacity: [0, 1], scaleY: [0.7, 1] },
+    ],
   };
 
   animate(section, animationTypes[type][0], { duration: 0 });
@@ -134,6 +154,8 @@ export function animateTextSplit(element) {
   if (!parts.length) {
     return;
   }
+
+  console.log(parts);
 
   animate(parts, { opacity: 0, y: 18, filter: "blur(2px)" }, { duration: 0 });
   inView(
