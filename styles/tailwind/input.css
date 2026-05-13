@@ -269,3 +269,78 @@
     opacity: 0;
   }
 }
+
+@layer base {
+  h1 {
+    font-size: var(--fs-h1);
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: var(--fs-h2);
+    line-height: 1.2;
+    letter-spacing: -1.75px;
+  }
+
+  h3 {
+    font-size: var(--fs-h3);
+    letter-spacing: -1.5px;
+  }
+
+  h4 {
+    font-size: var(--fs-h4);
+    letter-spacing: -1.5px;
+  }
+
+  h5 {
+    font-size: var(--fs-h5);
+    letter-spacing: -1.5px;
+  }
+
+  h6 {
+    font-size: var(--fs-h6);
+    letter-spacing: -1.5px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .text-h1 {
+    font-size: var(--fs-h1);
+    line-height: 1.2;
+  }
+
+  .text-h2 {
+    font-size: var(--fs-h2);
+    line-height: 1.2;
+    letter-spacing: -1.75px;
+  }
+
+  .text-h3 {
+    font-size: var(--fs-h3);
+    letter-spacing: -1.5px;
+  }
+
+  .text-h4 {
+    font-size: var(--fs-h4);
+    letter-spacing: -1.5px;
+  }
+
+  .text-h5 {
+    font-size: var(--fs-h5);
+    letter-spacing: -1.5px;
+  }
+
+  .text-h6 {
+    font-size: var(--fs-h6);
+    letter-spacing: -1.5px;
+  }
+}
