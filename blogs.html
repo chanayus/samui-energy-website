@@ -19,7 +19,6 @@
   <body>
     <navbar-component></navbar-component>
     <main class="flex-1 w-full h-full flex flex-col">
-
       <!-- Hero -->
       <header class="blogs-hero">
         <div class="container relative z-1">
@@ -36,13 +35,11 @@
       <!-- Article List -->
       <section data-reveal data-amount="0.1" data-delay="0.75" class="blogs-section">
         <div class="container">
-
           <header class="blogs-section__header">
             <h2 data-reveal class="blogs-section__heading font-medium">แนะนำบทความน่าอ่าน</h2>
           </header>
 
           <div class="blogs-list" role="feed">
-
             <article data-reveal class="blog-item">
               <a href="" class="blog-item__thumb">
                 <figure>
@@ -133,26 +130,28 @@
                 <p class="blog-item__excerpt">ทำความเข้าใจเทคโนโลยีเบื้องหลังระบบปรับอากาศ EER/COP สูง และผลกระทบต่อการประหยัดพลังงาน</p>
               </div>
             </article>
-
           </div>
 
           <!-- Pagination -->
+
           <nav class="pagination" aria-label="การแบ่งหน้า">
-            <a href="" class="pagination__item pagination__item--active" aria-current="page">1</a>
-            <a href="" class="pagination__item">2</a>
-            <a href="" class="pagination__item">3</a>
-            <span class="pagination__ellipsis" aria-hidden="true">...</span>
-            <a href="" class="pagination__item">10</a>
-            <a href="" class="pagination__next" aria-label="หน้าถัดไป">
+            <a class="prev page-numbers" href="" aria-label="หน้าก่อนหน้า">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </a>
+            <a class="pagination__item pagination__item--active" aria-current="page" href="javascript:void(0);">
+              <span class="page-numbers current">1</span>
+            </a>
+            <a class="page-numbers" href="">2</a>
+            <a class="next page-numbers" href="" aria-label="หน้าถัดไป">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="9 18 15 12 9 6" />
               </svg>
             </a>
           </nav>
-
         </div>
       </section>
-
     </main>
     <footer-component></footer-component>
   </body>

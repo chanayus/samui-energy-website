@@ -7,8 +7,6 @@ let prevScrollY = window.scrollY || 0;
 
 let menuEnabled = false;
 
-console.log(document.querySelector("#mobile-nav"));
-
 mobileNavToggle?.addEventListener("click", () => {
   if (menuEnabled) {
     //   gsap.timeline({ defaults: { duration: 0.35 } }).fromTo("#mobile-nav", { autoAlpha: 1 }, { autoAlpha: 0 });

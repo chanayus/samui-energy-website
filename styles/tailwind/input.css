@@ -272,6 +272,25 @@
 }
 
 @layer base {
+  button:disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  ul li {
+    list-style: disc;
+    margin-left: 2rem;
+  }
+
+  ol li {
+    list-style: decimal;
+    margin-left: 2rem;
+  }
+
   h1 {
     font-size: var(--fs-h1);
     line-height: 1.2;

@@ -97,8 +97,6 @@ function splitTextContent(element, mode = "words") {
         word.append(createSplitPart(character));
       });
 
-      console.log(word);
-
       fragment.append(word);
       return;
     }
@@ -154,8 +152,6 @@ export function animateTextSplit(element) {
   if (!parts.length) {
     return;
   }
-
-  console.log(parts);
 
   animate(parts, { opacity: 0, y: 18, filter: "blur(2px)" }, { duration: 0 });
   inView(

@@ -1,0 +1,245 @@
+/* ============================================================
+   Page Heading
+   ============================================================ */
+
+.contact-heading {
+  font-size: var(--fs-h1);
+
+  &::before {
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+  }
+}
+
+/* ============================================================
+   Contact Card
+   ============================================================ */
+
+.contact-card {
+  display: grid;
+  grid-template-columns: minmax(280px, 400px) 1fr;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
+}
+
+.contact-card__left {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  border-right: 1px solid rgba(4, 48, 59, 0.08);
+}
+
+.contact-card__right {
+  display: flex;
+  flex-direction: column;
+  min-height: 480px;
+}
+
+.contact-card__image {
+  flex: 1;
+  overflow: hidden;
+  background-color: var(--background-primary);
+  aspect-ratio: 16/9;
+  position: relative;
+  & img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* ============================================================
+   Contact Divider
+   ============================================================ */
+
+.contact-divider {
+  border: none;
+  border-top: 1px solid rgba(4, 48, 59, 0.1);
+  margin: 0;
+}
+
+/* ============================================================
+   Channel Icons
+   ============================================================ */
+
+.channel-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(4, 48, 59, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--dark-teal);
+}
+
+.channel-icon svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* ============================================================
+   Social Buttons
+   ============================================================ */
+
+.social-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: 1px solid rgba(4, 48, 59, 0.15);
+  transition:
+    opacity 0.2s,
+    background-color 0.2s;
+  padding: 0.625rem;
+}
+
+.social-btn:hover {
+  opacity: 0.8;
+  background-color: rgba(4, 48, 59, 0.15);
+}
+
+.social-btn svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.social-btn--fb {
+  background-color: #1877f2;
+}
+
+.social-btn--line {
+  background-color: #06c755;
+}
+
+.social-btn--yt {
+  background-color: #ff0000;
+}
+
+/* ============================================================
+   Contact Inquiry CTA
+   ============================================================ */
+
+.contact-inquiry {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding: 1.75rem 2rem;
+  border-top: 1px solid rgba(4, 48, 59, 0.08);
+  background: var(--background-secondary);
+}
+
+.inquiry-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(4, 48, 59, 0.15);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--dark-teal);
+}
+
+.inquiry-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* ============================================================
+   Prep Grid
+   ============================================================ */
+
+.prep-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.prep-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+}
+
+.prep-card__icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(4, 48, 59, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--dark-teal);
+}
+
+.prep-card__icon svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (width < 1024px) {
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card__left {
+    border-right: none;
+    border-bottom: 1px solid rgba(4, 48, 59, 0.08);
+  }
+
+  .contact-card__right {
+    min-height: unset;
+  }
+
+  .contact-card__image {
+    min-height: 300px;
+  }
+
+  .prep-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width < 640px) {
+  .contact-card__left {
+    padding: 2rem 1.5rem;
+  }
+
+  .contact-card__image {
+    min-height: 240px;
+  }
+
+  .contact-inquiry {
+    padding: 1.5rem;
+  }
+
+  .prep-grid {
+    grid-template-columns: 1fr;
+  }
+}
