@@ -21,10 +21,9 @@
    ============================================================ */
 
 .contact-card {
-  display: grid;
-  grid-template-columns: minmax(280px, 400px) 1fr;
   border-radius: 1.5rem;
   overflow: hidden;
+  display: flex;
   background: white;
   box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
 }
@@ -32,6 +31,7 @@
 .contact-card__left {
   padding: 2.5rem;
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: 1.75rem;
   border-right: 1px solid rgba(4, 48, 59, 0.08);
@@ -39,6 +39,7 @@
 
 .contact-card__right {
   display: flex;
+  flex: 3;
   flex-direction: column;
   min-height: 480px;
 }
@@ -205,7 +206,7 @@
 
 @media (width < 1024px) {
   .contact-card {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 
   .contact-card__left {
@@ -226,7 +227,7 @@
   }
 }
 
-@media (width < 640px) {
+@media (width < 769px) {
   .contact-card__left {
     padding: 2rem 1.5rem;
   }
@@ -237,6 +238,7 @@
 
   .contact-inquiry {
     padding: 1.5rem;
+    background: #FFF;
   }
 
   .prep-grid {
