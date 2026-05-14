@@ -1,4 +1,4 @@
-import { scroll, animate } from "../modules/animation.js";
+import { scroll, animate, stagger } from "../modules/animation.js";
 
 // Timeline scroll-driven animation
 requestAnimationFrame(() => {
@@ -28,18 +28,21 @@ requestAnimationFrame(() => {
 
 // Gallery scroll scale animation
 const timeline = [
-  [".gallery-imgs", { scale: [0.875, 1], opacity: [0, 1], filter: ["blur(2px)", "blur(0px)"] }],
-  [".gallery-imgs", { scale: [1, 4] }, { at: "<+0.2" }],
+  [".gallery-imgs > img", { scale: [0.75, 1], opacity: [0, 1], filter: ["blur(2px)", "blur(0px)"] }, { delay: stagger(0.1) }],
+  [".gallery-imgs", { scale: [1, 5], rotate: [0, 10] }],
 ];
 
-scroll(animate(timeline), { target: document.querySelector("#download-section") });
+scroll(animate(timeline, { defaultTransition: { duration: 3 } }), { target: document.querySelector("#download-section") });
 
 // Mouse parallax — translates .gallery-parallax (separate layer from scroll scale)
 const stickyDiv = document.querySelector("#download-section .sticky");
 const galleryParallax = document.querySelector(".gallery-parallax");
 
 if (stickyDiv && galleryParallax) {
-  let targetX = 0, targetY = 0, x = 0, y = 0;
+  let targetX = 0,
+    targetY = 0,
+    x = 0,
+    y = 0;
 
   function parallaxFrame() {
     x += (targetX - x) * 0.07;
