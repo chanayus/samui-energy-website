@@ -27,11 +27,11 @@ serviceCards?.forEach((card, index) => {
 // Animate gallery horizontally during vertical scroll
 
 const revertAnimate = () => {
-  serviceCards?.forEach((card, index) => {
+  serviceCards?.forEach((card) => {
     animate(card, { opacity: 1, scale: 1, filter: "blur(0px)" }, { duration: 0 });
   });
 
-  bgCards?.forEach((card, index) => {
+  bgCards?.forEach((card) => {
     animate(card, { opacity: 1, scale: 1, filter: "blur(0px)" }, { duration: 0 });
   });
 };

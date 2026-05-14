@@ -201,10 +201,6 @@
   pointer-events: none;
 }
 
-.pagination .pagination__item--active:hover {
-  background: var(--primary);
-}
-
 .pagination .prev svg,
 .pagination .next svg {
   width: 1rem;

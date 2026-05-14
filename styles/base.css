@@ -146,7 +146,6 @@ nav {
   }
 
   & #mobile-nav {
-    transition: 0.2s;
     padding: 0;
     grid-template-rows: 0fr;
     transition:

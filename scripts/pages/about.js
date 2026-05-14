@@ -39,23 +39,23 @@ const stickyDiv = document.querySelector("#download-section .sticky");
 const galleryParallax = document.querySelector(".gallery-parallax");
 
 if (stickyDiv && galleryParallax) {
-  let targetX = 0,
-    targetY = 0,
-    x = 0,
-    y = 0;
+  let targetX = 0, targetY = 0, x = 0, y = 0, rafId = null;
 
   function parallaxFrame() {
     x += (targetX - x) * 0.07;
     y += (targetY - y) * 0.07;
     galleryParallax.style.transform = `translate(${x.toFixed(3)}px, ${y.toFixed(3)}px)`;
-    requestAnimationFrame(parallaxFrame);
+    if (Math.abs(targetX - x) < 0.01 && Math.abs(targetY - y) < 0.01) {
+      rafId = null;
+      return;
+    }
+    rafId = requestAnimationFrame(parallaxFrame);
   }
-
-  requestAnimationFrame(parallaxFrame);
 
   stickyDiv.addEventListener("mousemove", (e) => {
     targetX = ((e.clientX - window.innerWidth / 2) / (window.innerWidth / 2)) * 18;
     targetY = ((e.clientY - window.innerHeight / 2) / (window.innerHeight / 2)) * 18;
+    if (!rafId) rafId = requestAnimationFrame(parallaxFrame);
   });
 
   stickyDiv.addEventListener("mouseleave", () => {
