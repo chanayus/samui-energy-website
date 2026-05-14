@@ -343,7 +343,7 @@
   }
 
   .heading-underline {
-    @apply w-12 rounded-full mt-3 h-0.5 bg-primary;
+    @apply w-12 rounded-full mt-3 h-1 bg-primary;
   }
 
   .text-h2 {

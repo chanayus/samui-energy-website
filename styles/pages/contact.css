@@ -2,19 +2,7 @@
    Page Heading
    ============================================================ */
 
-.contact-heading {
-  font-size: var(--fs-h1);
 
-  &::before {
-    content: "";
-    display: block;
-    width: 2rem;
-    height: 3px;
-    background: var(--primary);
-    border-radius: 9999px;
-    margin-bottom: 1rem;
-  }
-}
 
 /* ============================================================
    Contact Card
@@ -238,7 +226,7 @@
 
   .contact-inquiry {
     padding: 1.5rem;
-    background: #FFF;
+    background: #fff;
   }
 
   .prep-grid {
