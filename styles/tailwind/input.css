@@ -21,6 +21,10 @@
 
 @utility prose {
   /* Typography */
+  & {
+    @apply flex flex-col gap-y-8;
+  }
+
   del {
     @apply line-through opacity-60;
   }
@@ -35,30 +39,30 @@
   }
 
   p {
-    @apply mb-4 empty:hidden;
+    @apply empty:hidden;
   }
 
   h1 {
-    @apply text-3xl;
+    @apply text-4xl;
   }
   h2 {
-    @apply text-2xl;
+    @apply text-3xl;
   }
   h3 {
-    @apply text-xl;
+    @apply text-2xl;
   }
   h4 {
-    @apply text-lg;
+    @apply text-xl;
   }
   h5 {
-    @apply text-base;
+    @apply text-lg;
   }
   h6 {
-    @apply text-sm;
+    @apply text-base;
   }
 
   img {
-    @apply w-full rounded-xl bg-black/20 object-cover;
+    @apply w-full object-cover rounded-xl overflow-hidden bg-background-primary aspect-video;
   }
 
   /* Lists */
@@ -283,12 +287,12 @@
 
   ul li {
     list-style: disc;
-    margin-left: 2rem;
+    margin-left: 1rem;
   }
 
   ol li {
     list-style: decimal;
-    margin-left: 2rem;
+    margin-left: 1rem;
   }
 
   h1 {
@@ -336,6 +340,10 @@
   .text-h1 {
     font-size: var(--fs-h1);
     line-height: 1.2;
+  }
+
+  .heading-underline {
+    @apply w-12 rounded-full mt-3 h-0.5 bg-primary;
   }
 
   .text-h2 {

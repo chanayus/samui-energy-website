@@ -40,9 +40,9 @@
       <section class="py-12 bg-background-secondary">
         <div class="container blog-layout">
           <!-- Main article content -->
-          <article class="blog-layout__main">
+          <article class="prose blog-layout__main">
             <!-- Share section -->
-            <div class="flex items-center gap-3 pb-5 mb-8">
+            <div class="flex items-center gap-3 pb-5">
               <p class="text-sm font-medium">แชร์บทความ</p>
               <a href="" class="share-btn" aria-label="แชร์ Facebook">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -65,65 +65,51 @@
             </div>
 
             <!-- Intro paragraph -->
-            <p class="text-lg leading-loose mb-10">
+            <p>
               ประเทศไทยมีชายฝั่งทะเลยาวกว่า 2,000 กิโลเมตร เต็มไปด้วยเกาะน้อยใหญ่และหาดทรายสวยงามมากมาย นี่คือ 10 จุดหมายปลายทางทะเลไทยที่ได้รับการยกย่องว่าสวยติดอันดับโลก
               เหมาะสำหรับการพักผ่อนและเติมพลังชีวิต
             </p>
 
             <!-- Section 1 -->
-            <section class="space-y-5 mb-12">
-              <header>
-                <h4 class="font-semibold">1. เกาะสมุย จ.สุราษฎร์ธานี</h4>
-                <div class="w-12 rounded-full mt-3 h-0.5 bg-primary"></div>
-              </header>
-              <figure class="rounded-xl overflow-hidden bg-background-primary">
-                <img src="./images/pages/blog/section-1.avif" alt="เกาะสมุย จ.สุราษฎร์ธานี" class="w-full aspect-video object-cover" />
-              </figure>
-              <p class="leading-loose">
-                เกาะสมุยถือเป็นเกาะยอดนิยมของไทยที่มีครบทุกไลฟ์สไตล์ ทั้งหาดทรายสวย น้ำเขียวใส รีสอร์ทหรู ร้านอาหารเลิศรส และแหล่งท่องเที่ยวเชิงธรรมชาติ ไม่ว่าจะเป็นหาดเฉวง หาดละไม หรือหินตาหินยาย
-                ก็ล้วนเสน่ห์ที่ทำให้เกาะสมุยติดอันดับเกาะสวยของโลก
-              </p>
-              <aside class="tip-box">
-                <div class="tip-box__icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
-                    <path d="M9 18h6" />
-                    <path d="M10 22h4" />
-                  </svg>
-                </div>
-                <div>
-                  <p class="font-semibold text-sm mb-1">เคล็ดลับการเดินทาง</p>
-                  <p class="text-sm leading-loose">แนะนำเดินทางช่วงเดือนเมษายน – มิถุนายน อากาศดี ทะเลสงบ เหมาะกับกิจกรรมทางน้ำ</p>
-                </div>
-              </aside>
-            </section>
+            <hgroup>
+              <h2>1. เกาะสมุย จ.สุราษฎร์ธานี</h2>
+              <div class="heading-underline"></div>
+            </hgroup>
+
+            <img src="./images/pages/blog/section-1.avif" alt="เกาะสมุย จ.สุราษฎร์ธานี" />
+
+            <p>
+              เกาะสมุยถือเป็นเกาะยอดนิยมของไทยที่มีครบทุกไลฟ์สไตล์ ทั้งหาดทรายสวย น้ำเขียวใส รีสอร์ทหรู ร้านอาหารเลิศรส และแหล่งท่องเที่ยวเชิงธรรมชาติ ไม่ว่าจะเป็นหาดเฉวง หาดละไม หรือหินตาหินยาย
+              ก็ล้วนเสน่ห์ที่ทำให้เกาะสมุยติดอันดับเกาะสวยของโลก
+            </p>
+
+            <aside class="tip-box">
+              <div class="tip-box__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
+                  <path d="M9 18h6" />
+                  <path d="M10 22h4" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-semibold text-sm mb-1">เคล็ดลับการเดินทาง</p>
+                <p class="text-sm leading-loose">แนะนำเดินทางช่วงเดือนเมษายน – มิถุนายน อากาศดี ทะเลสงบ เหมาะกับกิจกรรมทางน้ำ</p>
+              </div>
+            </aside>
 
             <!-- Section 2 -->
-            <section class="space-y-5 mb-12">
-              <header>
-                <h4 class="font-semibold">2. เกาะพีพี จ.กระบี่</h4>
-                <div class="w-12 rounded-full mt-3 h-0.5 bg-primary"></div>
-              </header>
-              <figure class="rounded-xl overflow-hidden bg-background-primary">
-                <img src="./images/pages/blog/section-2.avif" alt="เกาะพีพี จ.กระบี่" class="w-full aspect-video object-cover" />
-              </figure>
-              <p class="leading-loose">
-                เกาะพีพีมีชื่อเสียงระดับโลกจากภาพยนตร์ The Beach ด้วยวิวทิวทัศน์น่าอัศจรรย์ น้ำทะเลสีฟ้าใส และหน้าผาหินปูนสูง เป็นจุดหมายที่นักท่องเที่ยวทั่วโลกให้คะแนนนิยมเป็นอันดับต้นๆ
-              </p>
-            </section>
+            <hgroup>
+              <h2>2. เกาะพีพี จ.กระบี่</h2>
+              <div class="heading-underline"></div>
+            </hgroup>
+
+            <img src="./images/pages/blog/section-2.avif" alt="เกาะพีพี จ.กระบี่" />
+
+            <p>เกาะพีพีมีชื่อเสียงระดับโลกจากภาพยนตร์ The Beach ด้วยวิวทิวทัศน์น่าอัศจรรย์ น้ำทะเลสีฟ้าใส และหน้าผาหินปูนสูง เป็นจุดหมายที่นักท่องเที่ยวทั่วโลกให้คะแนนนิยมเป็นอันดับต้นๆ</p>
 
             <!-- Back to blogs -->
             <a href="./blogs.html" class="flex items-center gap-2 text-sm font-medium pt-6 border-t">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="size-4 shrink-0"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 shrink-0">
                 <polyline points="15 18 9 12 15 6" />
               </svg>
               กลับไปหน้ารวมบทความ
@@ -136,7 +122,7 @@
             <div class="space-y-5">
               <div>
                 <h5 class="font-medium">บทความที่เกี่ยวข้อง</h5>
-                <div class="w-12 rounded-full mt-3 h-0.5 bg-primary"></div>
+                <div class="heading-underline"></div>
               </div>
               <div class="space-y-5">
                 <a href="" class="flex gap-3 group">
