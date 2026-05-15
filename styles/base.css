@@ -17,7 +17,7 @@
 }
 
 html {
-  /* font-size: clamp(14px, 0.84vw, 16px); */
+  font-size: clamp(14px, 0.84vw, 16px);
   scroll-behavior: smooth;
   font-family: "IBM Plex Sans Thai", sans-serif;
 }
