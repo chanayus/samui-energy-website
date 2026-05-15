@@ -13,7 +13,7 @@ class Navbar extends HTMLElement {
         <div class="bg-white inner lg:px-4 lg:pr-2 px-5 py-2 rounded-full">
            <div class="flex justify-between items-center ">
             <a href="../index.html">
-              <img src="../images/logo.webp" class="lg:w-32 w-22" alt="" width="140" height="46" />
+              <img src="../images/logo.webp" class="lg:w-32 w-24" alt="" width="140" height="46" />
             </a>
 
             <div class="flex gap-x-0.5 max-lg:hidden">
