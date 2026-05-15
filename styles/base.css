@@ -148,9 +148,11 @@ nav {
   & #mobile-nav {
     padding: 0;
     grid-template-rows: 0fr;
+    opacity: 0;
     transition:
       grid-template-rows 0.3s,
-      padding 0.3s;
+      padding 0.3s,
+      opacity 0.2s 0s;
 
     & .inner {
       width: 100%;
@@ -162,6 +164,11 @@ nav {
     &.active {
       padding: 24px 0;
       grid-template-rows: 1fr;
+      opacity: 1;
+      transition:
+        grid-template-rows 0.3s,
+        padding 0.3s,
+        opacity 0.3s 0.15s;
     }
   }
 }
