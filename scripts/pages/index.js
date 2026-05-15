@@ -3,6 +3,7 @@ import { animate, scroll, stagger } from "../modules/animation.js";
 const items = document.querySelectorAll(".img-container");
 
 const servicesSection = document.querySelector("#services-section");
+const stickySection = document.querySelector("#section-sticky");
 const bgCards = document.querySelectorAll("#bg-card-container .bg-card");
 const serviceCards = document.querySelectorAll("#services-section .service-card");
 
@@ -39,14 +40,33 @@ const revertAnimate = () => {
 let bgAnimate;
 let cardAnimate;
 
+function isChildOverflowing(child, parent) {
+  if (!child || !parent) {
+    return false;
+  }
+
+  const c = child.getBoundingClientRect();
+  const p = parent.getBoundingClientRect();
+
+  return c.bottom > p.bottom;
+}
+
 const resizeObserver = new ResizeObserver((entries) => {
-  if (entries[0].contentRect.width >= 768) {
-    bgAnimate = scroll(animate(bgSequence), { target: document.querySelector("#services-section") });
-    cardAnimate = scroll(animate(cardSequence), { target: document.querySelector("#services-section") });
+  servicesSection.classList.remove("is-stacked");
+  const isWide = entries[0].contentRect.width >= 1025;
+
+  const overflows = isChildOverflowing(serviceCards[0], stickySection);
+
+  if (isWide && !overflows) {
+    bgAnimate && bgAnimate();
+    cardAnimate && cardAnimate();
+    bgAnimate = scroll(animate(bgSequence), { target: servicesSection });
+    cardAnimate = scroll(animate(cardSequence), { target: servicesSection });
   } else {
     bgAnimate && bgAnimate();
     cardAnimate && cardAnimate();
     revertAnimate();
+    servicesSection.classList.add("is-stacked");
   }
 });
 resizeObserver.observe(servicesSection);
