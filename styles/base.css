@@ -196,6 +196,6 @@ footer {
   }
 }
 
-[data-reveal]:not([data-text-split]) {
+[data-reveal] {
   opacity: 0;
 }

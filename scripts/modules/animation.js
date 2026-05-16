@@ -127,17 +127,20 @@ sections.forEach((section) => {
     ],
   };
 
-  animate(section, animationTypes[type][0], { duration: 0 });
+  const anim = animationTypes[type] ?? animationTypes.default;
+  const isCard = type === "card";
+
+  animate(section, anim[0], { duration: 0 });
   inView(
     section,
     () => {
-      animate(section, animationTypes[type][1], {
-        duration: type === "card" ? 0.5 : duration,
+      animate(section, anim[1], {
+        duration: isCard ? 0.5 : duration,
         easing: defaultEase,
         delay: delay,
       });
     },
-    { amount: type === "card" ? 0.2 : amount },
+    { amount: isCard ? 0.2 : amount },
   );
 });
 
@@ -153,6 +156,7 @@ export function animateTextSplit(element) {
     return;
   }
 
+  animate(element, { opacity: 1 }, { duration: 0 });
   animate(parts, { opacity: 0, y: 18, filter: "blur(2px)" }, { duration: 0 });
   inView(
     element,
