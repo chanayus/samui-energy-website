@@ -21,6 +21,7 @@
   <body>
     <navbar-component></navbar-component>
     <main class="flex-1 w-full h-full flex flex-col">
+      <!-- Section 1: Hero -->
       <header id="hero-section" class="z-1 relative gap-y-10 overflow-hidden text-white bg-black min-h-180 lg:h-screen max-lg:max-h-206 flex flex-col lg:py-26 max-lg:pt-32 max-lg:pb-16">
         <hgroup class="container flex-1 flex flex-col justify-center space-y-4">
           <span class="glass-element px-4 rounded-full w-fit text-sm py-0.5 text-white/75">ยิ่งประหยัดได้มาก ยิ่งได้รับการสนับสนุนมาก</span>
@@ -32,10 +33,10 @@
               <source src="./images/pages/index/oppotunity.mp4" type="video/mp4" />
             </video>
             <h6 class="mt-2.5 mb-1.5">โอกาสมีจำนวนจำกัด</h6>
-            <p class="max-w-64 text-background-primary">รับจำนวนจำกัดเพียง 20 แห่งในพื้นที่เกาะสมุย แนะนำให้สมัครล่วงหน้าเพื่อไม่พลาดสิทธิ์</p>
+            <p class="max-w-64 text-background-primary">รับจำนวนจำกัดเมื่อเต็มวงเงินการสนับสนุน 20 ล้านบาท และไม่เกินจำนวน 20 แห่ง</p>
           </div>
           <div id="info" class="md:max-w-68 space-y-5">
-            <p class="text-lg">โครงการสนับสนุนการปรับปรุงระบบพลังงานสำหรับสถานประกอบการในเกาะสมุย รับเงินสนับสนุนสูงสุด 4 บาทต่อหน่วย จากผลการประหยัดพลังงานจริง</p>
+            <p class="text-lg">โครงการสนับสนุนเงินลงทุนการปรับปรุงประสิทธิภาพพลังงานสำหรับสถานประกอบการในเกาะสมุย ในอัตราหน่วยไฟฟ้าที่ลดลงต่อปี หน่วยละ 4 บาท</p>
             <a href="" class="btn-primary max-w-fit arrow-btn"> สมัครเข้าร่วมโครงการ </a>
           </div>
         </section>
@@ -44,6 +45,7 @@
         <div style="background: #061a04" class="absolute -z-1 w-full h-full top-0 left-0 opacity-45"></div>
       </header>
 
+      <!-- Section 2: About Stats -->
       <section class="py-28 space-y-20">
         <div class="flex container gap-5 max-lg:flex-col">
           <p data-reveal class="text-xl flex-1">เกี่ยวกับ</p>
@@ -62,11 +64,11 @@
           </section>
           <section data-reveal class="lg:px-6">
             <h3>4</h3>
-            <p>บาท / หน่วยที่ประหยัดได้</p>
+            <p>บาท / หน่วยไฟฟ้าที่ประหยัดได้</p>
           </section>
           <section data-reveal class="lg:px-6">
             <h3>20</h3>
-            <p>โครงการเปิดรับจำนวน</p>
+            <p>ล้านบาท จำกัดวงเงินสนับสนุน</p>
           </section>
           <section data-reveal class="lg:px-6">
             <h3>เกาะสมุย</h3>
@@ -75,6 +77,7 @@
         </div>
       </section>
 
+      <!-- Section 3: Business Types & Cards -->
       <section class="lg:space-y-32 space-y-24 pb-24 pt-8 bg-background-secondary">
         <figure class="container">
           <picture>
@@ -86,7 +89,7 @@
         <div class="container relative max-lg:space-y-12">
           <hgroup class="max-w-148 space-y-4 lg:absolute">
             <p data-reveal>ธุรกิจแบบไหนที่ควรเข้าร่วม</p>
-            <h4 data-reveal data-text-split>หากธุรกิจของคุณมีค่าไฟสูง หรือใช้ระบบปรับ อากาศและเครื่องจักรจำนวนมาก โครงการนี้จะ ช่วยให้คุณลดต้นทุนได้อย่างชัดเจน</h4>
+            <h4 data-reveal data-text-split>หากธุรกิจของคุณมีค่าไฟฟ้าสูง หรือใช้ระบบปรับอากาศและอุปกรณ์ไฟฟ้าที่อายุการใช้งานมากกว่า 10 ปีขึ้นไป โครงการนี้จะช่วยให้คุณลดต้นทุนได้อย่างชัดเจน</h4>
 
             <a data-reveal href="" class="btn-primary max-w-fit arrow-btn"> อ่านรายละเอียดโครงการ </a>
           </hgroup>
@@ -121,7 +124,7 @@
               <img src="./images/pages/index/card-2.avif" alt="" class="absolute -z-2 w-full h-full top-0 left-0 object-cover" />
             </div>
             <div data-reveal data-type="card" class="bottom-0 lg:p-8 p-6 rounded-3xl relative z-1 overflow-hidden min-h-72 lg:h-187 flex flex-col justify-between">
-              <h4 class="text-white">หากคุณมีค่าไฟตั้งแต่ 50,000 บาท/เดือนขึ้นไป คุณมีโอกาสลดต้นทุนได้อย่างมีนัยสำคัญ</h4>
+              <h4 class="text-white">หากคุณมีค่าไฟตั้งแต่ 400,000 บาท/เดือนขึ้นไป คุณมีโอกาสลดต้นทุนได้อย่างมีนัยสำคัญ</h4>
 
               <div class="flex gap-2">
                 <div class="bg-background-primary px-4 py-1 text-xs rounded-full">Sustainability</div>
@@ -135,6 +138,7 @@
         </div>
       </section>
 
+      <!-- Section 4: Services -->
       <section id="services-section">
         <div id="section-sticky">
           <div class="container">
@@ -143,15 +147,6 @@
               <h3 data-reveal data-text-split>เราช่วยคุณตั้งแต่การวิเคราะห์ ปรับปรุง เพื่อให้คุณลดค่าไฟได้จริง</h3>
             </hgroup>
             <section class="card-container">
-              <div class="service-card">
-                <figure>
-                  <div>
-                    <img src="./images/pages/index/help-1.avif" alt="" class="img-container" />
-                  </div>
-                </figure>
-                <h4>วิเคราะห์ระบบพลังงานแบบมืออาชีพ</h4>
-                <p>ประเมินการใช้พลังงานของธุรกิจคุณ เพื่อค้นหาโอกาสในการลดค่าไฟและเพิ่มประสิทธิภาพในจุดที่สำคัญที่สุด</p>
-              </div>
               <div class="service-card">
                 <figure>
                   <div>
@@ -193,7 +188,6 @@
           </div>
 
           <figure id="bg-card-container">
-            <img src="./images/pages/index/help-1.avif" alt="" class="bg-card" />
             <img src="./images/pages/index/help-2.avif" alt="" class="bg-card" />
             <img src="./images/pages/index/help-3.avif" alt="" class="bg-card" />
             <img src="./images/pages/index/help-4.avif" alt="" class="bg-card" />
@@ -204,6 +198,7 @@
         </div>
       </section>
 
+      <!-- Section 5: Process Steps -->
       <section class="bg-background-secondary py-32 space-y-12">
         <hgroup class="container text-center">
           <p data-reveal>ตั้งแต่สมัครจนได้รับเงินสนับสนุน</p>
@@ -214,7 +209,7 @@
             <h4>ขั้นตอนที่ 1</h4>
             <div class="bg-white rounded-2xl p-6 space-y-4 flex-1">
               <h5>เปิดรับสมัครผู้เข้าร่วมโครงการ</h5>
-              <p class="text-yellow">xx พฤษภาคม – 30 มิถุนายน 2569</p>
+              <p class="text-yellow">12 พฤษภาคม – 30 มิถุนายน 2569</p>
               <p>ดาวน์โหลดเอกสารการสมัครและเอกสารประกอบการสมัคร ส่งกลับทางอีเมลของโครงการฯ</p>
               <a href="" class="text-primary">Download เอกสารการสมัคร</a>
             </div>
@@ -302,6 +297,7 @@
         </div>
       </section>
 
+      <!-- Section 6: News & Blog -->
       <section class="py-28 space-y-20">
         <hgroup class="flex container justify-between lg:items-center gap-6 max-lg:flex-col">
           <h2 data-reveal>ข่าวสารและความรู้ด้านพลังงาน</h2>
