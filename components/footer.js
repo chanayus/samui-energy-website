@@ -4,8 +4,8 @@ class Footer extends HTMLElement {
         <footer id="footer" class="w-full bg-primary/80 p-5 pb-16 relative">
             <div class="container py-20 text-white text-center space-y-4">
               <p data-reveal>อย่าปล่อยให้ค่าไฟเป็นต้นทุนที่ควบคุมไม่ได้</p>
-              <h3 data-reveal data-text-split class="max-w-192 mx-auto">เริ่มลดค่าไฟวันนี้ พร้อมรับเงินสนับสนุนสูงสุด 2 ล้านบาท โครงการรับจำนวนจำกัดเพียง 20 แห่งเท่านั้น</h3>
-              <a data-reveal href="" class="btn-yellow max-w-fit mx-auto arrow-btn">สมัครเข้าร่วมโครงการ</a>
+              <h3 data-reveal data-text-split class="max-w-3xl mx-auto">เริ่มลดค่าไฟวันนี้ พร้อมรับเงินสนับสนุนสูงสุด 2 ล้านบาท โครงการรับจำนวนจำกัดเพียง 20 แห่งเท่านั้น</h3>
+              <a data-reveal download href="../files/ใบสมัครเข้าร่วมโครงการ 1 Unit Save 4 Baht.zip" class="btn-yellow max-w-fit mx-auto arrow-btn">ดาวน์โหลดใบสมัครเข้าร่วมโครงการ</a>
             </div>
             <div class="container lg:p-12 p-6 bg-white rounded-3xl">
               <section class="flex justify-between flex-wrap gap-8">
