@@ -134,9 +134,8 @@
 }
 
 .equipment-card__desc {
-  color: #9ca3af;
+  color: var(--dark-teal);
   max-width: 20ch;
-
   text-wrap: balance;
 }
 
