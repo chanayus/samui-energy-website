@@ -20,7 +20,7 @@ class Navbar extends HTMLElement {
               <a href="../about.html" class="btn">เกี่ยวกับ</a>
               <a href="" class="btn">โครงการ</a>
               <a href="../eligibility.html" class="btn">ขั้นตอนเข้าร่วม</a>
-              <a href="" class="btn">ข่าวสารและความรู้</a>
+              <a href="../blogs.html" class="btn">ข่าวสารและความรู้</a>
             </div>
 
             <button class="btn-primary max-lg:hidden arrow-btn">
