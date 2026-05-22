@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>มาตรการที่ 1 — การเปลี่ยนเครื่องปรับอากาศประสิทธิภาพสูง</title>
+
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/pages/measure-1.css" />
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css" />
+
+    <!-- Components -->
+    <script src="./components/navbar.js"></script>
+    <script src="./components/footer.js"></script>
+
+    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
+  </head>
+  <body>
+    <navbar-component></navbar-component>
+    <main class="flex-1 w-full flex flex-col">
+
+      <!-- Section 1: Hero -->
+      <header class="measure-hero">
+        <div class="container">
+          <p class="measure-badge">MEASURE 01</p>
+          <h1 data-text-split>การเปลี่ยนเครื่องปรับอากาศ ประสิทธิภาพสูง</h1>
+          <p class="measure-hero__sub">หลักเกณฑ์และวิธีการคำนวณผลประหยัดพลังงาน</p>
+        </div>
+      </header>
+
+      <!-- Section 2: Overview -->
+      <section class="py-16 bg-background-secondary">
+        <div class="container">
+          <div class="measure-overview-card" data-reveal>
+            <p class="measure-label">ลักษณะหรือรูปแบบที่ดำเนินการ</p>
+            <p>การเปลี่ยนเครื่องปรับอากาศแบบแยกส่วนเดิมที่มีอายุการใช้งานมากกว่า 10 ปี ด้วยเครื่องปรับอากาศประสิทธิภาพพลังงานสูงกว่า</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Parameters -->
+      <section class="py-20">
+        <div class="container space-y-12">
+          <hgroup class="space-y-3">
+            <p data-reveal>เงื่อนไขและพารามิเตอร์ที่ใช้ในการคำนวณ</p>
+            <h2 data-reveal data-text-split>ตัวแปรสำคัญและค่าที่ใช้คำนวณ</h2>
+          </hgroup>
+          <div class="param-grid">
+            <div class="param-card" data-reveal>
+              <div class="param-card__symbol">C</div>
+              <p class="param-card__name">Capacity (ขนาดทำความเย็น)</p>
+              <p class="param-card__unit">BTU/hr</p>
+              <p class="param-card__desc">ขนาดทำความเย็นของเครื่องปรับอากาศ โดยเครื่องใหม่ต้องมีขนาดต่างจากเครื่องเดิมไม่เกิน 10%</p>
+            </div>
+            <div class="param-card" data-reveal>
+              <div class="param-card__symbol">EER<sub>old</sub></div>
+              <p class="param-card__name">ประสิทธิภาพเครื่องเดิม</p>
+              <p class="param-card__unit">BTU/hr/W</p>
+              <p class="param-card__desc">หากไม่มีป้าย ให้ใช้ค่ามาตรฐานตามปีที่ผลิต คิดลด 1%/ปี (มีบำรุงรักษา) หรือ 2%/ปี (ขาดการดูแล)</p>
+            </div>
+            <div class="param-card" data-reveal>
+              <div class="param-card__symbol">EER<sub>new</sub></div>
+              <p class="param-card__name">ประสิทธิภาพเครื่องใหม่</p>
+              <p class="param-card__unit">BTU/hr/W</p>
+              <p class="param-card__desc">ต้องไม่ต่ำกว่าเบอร์ 5 หากเป็น Inverter ใช้ค่า SEER แทน EER เพื่อสะท้อนการประหยัดในช่วงภาระต่ำ</p>
+            </div>
+            <div class="param-card" data-reveal>
+              <div class="param-card__symbol">H</div>
+              <p class="param-card__name">Operating Hours (ชั่วโมงใช้งาน)</p>
+              <p class="param-card__unit">ชั่วโมง/ปี</p>
+              <p class="param-card__desc">คิดตามการเปิดใช้จริง — สำนักงาน ≤ 10 ชม./วัน — ห้องพักหรือโรงแรม ≤ 12 ชม./วัน</p>
+            </div>
+            <div class="param-card" data-reveal>
+              <div class="param-card__symbol">LF</div>
+              <p class="param-card__name">Load Factor (ภาระการทำความเย็น)</p>
+              <p class="param-card__unit">= 0.75 (คงที่)</p>
+              <p class="param-card__desc">สัดส่วนภาระการทำความเย็นจริงเทียบกับพิกัดเครื่อง กำหนดค่าคงที่ที่ 0.75 ตามหลัก Conservative</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Calculation Method -->
+      <section class="py-20 bg-background-secondary">
+        <div class="container space-y-12">
+          <hgroup class="space-y-3">
+            <p data-reveal>ระเบียบวิธีการคำนวณ</p>
+            <h2 data-reveal data-text-split>สมการทางวิศวกรรม</h2>
+          </hgroup>
+          <div class="calc-steps">
+
+            <!-- Prerequisite -->
+            <div class="calc-step" data-reveal>
+              <div class="calc-step__num">ก่อนเริ่ม</div>
+              <div class="calc-step__body">
+                <h4 class="calc-step__title">ประเมินประสิทธิภาพเครื่องปรับอากาศเดิม ณ ปัจจุบัน</h4>
+                <div class="equation-block">
+                  <div>
+                    <span class="eq-var">EER<sub>estimated</sub></span>
+                    <span class="eq-op">=</span>
+                    <span class="eq-var">EER<sub>nameplate</sub></span>
+                    <span class="eq-op">×</span>
+                    <span class="eq-expr">(1 – r)<sup>n</sup></span>
+                  </div>
+                </div>
+                <div class="equation-legend">
+                  <div><strong>r</strong> = อัตราเสื่อมสภาพต่อปี: 0.01 (บำรุงรักษาสม่ำเสมอ) หรือ 0.02 (ขาดการดูแล)</div>
+                  <div><strong>n</strong> = อายุการใช้งานของเครื่องปรับอากาศ (ปี)</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 1 -->
+            <div class="calc-step" data-reveal>
+              <div class="calc-step__num">ขั้นตอนที่ 1</div>
+              <div class="calc-step__body">
+                <h4 class="calc-step__title">คำนวณกำลังไฟฟ้าที่ใช้ของเครื่องเดิมและเครื่องใหม่ (kW)</h4>
+                <div class="equation-block">
+                  <div>
+                    <span class="eq-var">kW<sub>old</sub></span>
+                    <span class="eq-op">=</span>
+                    <span class="eq-expr">C ÷ (EER<sub>old</sub> × 1,000)</span>
+                  </div>
+                  <div>
+                    <span class="eq-var">kW<sub>new</sub></span>
+                    <span class="eq-op">=</span>
+                    <span class="eq-expr">C ÷ (EER<sub>new</sub> × 1,000)</span>
+                  </div>
+                </div>
+                <div class="equation-legend">
+                  <div>หากเครื่องใหม่เป็นระบบ Inverter ใช้ค่า <strong>SEER</strong> แทน <strong>EER</strong> เพื่อสะท้อนการประหยัดในช่วงภาระต่ำกว่า 100%</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="calc-step" data-reveal>
+              <div class="calc-step__num">ขั้นตอนที่ 2</div>
+              <div class="calc-step__body">
+                <h4 class="calc-step__title">คำนวณพลังงานไฟฟ้าที่ประหยัดได้ต่อปี (kWh/ปี)</h4>
+                <div class="equation-block">
+                  <div>
+                    <span class="eq-var">Energy Savings</span>
+                    <span class="eq-op">=</span>
+                    <span class="eq-expr">(kW<sub>old</sub> – kW<sub>new</sub>) × H × LF</span>
+                  </div>
+                  <div class="equation-block__alt">
+                    หรือ:
+                    <span class="eq-expr">C/1,000 × (1/EER<sub>old</sub> – 1/EER<sub>new</sub>) × H × LF</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Efficiency Standards -->
+      <section class="py-20">
+        <div class="container space-y-12">
+          <hgroup class="space-y-3">
+            <p data-reveal>มาตรฐานประสิทธิภาพ</p>
+            <h2 data-reveal data-text-split>ระดับประสิทธิภาพเครื่องปรับอากาศ (SEER)</h2>
+          </hgroup>
+          <div class="table-wrapper" data-reveal>
+            <table class="efficiency-table">
+              <thead>
+                <tr>
+                  <th>ระดับประสิทธิภาพ</th>
+                  <th>ขนาด &lt; 27,296 BTU/hr<span>(SEER)</span></th>
+                  <th>ขนาด 27,296 – 40,944 BTU/hr<span>(SEER)</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>เบอร์ 5 (มาตรฐาน)</td>
+                  <td>15.00 – 17.49</td>
+                  <td>14.00 – 16.49</td>
+                </tr>
+                <tr>
+                  <td>เบอร์ 5 ★ (1 ดาว)</td>
+                  <td>–</td>
+                  <td>16.50 – 18.99</td>
+                </tr>
+                <tr>
+                  <td>เบอร์ 5 ★★ (2 ดาว)</td>
+                  <td>20.00 – 22.49</td>
+                  <td>19.00 – 21.49</td>
+                </tr>
+                <tr>
+                  <td>เบอร์ 5 ★★★ (3 ดาว)</td>
+                  <td>22.50 – 24.99</td>
+                  <td>21.50 – 23.99</td>
+                </tr>
+                <tr class="table-row--highlight">
+                  <td>เบอร์ 5 ★★★★★ (5 ดาว)</td>
+                  <td>25.00 ขึ้นไป</td>
+                  <td>24.00 ขึ้นไป</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Case Study -->
+      <section class="py-20 bg-background-secondary">
+        <div class="container space-y-12">
+          <hgroup class="space-y-3">
+            <p data-reveal>ตัวอย่างการคำนวณ</p>
+            <h2 data-reveal data-text-split>Case Study Example</h2>
+          </hgroup>
+          <div class="case-study">
+
+            <div class="case-study__scenario" data-reveal>
+              <p>สถานการณ์: เปลี่ยนแอร์ขนาด 36,000 BTU/hr ในสำนักงาน อายุ 15 ปี เป็นแอร์ Inverter เบอร์ 5 ระดับ 3 ดาว</p>
+            </div>
+
+            <div class="case-study__inputs" data-reveal>
+              <p class="case-study__section-title">ข้อมูลนำเข้า</p>
+              <div class="input-grid">
+                <div class="input-item">
+                  <span class="input-item__label">C (ขนาดทำความเย็น)</span>
+                  <span class="input-item__value">36,000 BTU/hr</span>
+                </div>
+                <div class="input-item">
+                  <span class="input-item__label">EER old (ประเมิน)</span>
+                  <span class="input-item__value">8.0 BTU/hr/W</span>
+                </div>
+                <div class="input-item">
+                  <span class="input-item__label">SEER new</span>
+                  <span class="input-item__value">20.0 BTU/hr/W</span>
+                </div>
+                <div class="input-item">
+                  <span class="input-item__label">H (ชั่วโมงใช้งาน)</span>
+                  <span class="input-item__value">4,380 ชม./ปี</span>
+                </div>
+                <div class="input-item">
+                  <span class="input-item__label">LF (Load Factor)</span>
+                  <span class="input-item__value">0.75</span>
+                </div>
+                <div class="input-item">
+                  <span class="input-item__label">ค่าไฟฟ้าเฉลี่ย</span>
+                  <span class="input-item__value">4.5 บาท/kWh</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="case-study__results" data-reveal>
+              <p class="case-study__section-title">ผลลัพธ์</p>
+              <div class="result-stats">
+                <div class="result-stat">
+                  <span class="result-stat__num">8,869</span>
+                  <span class="result-stat__unit">kWh/ปี</span>
+                  <span class="result-stat__label">พลังงานที่ประหยัดได้</span>
+                </div>
+                <div class="result-stat">
+                  <span class="result-stat__num">39,910</span>
+                  <span class="result-stat__unit">บาท/ปี</span>
+                  <span class="result-stat__label">เงินที่ประหยัดได้</span>
+                </div>
+                <div class="result-stat result-stat--highlight">
+                  <span class="result-stat__num">35,476</span>
+                  <span class="result-stat__unit">บาท</span>
+                  <span class="result-stat__label">เงินสนับสนุนที่คาดว่าจะได้รับ</span>
+                </div>
+                <div class="result-stat">
+                  <span class="result-stat__num">4,212</span>
+                  <span class="result-stat__unit">kgCO₂e/ปี</span>
+                  <span class="result-stat__label">การลดการปล่อยคาร์บอน</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 7: Notes -->
+      <section class="py-20">
+        <div class="container space-y-10">
+          <h2 data-reveal data-text-split>หมายเหตุและข้อกำหนดเพิ่มเติม</h2>
+          <div class="notes-grid">
+            <div class="note-card" data-reveal>
+              <div class="note-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="3 6 5 6 21 6" />
+                  <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+                  <path d="M10 11v6M14 11v6" />
+                  <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" />
+                </svg>
+              </div>
+              <h4>วิธีการทำลายซาก</h4>
+              <p>การกำจัดซากต้องเป็นวิธีการที่เหมาะสมและไม่เกิดปัญหากระทบต่อสิ่งแวดล้อม โดยมีวัตถุประสงค์หลักเพื่อป้องกันมิให้นำเอาอุปกรณ์เก่ามาใช้ใหม่หรือใช้ซ้ำได้อีก</p>
+            </div>
+            <div class="note-card" data-reveal>
+              <div class="note-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  <polyline points="9 11 11 13 15 9" />
+                </svg>
+              </div>
+              <h4>การทวนสอบผลประหยัด</h4>
+              <p>ใช้การทวนสอบการปรับปรุงที่เกิดขึ้นจริงของสถานประกอบการ และการคำนวณจากผลต่างระหว่างปริมาณพลังงานที่ใช้จริงหลังปรับปรุงเทียบกับระดับฐานการใช้พลังงานเดิมก่อนการปรับปรุง</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <footer-component></footer-component>
+  </body>
+</html>
