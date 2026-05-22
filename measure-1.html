@@ -7,7 +7,7 @@
 
     <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
     <link rel="stylesheet" href="./styles/base.css" />
-    <link rel="stylesheet" href="./styles/pages/measure-1.css" />
+    <link rel="stylesheet" href="./styles/pages/measure.css" />
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css" />
 
     <!-- Components -->
@@ -24,7 +24,7 @@
       <!-- Section 1: Hero -->
       <header class="measure-hero">
         <div class="container">
-          <p class="measure-badge">MEASURE 01</p>
+          <p class="measure-badge">มาตรการ 01</p>
           <h1 data-text-split>การเปลี่ยนเครื่องปรับอากาศ ประสิทธิภาพสูง</h1>
           <p class="measure-hero__sub">หลักเกณฑ์และวิธีการคำนวณผลประหยัดพลังงาน</p>
         </div>
@@ -52,33 +52,34 @@
               <div class="param-card__symbol">C</div>
               <p class="param-card__name">Capacity (ขนาดทำความเย็น)</p>
               <p class="param-card__unit">BTU/hr</p>
-              <p class="param-card__desc">ขนาดทำความเย็นของเครื่องปรับอากาศ โดยเครื่องใหม่ต้องมีขนาดต่างจากเครื่องเดิมไม่เกิน 10%</p>
+              <p class="param-card__desc">ขนาดทำความเย็นของเครื่องปรับอากาศ (BTU/hr) โดยขนาดทำความเย็นของเครื่องปรับอากาศใหม่ต้องมีค่าต่างจากเครื่องเดิมไม่เกิน 10%</p>
             </div>
             <div class="param-card" data-reveal>
               <div class="param-card__symbol">EER<sub>old</sub></div>
-              <p class="param-card__name">ประสิทธิภาพเครื่องเดิม</p>
+              <p class="param-card__name">ประสิทธิภาพเครื่องปรับอากาศเดิม</p>
               <p class="param-card__unit">BTU/hr/W</p>
-              <p class="param-card__desc">หากไม่มีป้าย ให้ใช้ค่ามาตรฐานตามปีที่ผลิต คิดลด 1%/ปี (มีบำรุงรักษา) หรือ 2%/ปี (ขาดการดูแล)</p>
+              <p class="param-card__desc">หากไม่มีป้าย ให้ใช้ค่ามาตรฐานตามปีที่ผลิต และประเมินค่าเสื่อมสภาพตามอายุการใช้งาน คิดลดลง 1% ต่อปีกรณีมีการบำรุงรักษาสม่ำเสมอ และ 2% ต่อปี กรณีขาดการดูแลบำรุงรักษาอย่างสม่ำเสมอ</p>
             </div>
             <div class="param-card" data-reveal>
               <div class="param-card__symbol">EER<sub>new</sub></div>
-              <p class="param-card__name">ประสิทธิภาพเครื่องใหม่</p>
+              <p class="param-card__name">EER new หรือ SEER new: ประสิทธิภาพเครื่องปรับอากาศตัวใหม่</p>
               <p class="param-card__unit">BTU/hr/W</p>
-              <p class="param-card__desc">ต้องไม่ต่ำกว่าเบอร์ 5 หากเป็น Inverter ใช้ค่า SEER แทน EER เพื่อสะท้อนการประหยัดในช่วงภาระต่ำ</p>
+              <p class="param-card__desc">ประสิทธิภาพเครื่องปรับอากาศตัวใหม่ (BTU/hr/W) ที่นำมาใช้ทดแทนเครื่องเดิมต้องไม่ต่ำกว่าเบอร์ 5</p>
             </div>
             <div class="param-card" data-reveal>
               <div class="param-card__symbol">H</div>
-              <p class="param-card__name">Operating Hours (ชั่วโมงใช้งาน)</p>
+              <p class="param-card__name">Operating Hours (H): ชั่วโมงการทำงานต่อปี</p>
               <p class="param-card__unit">ชั่วโมง/ปี</p>
-              <p class="param-card__desc">คิดตามการเปิดใช้จริง — สำนักงาน ≤ 10 ชม./วัน — ห้องพักหรือโรงแรม ≤ 12 ชม./วัน</p>
+              <p class="param-card__desc">คิดตามการเปิดใช้งานจริงแต่กรณีเป็นอาคารสำนักงานต้องไม่เกิน 10 ชั่วโมง/วัน กรณีเป็นห้องพักหรือโรงแรมต้องไม่เกิน 12 ชั่วโมงต่อวัน และวันทำงานคิดตามการเปิดบริการจริงของสถานประกอบการ</p>
             </div>
             <div class="param-card" data-reveal>
               <div class="param-card__symbol">LF</div>
               <p class="param-card__name">Load Factor (ภาระการทำความเย็น)</p>
-              <p class="param-card__unit">= 0.75 (คงที่)</p>
-              <p class="param-card__desc">สัดส่วนภาระการทำความเย็นจริงเทียบกับพิกัดเครื่อง กำหนดค่าคงที่ที่ 0.75 ตามหลัก Conservative</p>
+              <p class="param-card__unit">= 0.75</p>
+              <p class="param-card__desc">สัดส่วนภาระการทำความเย็นจริงเทียบกับพิกัดเครื่อง ให้กำหนดค่า LF=0.75</p>
             </div>
           </div>
+          <p class="measure-note" data-reveal>ผลการคำนวณ: ใช้หลักเกณฑ์ Conservative</p>
         </div>
       </section>
 
@@ -87,7 +88,7 @@
         <div class="container space-y-12">
           <hgroup class="space-y-3">
             <p data-reveal>ระเบียบวิธีการคำนวณ</p>
-            <h2 data-reveal data-text-split>สมการทางวิศวกรรม</h2>
+            <h2 data-reveal data-text-split>สมการทางวิศวกรรม (Engineering Equations)</h2>
           </hgroup>
           <div class="calc-steps">
 
@@ -106,8 +107,12 @@
                   </div>
                 </div>
                 <div class="equation-legend">
-                  <div><strong>r</strong> = อัตราเสื่อมสภาพต่อปี: 0.01 (บำรุงรักษาสม่ำเสมอ) หรือ 0.02 (ขาดการดูแล)</div>
+                  <div><strong>EER estimated</strong> = ประสิทธิภาพเครื่องปรับอากาศที่ประเมิน ณ ปัจจุบัน</div>
+                  <div><strong>EER nameplate</strong> = ประสิทธิภาพเครื่องปรับอากาศตามป้าย (ตอนซื้อมาใหม่)</div>
+                  <div><strong>r</strong> = อัตราการเสื่อมสภาพต่อปี (Degradation Rate) เลือกใช้ 0.01 (1%) หรือ 0.02 (2%)</div>
                   <div><strong>n</strong> = อายุการใช้งานของเครื่องปรับอากาศ (ปี)</div>
+                  <div><strong>LF</strong> = Load Factor (LF): สัดส่วนภาระการทำความเย็นจริงเทียบกับพิกัดเครื่อง ให้ใช้ค่า 0.75</div>
+                  <div><strong>H</strong> = ชั่วโมงการเปิดใช้งานต่อปี</div>
                 </div>
               </div>
             </div>
@@ -119,18 +124,18 @@
                 <h4 class="calc-step__title">คำนวณกำลังไฟฟ้าที่ใช้ของเครื่องเดิมและเครื่องใหม่ (kW)</h4>
                 <div class="equation-block">
                   <div>
-                    <span class="eq-var">kW<sub>old</sub></span>
+                    <span class="eq-var">kW old<small>(estimated)</small></span>
                     <span class="eq-op">=</span>
-                    <span class="eq-expr">C ÷ (EER<sub>old</sub> × 1,000)</span>
+                    <span class="eq-expr">C / (EER old<small>(estimated)</small> x 1,000)</span>
                   </div>
                   <div>
-                    <span class="eq-var">kW<sub>new</sub></span>
+                    <span class="eq-var">kW new<small>(nameplate)</small></span>
                     <span class="eq-op">=</span>
-                    <span class="eq-expr">C ÷ (EER<sub>new</sub> × 1,000)</span>
+                    <span class="eq-expr">C / (EER new<small>(nameplate)</small> x 1,000)</span>
                   </div>
                 </div>
                 <div class="equation-legend">
-                  <div>หากเครื่องใหม่เป็นระบบ Inverter ใช้ค่า <strong>SEER</strong> แทน <strong>EER</strong> เพื่อสะท้อนการประหยัดในช่วงภาระต่ำกว่า 100%</div>
+                  <div>หมายเหตุ: หากเครื่องใหม่เป็นระบบ Inverter จะใช้ค่า <strong>SEER</strong> แทน <strong>EER</strong> เพื่อสะท้อนการประหยัดพลังงานในช่วงที่ภาระการทำความเย็นต่ำกว่า 100%</div>
                 </div>
               </div>
             </div>
@@ -139,16 +144,16 @@
             <div class="calc-step" data-reveal>
               <div class="calc-step__num">ขั้นตอนที่ 2</div>
               <div class="calc-step__body">
-                <h4 class="calc-step__title">คำนวณพลังงานไฟฟ้าที่ประหยัดได้ต่อปี (kWh/ปี)</h4>
+                <h4 class="calc-step__title">คำนวณพลังงานไฟฟ้าที่ประหยัดได้ต่อปี (kWh/year)</h4>
                 <div class="equation-block">
                   <div>
-                    <span class="eq-var">Energy Savings</span>
+                    <span class="eq-var">Energy Savings (kWh/year)</span>
                     <span class="eq-op">=</span>
-                    <span class="eq-expr">(kW<sub>old</sub> – kW<sub>new</sub>) × H × LF</span>
+                    <span class="eq-expr">(kW old – kW new) x H x LF</span>
                   </div>
                   <div class="equation-block__alt">
-                    หรือ:
-                    <span class="eq-expr">C/1,000 × (1/EER<sub>old</sub> – 1/EER<sub>new</sub>) × H × LF</span>
+                    หรือเขียนรวมสมการได้เป็น:
+                    <span class="eq-expr">Energy Savings = C/1,000 x {1/EER old – 1/EER new} x H x LF</span>
                   </div>
                 </div>
               </div>
@@ -227,16 +232,16 @@
                   <span class="input-item__value">36,000 BTU/hr</span>
                 </div>
                 <div class="input-item">
-                  <span class="input-item__label">EER old (ประเมิน)</span>
+                  <span class="input-item__label">EER old (ประเมินจากการเสื่อมสภาพ อายุ 15 ปี)</span>
                   <span class="input-item__value">8.0 BTU/hr/W</span>
                 </div>
                 <div class="input-item">
-                  <span class="input-item__label">SEER new</span>
+                  <span class="input-item__label">SEER new (ตาม Catalog ของเครื่องใหม่)</span>
                   <span class="input-item__value">20.0 BTU/hr/W</span>
                 </div>
                 <div class="input-item">
-                  <span class="input-item__label">H (ชั่วโมงใช้งาน)</span>
-                  <span class="input-item__value">4,380 ชม./ปี</span>
+                  <span class="input-item__label">H (12 ชม./วัน x 365 วันทำงาน)</span>
+                  <span class="input-item__value">4,380 ชั่วโมง/ปี</span>
                 </div>
                 <div class="input-item">
                   <span class="input-item__label">LF (Load Factor)</span>
@@ -245,6 +250,42 @@
                 <div class="input-item">
                   <span class="input-item__label">ค่าไฟฟ้าเฉลี่ย</span>
                   <span class="input-item__value">4.5 บาท/kWh</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="case-study__results case-study__inputs" data-reveal>
+              <p class="case-study__section-title">ขั้นตอนการคำนวณ</p>
+              <div class="calc-chain">
+                <div class="calc-chain__row">
+                  <span class="calc-chain__label">กำลังไฟฟ้าแอร์เดิม</span>
+                  <span class="calc-chain__formula">36,000 / (8.0 x 1,000)</span>
+                  <span class="calc-chain__result">= 4.5 kW</span>
+                </div>
+                <div class="calc-chain__row">
+                  <span class="calc-chain__label">กำลังไฟฟ้าแอร์ใหม่</span>
+                  <span class="calc-chain__formula">36,000 / (20.0 x 1,000)</span>
+                  <span class="calc-chain__result">= 1.80 kW</span>
+                </div>
+                <div class="calc-chain__row">
+                  <span class="calc-chain__label">ผลประหยัดพลังงาน</span>
+                  <span class="calc-chain__formula">(4.5 - 1.80) x 4,380 x 0.75</span>
+                  <span class="calc-chain__result">= 8,869 kWh/ปี</span>
+                </div>
+                <div class="calc-chain__row">
+                  <span class="calc-chain__label">เงินที่ประหยัดได้</span>
+                  <span class="calc-chain__formula">8,869 x 4.5</span>
+                  <span class="calc-chain__result">= 39,910.5 บาท/ปี</span>
+                </div>
+                <div class="calc-chain__row">
+                  <span class="calc-chain__label">เงินสนับสนุนที่คาดว่าจะได้รับ</span>
+                  <span class="calc-chain__formula">8,869 x 4</span>
+                  <span class="calc-chain__result">= 35,476 บาท</span>
+                </div>
+                <div class="calc-chain__row">
+                  <span class="calc-chain__label">การลดคาร์บอน (GHG Reduction)</span>
+                  <span class="calc-chain__formula">8,869 x 0.475</span>
+                  <span class="calc-chain__result">= 4,212 kgCO2e/ปี</span>
                 </div>
               </div>
             </div>
@@ -258,7 +299,7 @@
                   <span class="result-stat__label">พลังงานที่ประหยัดได้</span>
                 </div>
                 <div class="result-stat">
-                  <span class="result-stat__num">39,910</span>
+                  <span class="result-stat__num">39,910.5</span>
                   <span class="result-stat__unit">บาท/ปี</span>
                   <span class="result-stat__label">เงินที่ประหยัดได้</span>
                 </div>
@@ -270,7 +311,7 @@
                 <div class="result-stat">
                   <span class="result-stat__num">4,212</span>
                   <span class="result-stat__unit">kgCO₂e/ปี</span>
-                  <span class="result-stat__label">การลดการปล่อยคาร์บอน</span>
+                  <span class="result-stat__label">การลดการปล่อยคาร์บอน (GHG)</span>
                 </div>
               </div>
             </div>

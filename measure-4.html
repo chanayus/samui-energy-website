@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>มาตรการที่ 4 — การใช้หลอดไฟ LED</title>
+
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/pages/measure.css" />
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css" />
+
+    <!-- Components -->
+    <script src="./components/navbar.js"></script>
+    <script src="./components/footer.js"></script>
+
+    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
+  </head>
+  <body>
+    <navbar-component></navbar-component>
+    <main class="flex-1 w-full flex flex-col">
+
+      <!-- Section 1: Hero -->
+      <header class="measure-hero">
+        <div class="container">
+          <p class="measure-badge">มาตรการ 04</p>
+          <h1 data-text-split>การใช้หลอดไฟ LED</h1>
+          <p class="measure-hero__sub">หลักเกณฑ์และวิธีการคำนวณผลประหยัดพลังงาน</p>
+        </div>
+      </header>
+
+      <!-- Section 2: Overview -->
+      <section class="py-16 bg-background-secondary">
+        <div class="container">
+          <div class="measure-overview-card" data-reveal>
+            <p class="measure-label">ลักษณะหรือรูปแบบที่ดำเนินการ</p>
+            <p>การเปลี่ยนหลอดไฟฟ้าเดิมที่มีประสิทธิภาพพลังงานต่ำด้วยหลอด LED ประสิทธิภาพสูง (หลอดไฟที่ได้รับ "ฉลากประหยัดไฟฟ้าเบอร์ 5" เทียบเท่า หรือ ดีกว่า)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Parameters -->
+      <section class="py-20">
+        <div class="container space-y-12">
+          <hgroup class="space-y-3">
+            <p data-reveal>เงื่อนไขและพารามิเตอร์ที่ใช้ในการคำนวณ</p>
+            <h2 data-reveal data-text-split>ตัวแปรสำคัญและค่าที่ใช้คำนวณ</h2>
+          </hgroup>
+          <div class="param-grid">
+            <div class="param-card" data-reveal>
+              <div class="param-card__symbol">W<sub>lamp</sub></div>
+              <p class="param-card__name">W lamp: พิกัดกำลังไฟฟ้าของหลอดไฟเดิม</p>
+              <p class="param-card__unit">W</p>
+              <p class="param-card__desc">พิกัดกำลังไฟฟ้าของหลอดไฟเดิม (เช่น หลอดฟลูออเรสเซนต์ T8 = 36W)</p>
+            </div>
+            <div class="param-card" data-reveal>
+              <div class="param-card__symbol">W<sub>ballast</sub></div>
+              <p class="param-card__name">W ballast: กำลังไฟฟ้าสูญเสียในอุปกรณ์ควบคุม</p>
+              <p class="param-card__unit">W</p>
+              <p class="param-card__desc">กำลังไฟฟ้าสูญเสียในอุปกรณ์ควบคุม (บัลลาสต์แม่เหล็กทั่วไปจะมีการสูญเสียที่ประมาณ 10W ถึง 12W)</p>
+            </div>
+            <div class="param-card" data-reveal>
+              <div class="param-card__symbol">W<sub>old</sub></div>
+              <p class="param-card__name">W old: กำลังไฟฟ้ารวมของโคมไฟเดิม</p>
+              <p class="param-card__unit">W</p>
+              <p class="param-card__desc">กำลังไฟฟ้ารวมของโคมไฟเดิม (W lamp + W ballast)</p>
+            </div>
+            <div class="param-card" data-reveal>
+              <div class="param-card__symbol">W<sub>new</sub></div>
+              <p class="param-card__name">W new (LED Wattage): พิกัดกำลังไฟฟ้าของหลอด LED ใหม่</p>
+              <p class="param-card__unit">W</p>
+              <p class="param-card__desc">พิกัดกำลังไฟฟ้าของหลอด LED ใหม่ (หลอด LED มี Driver ในตัวแล้ว จึงใช้ค่าตาม Nameplate ได้เลย เช่น 18W)</p>
+            </div>
+            <div class="param-card" data-reveal>
+              <div class="param-card__symbol">N</div>
+              <p class="param-card__name">N: จำนวนหลอดไฟที่ทำการเปลี่ยน</p>
+              <p class="param-card__unit">หลอด</p>
+              <p class="param-card__desc">จำนวนหลอดไฟที่ทำการเปลี่ยน (หลอด)</p>
+            </div>
+            <div class="param-card" data-reveal>
+              <div class="param-card__symbol">H</div>
+              <p class="param-card__name">H: ชั่วโมงการทำงานต่อปี</p>
+              <p class="param-card__unit">ชั่วโมง/ปี</p>
+              <p class="param-card__desc">ชั่วโมงการทำงานต่อปี (ชั่วโมง/ปี)</p>
+            </div>
+          </div>
+          <p class="measure-note" data-reveal>ผลการคำนวณ: ใช้หลักเกณฑ์ Conservative</p>
+        </div>
+      </section>
+
+      <!-- Section 4: Engineering Equations -->
+      <section class="py-20 bg-background-secondary">
+        <div class="container space-y-12">
+          <hgroup class="space-y-3">
+            <p data-reveal>การคำนวณผลประหยัดพลังงาน</p>
+            <h2 data-reveal data-text-split>สมการทางวิศวกรรม (Engineering Equations)</h2>
+          </hgroup>
+          <div class="calc-steps">
+
+            <!-- Step 1 -->
+            <div class="calc-step" data-reveal>
+              <div class="calc-step__num">ขั้นตอนที่ 1</div>
+              <div class="calc-step__body">
+                <h4 class="calc-step__title">คำนวณพลังงานไฟฟ้าที่ประหยัดได้จากระบบแสงสว่างโดยตรง (Lighting Energy Savings)</h4>
+                <div class="equation-block">
+                  <div>
+                    <span class="eq-var">ΔkW</span>
+                    <span class="eq-op">=</span>
+                    <span class="eq-expr">(W lamp + W ballast – W new) / 1,000</span>
+                  </div>
+                  <div>
+                    <span class="eq-var">Lighting Savings (kWh/year)</span>
+                    <span class="eq-op">=</span>
+                    <span class="eq-expr">ΔkW x N x H</span>
+                  </div>
+                </div>
+                <div class="equation-legend">
+                  <div>กำลังไฟฟ้าที่ลดลงต่อหลอด (kW): ΔkW</div>
+                  <div>พลังงานที่ประหยัดได้ต่อปี (kWh/year): Lighting Savings (kWh/year)</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="calc-step" data-reveal>
+              <div class="calc-step__num">ขั้นตอนที่ 2</div>
+              <div class="calc-step__body">
+                <h4 class="calc-step__title">คำนวณการลดการปล่อยก๊าซเรือนกระจก (GHG Emission Reduction)</h4>
+                <div class="equation-block">
+                  <div>
+                    <span class="eq-var">GHG Reduction (kgCO2e/year)</span>
+                    <span class="eq-op">=</span>
+                    <span class="eq-expr">Total Savings (kWh/year) x Grid Emission Factor</span>
+                  </div>
+                </div>
+                <div class="equation-legend">
+                  <div>อ้างอิงค่า EF จาก อบก. ปัจจุบันอยู่ที่ 0.475 kgCO2e/kWh</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Case Study -->
+      <section class="py-20">
+        <div class="container space-y-12">
+          <hgroup class="space-y-3">
+            <p data-reveal>ตัวอย่างการคำนวณ</p>
+            <h2 data-reveal data-text-split>Case Study Example</h2>
+          </hgroup>
+          <div class="case-study">
+
+            <div class="case-study__scenario" data-reveal>
+              <p>สถานการณ์: เปลี่ยนหลอดฟลูออเรสเซนต์ (T8) 36W พร้อมบัลลาสต์แม่เหล็ก จำนวน 1,000 หลอด เป็นหลอด LED Tube 18W ในพื้นที่สำนักงานปรับอากาศ (เปิดแอร์) โดยมีการใช้งาน 10 ชั่วโมง/วัน, 250 วัน/ปี (รวม 2,500 ชั่วโมง/ปี)</p>
+              <p>สมมติฐาน: W old = 36W + 10W = 46W | W new = 18W | ค่าไฟเฉลี่ย = 4.5 บาท/kWh</p>
+            </div>
+
+            <div class="case-study__inputs" data-reveal>
+              <p class="case-study__section-title">ข้อมูลนำเข้า</p>
+              <div class="input-grid">
+                <div class="input-item">
+                  <span class="input-item__label">W lamp (T8 Fluorescent)</span>
+                  <span class="input-item__value">36W</span>
+                </div>
+                <div class="input-item">
+                  <span class="input-item__label">W ballast (บัลลาสต์แม่เหล็ก)</span>
+                  <span class="input-item__value">10W</span>
+                </div>
+                <div class="input-item">
+                  <span class="input-item__label">W old (รวม)</span>
+                  <span class="input-item__value">46W</span>
+                </div>
+                <div class="input-item">
+                  <span class="input-item__label">W new (LED Tube)</span>
+                  <span class="input-item__value">18W</span>
+                </div>
+                <div class="input-item">
+                  <span class="input-item__label">N (จำนวนหลอด)</span>
+                  <span class="input-item__value">1,000 หลอด</span>
+                </div>
+                <div class="input-item">
+                  <span class="input-item__label">H (10 ชม./วัน, 250 วัน/ปี)</span>
+                  <span class="input-item__value">2,500 ชั่วโมง/ปี</span>
+                </div>
+                <div class="input-item">
+                  <span class="input-item__label">ค่าไฟฟ้าเฉลี่ย</span>
+                  <span class="input-item__value">4.5 บาท/kWh</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="case-study__results case-study__inputs" data-reveal>
+              <p class="case-study__section-title">ขั้นตอนการคำนวณ</p>
+              <div class="calc-chain">
+                <div class="calc-chain__row">
+                  <span class="calc-chain__label">ประหยัดไฟแสงสว่าง</span>
+                  <span class="calc-chain__formula">(46–18)/1,000 x 1,000 x 2,500</span>
+                  <span class="calc-chain__result">= 70,000 kWh/ปี</span>
+                </div>
+                <div class="calc-chain__row">
+                  <span class="calc-chain__label">ประหยัดเงิน</span>
+                  <span class="calc-chain__formula">70,000 x 4.5</span>
+                  <span class="calc-chain__result">= 315,000 บาท/ปี</span>
+                </div>
+                <div class="calc-chain__row">
+                  <span class="calc-chain__label">เงินสนับสนุนที่คาดว่าจะได้รับ</span>
+                  <span class="calc-chain__formula">70,000 x 4</span>
+                  <span class="calc-chain__result">= 280,000 บาท</span>
+                </div>
+                <div class="calc-chain__row">
+                  <span class="calc-chain__label">ลดคาร์บอน (GHG Reduction)</span>
+                  <span class="calc-chain__formula">70,000 x 0.475</span>
+                  <span class="calc-chain__result">= 33,250 kgCO2e/ปี (ประมาณ 33.2 ตันคาร์บอนฯ)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="case-study__results" data-reveal>
+              <p class="case-study__section-title">ผลลัพธ์</p>
+              <div class="result-stats">
+                <div class="result-stat">
+                  <span class="result-stat__num">70,000</span>
+                  <span class="result-stat__unit">kWh/ปี</span>
+                  <span class="result-stat__label">ประหยัดไฟแสงสว่าง</span>
+                </div>
+                <div class="result-stat">
+                  <span class="result-stat__num">315,000</span>
+                  <span class="result-stat__unit">บาท/ปี</span>
+                  <span class="result-stat__label">ประหยัดเงิน</span>
+                </div>
+                <div class="result-stat result-stat--highlight">
+                  <span class="result-stat__num">280,000</span>
+                  <span class="result-stat__unit">บาท</span>
+                  <span class="result-stat__label">เงินสนับสนุนที่คาดว่าจะได้รับ</span>
+                </div>
+                <div class="result-stat">
+                  <span class="result-stat__num">33,250</span>
+                  <span class="result-stat__unit">kgCO2e/ปี</span>
+                  <span class="result-stat__label">ลดคาร์บอน (GHG Reduction)</span>
+                  <span class="result-stat__sub">ประมาณ 33.2 ตันคาร์บอนฯ</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Notes -->
+      <section class="py-20 bg-background-secondary">
+        <div class="container space-y-10">
+          <h2 data-reveal data-text-split>หมายเหตุและข้อกำหนดเพิ่มเติม</h2>
+          <div class="notes-grid">
+            <div class="note-card" data-reveal>
+              <div class="note-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="3 6 5 6 21 6" />
+                  <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+                  <path d="M10 11v6M14 11v6" />
+                  <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" />
+                </svg>
+              </div>
+              <h4>วิธีการทำลายซาก</h4>
+              <p>การกำจัดซากต้องเป็นวิธีการที่เหมาะสมและไม่เกิดปัญหากระทบต่อสิ่งแวดล้อม โดยมีวัตถุประสงค์หลักเพื่อป้องกันมิให้นำเอาอุปกรณ์เก่ามาใช้ใหม่หรือใช้ซ้ำได้อีก</p>
+            </div>
+            <div class="note-card" data-reveal>
+              <div class="note-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  <polyline points="9 11 11 13 15 9" />
+                </svg>
+              </div>
+              <h4>การทวนสอบผลประหยัด</h4>
+              <p>ใช้การทวนสอบการปรับปรุงที่เกิดขึ้นจริงของสถานประกอบการ และการคำนวณจากผลต่างระหว่างปริมาณพลังงานที่ใช้จริงหลังปรับปรุงเทียบกับระดับฐานการใช้พลังงานเดิมก่อนการปรับปรุง</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <footer-component></footer-component>
+  </body>
+</html>

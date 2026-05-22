@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>มาตรการที่ 3 — การใช้ VSD สำหรับปั๊มน้ำและพัดลม</title>
+
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/pages/measure.css" />
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css" />
+
+    <!-- Components -->
+    <script src="./components/navbar.js"></script>
+    <script src="./components/footer.js"></script>
+
+    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
+  </head>
+  <body>
+    <navbar-component></navbar-component>
+    <main class="flex-1 w-full flex flex-col">
+
+      <!-- Section 1: Hero -->
+      <header class="measure-hero">
+        <div class="container">
+          <p class="measure-badge">มาตรการ 03</p>
+          <h1 data-text-split>การใช้ VSD สำหรับปั๊มน้ำและพัดลม</h1>
+          <p class="measure-hero__sub">หลักเกณฑ์และวิธีการคำนวณผลประหยัดพลังงาน</p>
+        </div>
+      </header>
+
+      <!-- Section 2: Overview -->
+      <section class="py-16 bg-background-secondary">
+        <div class="container">
+          <div class="measure-overview-card" data-reveal>
+            <p class="measure-label">ลักษณะหรือรูปแบบที่ดำเนินการ</p>
+            <p>การลดการใช้พลังงานไฟฟ้าโดยการลดหรือควบคุมภาระการใช้งานอุปกรณ์ให้เหมาะสมกับการเปลี่ยนแปลงของภาระงานสำหรับมอเตอร์ไฟฟ้า โดยใช้อุปกรณ์ควบคุมความเร็วรอบ (VSD) ซึ่งใช้ได้กับอุปกรณ์ประเภท Variable Torque (เช่น พัดลมและปั๊มหอยโข่ง) ซึ่งสามารถใช้ได้กับการปรับลดความเร็วรอบแบบคงที่ หรือ ควบคุมให้แปรผันตามภาระงานแบบอัตโนมัติ</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Parameters -->
+      <section class="py-20">
+        <div class="container space-y-12">
+          <hgroup class="space-y-3">
+            <p data-reveal>เงื่อนไขและพารามิเตอร์ที่ใช้ในการคำนวณ</p>
+            <h2 data-reveal data-text-split>ตัวแปรสำคัญและค่าที่ใช้คำนวณ</h2>
+          </hgroup>
+          <div class="param-grid">
+            <div class="param-card" data-reveal>
+              <div class="param-card__symbol">kW<sub>rated</sub></div>
+              <p class="param-card__name">kW rated: พิกัดกำลังไฟฟ้าของมอเตอร์</p>
+              <p class="param-card__unit">kW</p>
+              <p class="param-card__desc">พิกัดกำลังไฟฟ้าของมอเตอร์ (หากระบุเป็น HP ให้คูณ 0.746 เพื่อแปลงเป็น kW)</p>
+            </div>
+            <div class="param-card" data-reveal>
+              <div class="param-card__symbol">LF</div>
+              <p class="param-card__name">LF (Load Factor): สัดส่วนการใช้พลังงานจริง</p>
+              <p class="param-card__unit">≤ 0.80</p>
+              <p class="param-card__desc">สัดส่วนการใช้พลังงานจริงเทียบกับพิกัดมอเตอร์โดยการตรวจวัดค่าการทำงานชั่วขณะ (Spot check) โดยโครงการกำหนดค่าไว้ไม่เกิน 0.80</p>
+            </div>
+            <div class="param-card" data-reveal>
+              <div class="param-card__symbol">kW<sub>base</sub></div>
+              <p class="param-card__name">kW base: กำลังไฟฟ้าฐานก่อนติด VSD</p>
+              <p class="param-card__unit">kW</p>
+              <p class="param-card__desc">กำลังไฟฟ้าฐานก่อนติด VSD (กรณีใช้หรี่วาล์วหรือ Damper มอเตอร์มักจะกินไฟเกือบเท่าเดิมตลอดเวลา)</p>
+            </div>
+            <div class="param-card" data-reveal>
+              <div class="param-card__symbol">P(t)</div>
+              <p class="param-card__name">Profile (Duty Cycle): สัดส่วนชั่วโมงการทำงาน</p>
+              <p class="param-card__unit">%</p>
+              <p class="param-card__desc">สัดส่วนชั่วโมงการทำงานที่ความเร็วรอบต่างๆ (โดยการทดสอบจำลอง Duty cycle กรณีมีการควบคุมความเร็วรอบตามภาระงานแบบอัตโนมัติ)</p>
+            </div>
+            <div class="param-card" data-reveal>
+              <div class="param-card__symbol">%η<sub>VSD</sub></div>
+              <p class="param-card__name">%Eff VSD: ประสิทธิภาพของ VSD</p>
+              <p class="param-card__unit">= 0.96 (96%)</p>
+              <p class="param-card__desc">ประสิทธิภาพของ VSD (กำหนดไว้ที่ 0.96 หรือ 96%)</p>
+            </div>
+            <div class="param-card" data-reveal>
+              <div class="param-card__symbol">H</div>
+              <p class="param-card__name">H: ชั่วโมงการทำงานต่อปี</p>
+              <p class="param-card__unit">ชั่วโมง/ปี</p>
+              <p class="param-card__desc">ชั่วโมงการทำงานต่อปี (ชั่วโมง/ปี) ตามที่มีบันทึกการเปิดใช้งานจริง</p>
+            </div>
+          </div>
+          <p class="measure-note" data-reveal>ผลการคำนวณ: ใช้หลักเกณฑ์ Conservative</p>
+        </div>
+      </section>
+
+      <!-- Section 4: Engineering Equations -->
+      <section class="py-20 bg-background-secondary">
+        <div class="container space-y-12">
+          <hgroup class="space-y-3">
+            <p data-reveal>การคำนวณผลประหยัดพลังงาน</p>
+            <h2 data-reveal data-text-split>สมการทางวิศวกรรม (Engineering Equations)</h2>
+          </hgroup>
+          <div class="calc-steps">
+
+            <!-- Affinity Laws -->
+            <div class="calc-step" data-reveal>
+              <div class="calc-step__num">Affinity Laws</div>
+              <div class="calc-step__body">
+                <h4 class="calc-step__title">กฎความคล้ายคลึง (Affinity Laws)</h4>
+                <div class="equation-block">
+                  <div>
+                    <span class="eq-var">P2</span>
+                    <span class="eq-op">=</span>
+                    <span class="eq-expr">P1 x (N2/N1)<sup>3</sup></span>
+                  </div>
+                </div>
+                <div class="equation-legend">
+                  <div>ความสัมพันธ์ระหว่างกำลังไฟฟ้า (P) และความเร็วรอบ (N) หรืออัตราการไหล (Q) จะแปรผันตาม "กำลังสาม (Cube Law)"</div>
+                  <div>แปลความหมาย: ลดรอบลงเพียง 20% หรือเดินเครื่องที่ 80% พลังงานจะลดลงเหลือ 0.8<sup>3</sup> = 0.512 หรือลดลงเกือบครึ่ง!</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 1 -->
+            <div class="calc-step" data-reveal>
+              <div class="calc-step__num">ขั้นตอนที่ 1</div>
+              <div class="calc-step__body">
+                <h4 class="calc-step__title">คำนวณการใช้พลังงานกรณีฐาน (Baseline Energy)</h4>
+                <div class="equation-block">
+                  <div>
+                    <span class="eq-var">kW base</span>
+                    <span class="eq-op">=</span>
+                    <span class="eq-expr">kW rated x LF</span>
+                  </div>
+                  <div>
+                    <span class="eq-var">Baseline Energy (kWh/year)</span>
+                    <span class="eq-op">=</span>
+                    <span class="eq-expr">kW base x ชั่วโมงการทำงานรวม (H)</span>
+                  </div>
+                </div>
+                <div class="equation-legend">
+                  <div>กรณีเดิมที่หรี่วาล์ว (Throttling) มอเตอร์จะกินไฟค่อนข้างคงที่</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="calc-step" data-reveal>
+              <div class="calc-step__num">ขั้นตอนที่ 2</div>
+              <div class="calc-step__body">
+                <h4 class="calc-step__title">คำนวณการใช้พลังงานหลังติด VSD (Proposed Energy)</h4>
+                <div class="equation-block">
+                  <div>
+                    <span class="eq-var">kW vsd at speed%</span>
+                    <span class="eq-op">=</span>
+                    <span class="eq-expr">kW base x (speed%)<sup>3</sup> / %Eff vsd</span>
+                  </div>
+                  <div>
+                    <span class="eq-var">Proposed Energy (kWh/year)</span>
+                    <span class="eq-op">=</span>
+                    <span class="eq-expr">Σ (kW vsd x ชั่วโมงการทำงานในรอบนั้นๆ)</span>
+                  </div>
+                </div>
+                <div class="equation-legend">
+                  <div>ต้องคำนวณแยกตาม Profile การใช้งาน แล้วนำมารวมกัน:</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="calc-step" data-reveal>
+              <div class="calc-step__num">ขั้นตอนที่ 3</div>
+              <div class="calc-step__body">
+                <h4 class="calc-step__title">สรุปผลประหยัด (Savings & GHG Reduction)</h4>
+                <div class="equation-block">
+                  <div>
+                    <span class="eq-var">Energy Savings (kWh)</span>
+                    <span class="eq-op">=</span>
+                    <span class="eq-expr">Baseline Energy – Proposed Energy</span>
+                  </div>
+                  <div>
+                    <span class="eq-var">Cost Savings (Baht)</span>
+                    <span class="eq-op">=</span>
+                    <span class="eq-expr">Energy Savings x ค่าไฟฟ้าเฉลี่ย</span>
+                  </div>
+                  <div>
+                    <span class="eq-var">GHG Reduction (kgCO2e)</span>
+                    <span class="eq-op">=</span>
+                    <span class="eq-expr">Energy Savings x 0.475 (Grid EF)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Case Study -->
+      <section class="py-20">
+        <div class="container space-y-12">
+          <hgroup class="space-y-3">
+            <p data-reveal>ตัวอย่างการคำนวณ</p>
+            <h2 data-reveal data-text-split>Case Study Example</h2>
+          </hgroup>
+          <div class="case-study">
+
+            <div class="case-study__scenario" data-reveal>
+              <p>สถานการณ์: ระบบพัดลมส่งลมเย็น (AHU) ขนาด 30 kW (40 HP) เดิมปรับปริมาณลมโดยใช้ Damper ทำงาน 4,380 ชั่วโมง/ปี ทีมผู้เชี่ยวชาญสัมภาษณ์ช่างคุมเครื่องและประเมิน Load Profile ได้ดังนี้:</p>
+              <ul>
+                <li>ทำงานที่ความต้องการลม 100% (รอบ 100%) = 20% ของเวลา (876 ชั่วโมง)</li>
+                <li>ทำงานที่ความต้องการลม 80% (รอบ 80%) = 50% ของเวลา (2,190 ชั่วโมง)</li>
+                <li>ทำงานที่ความต้องการลม 60% (รอบ 60%) = 30% ของเวลา (1,314 ชั่วโมง)</li>
+              </ul>
+              <p>สมมติฐาน: LF = 0.8 | η vsd = 0.96 | ค่าไฟ 4.5 บาท/kWh</p>
+            </div>
+
+            <div class="case-study__inputs" data-reveal>
+              <p class="case-study__section-title">ข้อมูลนำเข้า</p>
+              <div class="input-grid">
+                <div class="input-item">
+                  <span class="input-item__label">kW rated (ขนาด AHU)</span>
+                  <span class="input-item__value">30 kW (40 HP)</span>
+                </div>
+                <div class="input-item">
+                  <span class="input-item__label">LF (Load Factor)</span>
+                  <span class="input-item__value">0.8</span>
+                </div>
+                <div class="input-item">
+                  <span class="input-item__label">%Eff VSD (η vsd)</span>
+                  <span class="input-item__value">0.96</span>
+                </div>
+                <div class="input-item">
+                  <span class="input-item__label">H (ชั่วโมงการทำงาน)</span>
+                  <span class="input-item__value">4,380 ชั่วโมง/ปี</span>
+                </div>
+                <div class="input-item">
+                  <span class="input-item__label">ค่าไฟฟ้าเฉลี่ย</span>
+                  <span class="input-item__value">4.5 บาท/kWh</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="case-study__results case-study__inputs" data-reveal>
+              <p class="case-study__section-title">Baseline Energy</p>
+              <div class="calc-chain">
+                <div class="calc-chain__row">
+                  <span class="calc-chain__label">kW base</span>
+                  <span class="calc-chain__formula">30 x 0.8</span>
+                  <span class="calc-chain__result">= 24 kW (ตั้งสมมติฐานว่าตอนหรี่ Damper มอเตอร์กินไฟเท่าเดิมตลอด)</span>
+                </div>
+                <div class="calc-chain__row">
+                  <span class="calc-chain__label">Baseline (kWh)</span>
+                  <span class="calc-chain__formula">24 kW x 4,380 hrs</span>
+                  <span class="calc-chain__result">= 105,120 kWh/year</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="case-study__results case-study__inputs" data-reveal>
+              <p class="case-study__section-title">Proposed Energy (ติด VSD)</p>
+              <div class="table-wrapper">
+                <table class="efficiency-table">
+                  <thead>
+                    <tr>
+                      <th>ความเร็วรอบ</th>
+                      <th>สมการคำนวณ kW</th>
+                      <th>kW</th>
+                      <th>ชั่วโมง</th>
+                      <th>kWh</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>ลม 100%</td>
+                      <td>(24 x 1<sup>3</sup>) / 0.96</td>
+                      <td>25 kW</td>
+                      <td>876 hrs</td>
+                      <td>21,900 kWh</td>
+                    </tr>
+                    <tr>
+                      <td>ลม 80%</td>
+                      <td>(24 x 0.8<sup>3</sup>) / 0.96</td>
+                      <td>12.80 kW</td>
+                      <td>2,190 hrs</td>
+                      <td>28,032 kWh</td>
+                    </tr>
+                    <tr>
+                      <td>ลม 60%</td>
+                      <td>(24 x 0.6<sup>3</sup>) / 0.96</td>
+                      <td>5.40 kW</td>
+                      <td>1,314 hrs</td>
+                      <td>7,095.6 kWh</td>
+                    </tr>
+                    <tr class="table-row--highlight">
+                      <td>รวม Proposed kWh</td>
+                      <td>21,900 + 28,032 + 7,095.6</td>
+                      <td>–</td>
+                      <td>–</td>
+                      <td>57,027.6 kWh/year</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="case-note">หมายเหตุ: ที่โหลดเต็ม 100% VSD จะกินไฟมากกว่าเดิมเล็กน้อยจาก Loss ของตัวมันเอง</p>
+            </div>
+
+            <div class="case-study__results case-study__inputs" data-reveal>
+              <p class="case-study__section-title">ขั้นตอนการคำนวณ</p>
+              <div class="calc-chain">
+                <div class="calc-chain__row">
+                  <span class="calc-chain__label">ประหยัดพลังงานไฟฟ้า</span>
+                  <span class="calc-chain__formula">105,120 – 57,027.6</span>
+                  <span class="calc-chain__result">= 48,092 kWh/ปี</span>
+                </div>
+                <div class="calc-chain__row">
+                  <span class="calc-chain__label">ประหยัดเงิน</span>
+                  <span class="calc-chain__formula">48,092 x 4.5</span>
+                  <span class="calc-chain__result">= 216,414 บาท/ปี</span>
+                </div>
+                <div class="calc-chain__row">
+                  <span class="calc-chain__label">เงินสนับสนุนที่คาดว่าจะได้รับ</span>
+                  <span class="calc-chain__formula">48,092 x 4</span>
+                  <span class="calc-chain__result">= 192,368 บาท</span>
+                </div>
+                <div class="calc-chain__row">
+                  <span class="calc-chain__label">GHG Reduction</span>
+                  <span class="calc-chain__formula">48,092 x 0.475</span>
+                  <span class="calc-chain__result">= 22,843 kgCO2e/ปี (หรือประมาณ 22.84 ตันคาร์บอนเทียบเท่า)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="case-study__results" data-reveal>
+              <p class="case-study__section-title">ผลลัพธ์</p>
+              <div class="result-stats">
+                <div class="result-stat">
+                  <span class="result-stat__num">48,092</span>
+                  <span class="result-stat__unit">kWh/ปี</span>
+                  <span class="result-stat__label">ประหยัดพลังงานไฟฟ้า</span>
+                </div>
+                <div class="result-stat">
+                  <span class="result-stat__num">216,414</span>
+                  <span class="result-stat__unit">บาท/ปี</span>
+                  <span class="result-stat__label">ประหยัดเงิน</span>
+                </div>
+                <div class="result-stat result-stat--highlight">
+                  <span class="result-stat__num">192,368</span>
+                  <span class="result-stat__unit">บาท</span>
+                  <span class="result-stat__label">เงินสนับสนุนที่คาดว่าจะได้รับ</span>
+                </div>
+                <div class="result-stat">
+                  <span class="result-stat__num">22,843</span>
+                  <span class="result-stat__unit">kgCO2e/ปี</span>
+                  <span class="result-stat__label">GHG Reduction</span>
+                  <span class="result-stat__sub">หรือประมาณ 22.84 ตันคาร์บอนเทียบเท่า</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Notes -->
+      <section class="py-20 bg-background-secondary">
+        <div class="container space-y-10">
+          <h2 data-reveal data-text-split>หมายเหตุและข้อกำหนดเพิ่มเติม</h2>
+          <div class="notes-grid">
+            <div class="note-card" data-reveal>
+              <div class="note-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="3 6 5 6 21 6" />
+                  <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+                  <path d="M10 11v6M14 11v6" />
+                  <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" />
+                </svg>
+              </div>
+              <h4>วิธีการทำลายซาก</h4>
+              <p>ไม่มี</p>
+            </div>
+            <div class="note-card" data-reveal>
+              <div class="note-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  <polyline points="9 11 11 13 15 9" />
+                </svg>
+              </div>
+              <h4>การทวนสอบผลประหยัด</h4>
+              <p>ใช้การทวนสอบการปรับปรุงที่เกิดขึ้นจริงของสถานประกอบการ และการคำนวณจากผลต่างระหว่างปริมาณพลังงานที่ใช้จริงหลังปรับปรุงเทียบกับระดับฐานการใช้พลังงานเดิมก่อนการปรับปรุง</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <footer-component></footer-component>
+  </body>
+</html>

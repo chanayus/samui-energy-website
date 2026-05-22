@@ -17,9 +17,9 @@ class Navbar extends HTMLElement {
             </a>
 
             <div class="flex gap-x-0.5 max-lg:hidden">
-              <a href="" class="btn">เกี่ยวกับ</a>
+              <a href="../about.html" class="btn">เกี่ยวกับ</a>
               <a href="" class="btn">โครงการ</a>
-              <a href="" class="btn">ขั้นตอนเข้าร่วม</a>
+              <a href="../eligibility.html" class="btn">ขั้นตอนเข้าร่วม</a>
               <a href="" class="btn">ข่าวสารและความรู้</a>
             </div>
 

@@ -1,0 +1,771 @@
+/* ============================================================
+   Measure Pages — Shared Base Styles
+   Used by: measure-1.html, measure-2.html, …
+   ============================================================ */
+
+/* ============================================================
+   Section 1 — Hero
+   ============================================================ */
+
+.measure-hero {
+  background-color: var(--dark-teal);
+  color: white;
+  padding: 9rem 0 5rem;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(199, 145, 27, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  & .measure-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(199, 145, 27, 0.12);
+    color: var(--yellow);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 0.375rem 1rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(199, 145, 27, 0.3);
+    margin-bottom: 1.5rem;
+  }
+
+  & h1 {
+    max-width: 22ch;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  & .measure-hero__sub {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 1.125rem;
+  }
+}
+
+/* ============================================================
+   Section 2 — Overview
+   ============================================================ */
+
+.measure-overview-card {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 2.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  border-left: 4px solid var(--primary);
+
+  & .measure-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: rgba(4, 48, 59, 0.45);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  & p:last-child {
+    font-size: 1.1875rem;
+    line-height: 1.8;
+    color: var(--dark-teal);
+    font-weight: 500;
+  }
+
+  @media (width < 768px) {
+    padding: 1.75rem;
+  }
+}
+
+/* ============================================================
+   Section 3 — Parameters
+   ============================================================ */
+
+.param-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+
+  @media (width < 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (width < 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.param-card {
+  background: white;
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  border: 1px solid rgba(4, 48, 59, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  & .param-card__symbol {
+    font-size: 1.875rem;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--dark-teal);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+
+    & sub {
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 600;
+    }
+  }
+
+  & .param-card__name {
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--dark-teal);
+  }
+
+  & .param-card__unit {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--yellow);
+    background: rgba(199, 145, 27, 0.1);
+    border-radius: 9999px;
+    padding: 0.2rem 0.75rem;
+    width: fit-content;
+  }
+
+  & .param-card__desc {
+    font-size: 0.875rem;
+    line-height: 1.75;
+    color: rgba(4, 48, 59, 0.6);
+    margin-top: 0.25rem;
+  }
+}
+
+.measure-note {
+  background: rgba(199, 145, 27, 0.1);
+  border: 1px solid rgba(199, 145, 27, 0.3);
+  border-radius: 0.75rem;
+  padding: 0.875rem 1.5rem;
+  font-weight: 600;
+  color: var(--dark-teal);
+  width: fit-content;
+}
+
+/* ============================================================
+   Section 4 — Calculation Method
+   ============================================================ */
+
+.calc-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.calc-step {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 1.5rem;
+  align-items: start;
+
+  @media (width < 768px) {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  & .calc-step__num {
+    background: var(--primary);
+    color: #fff;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    padding: 0.625rem 0.875rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+
+    @media (width >= 768px) {
+      margin-top: 0.375rem;
+    }
+  }
+
+  & .calc-step__body {
+    background: white;
+    border-radius: 1.25rem;
+    padding: 2rem;
+    border: 1px solid rgba(4, 48, 59, 0.08);
+  }
+
+  & .calc-step__title {
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    color: var(--dark-teal);
+  }
+}
+
+.equation-block {
+  background: var(--background-secondary);
+  color: var(--dark-teal);
+  border-radius: 0.875rem;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  & > div {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  & .eq-var {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  & .eq-op {
+    color: rgba(4, 48, 59, 0.45);
+  }
+
+  & .eq-expr {
+    color: var(--dark-teal);
+    font-size: 0.9375rem;
+  }
+
+  & .equation-block__alt {
+    border-top: 1px solid rgba(4, 48, 59, 0.1);
+    padding-top: 0.75rem;
+    font-size: 0.875rem;
+    color: rgba(4, 48, 59, 0.55);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    align-items: baseline;
+  }
+}
+
+.equation-legend {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  color: rgba(4, 48, 59, 0.6);
+
+  & strong {
+    color: var(--dark-teal);
+    font-weight: 700;
+    font-style: italic;
+  }
+}
+
+/* ============================================================
+   Section 5 — Efficiency Table (optional — only some measures)
+   ============================================================ */
+
+.table-wrapper {
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid rgba(4, 48, 59, 0.1);
+  overflow-x: auto;
+}
+
+.efficiency-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  & th {
+    background: var(--primary);
+    color: white;
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.9375rem;
+
+    &:first-child {
+      text-align: left;
+    }
+
+    & span {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.55);
+      margin-top: 0.2rem;
+    }
+  }
+
+  & td {
+    padding: 1rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(4, 48, 59, 0.07);
+    font-size: 0.9375rem;
+    color: var(--dark-teal);
+    background: var(--background-primary);
+
+    &:first-child {
+      text-align: left;
+      font-weight: 500;
+      background: var(--background-secondary);
+    }
+  }
+
+  & tr:last-child td {
+    border-bottom: none;
+  }
+
+  & .table-row--highlight td {
+    background: rgba(199, 145, 27, 0.07);
+    font-weight: 600;
+    color: var(--yellow);
+
+    &:first-child {
+      background: rgba(199, 145, 27, 0.12);
+      color: var(--dark-teal);
+    }
+  }
+}
+
+/* ============================================================
+   Section 6 — Case Study
+   ============================================================ */
+
+.case-study {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.case-study__scenario {
+  background: rgba(4, 48, 59, 0.04);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  border-left: 3px solid var(--primary);
+
+  & p {
+    color: var(--dark-teal);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+}
+
+.case-study__section-title {
+  font-weight: 600;
+  font-size: 1.0625rem;
+  color: var(--dark-teal);
+  margin-bottom: 1.25rem;
+}
+
+.case-study__inputs,
+.case-study__results {
+  background: white;
+  border-radius: 1.25rem;
+  padding: 2rem;
+  border: 1px solid rgba(4, 48, 59, 0.08);
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+
+  @media (width < 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (width < 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.input-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.25rem;
+  background: var(--background-secondary);
+  border-radius: 0.875rem;
+
+  & .input-item__label {
+    font-size: 0.8125rem;
+    color: rgba(4, 48, 59, 0.5);
+    font-weight: 500;
+  }
+
+  & .input-item__value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark-teal);
+  }
+}
+
+.result-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+
+  @media (width < 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (width < 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.result-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.75rem 1rem;
+  background: var(--background-secondary);
+  border-radius: 1rem;
+  gap: 0.2rem;
+
+  & .result-stat__num {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--dark-teal);
+    line-height: 1;
+  }
+
+  & .result-stat__unit {
+    font-size: 0.8125rem;
+    color: rgba(4, 48, 59, 0.5);
+    font-weight: 500;
+  }
+
+  & .result-stat__label {
+    font-size: 0.8125rem;
+    color: rgba(4, 48, 59, 0.65);
+    margin-top: 0.375rem;
+    line-height: 1.4;
+  }
+
+  & .result-stat__sub {
+    font-size: 0.75rem;
+    color: rgba(4, 48, 59, 0.45);
+    line-height: 1.4;
+    margin-top: 0.125rem;
+  }
+
+  &.result-stat--highlight {
+    background: var(--primary);
+
+    & .result-stat__num {
+      color: #fff;
+    }
+
+    & .result-stat__unit,
+    & .result-stat__label,
+    & .result-stat__sub {
+      color: rgba(255, 255, 255, 0.75);
+    }
+  }
+}
+
+.calc-chain {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.calc-chain__row {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 1rem;
+  padding: 0.875rem 1.25rem;
+  background: var(--background-secondary);
+  border-radius: 0.75rem;
+  align-items: center;
+
+  @media (width < 768px) {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  & .calc-chain__label {
+    font-weight: 500;
+    color: var(--dark-teal);
+  }
+
+  & .calc-chain__formula {
+    font-size: 14px;
+    color: rgba(4, 48, 59, 0.75);
+  }
+
+  & .calc-chain__result {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark-teal);
+    text-align: right;
+
+    @media (width < 768px) {
+      text-align: left;
+    }
+  }
+}
+
+/* ============================================================
+   Measure 5 — Overview Examples
+   ============================================================ */
+
+.measure-examples-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  & li {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    padding: 0.875rem 1.25rem;
+    background: white;
+    border-radius: 0.75rem;
+    margin: 0;
+    border: 1px solid rgba(4, 48, 59, 0.08);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--dark-teal);
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: var(--primary);
+      flex-shrink: 0;
+    }
+  }
+}
+
+/* ============================================================
+   Measure 5 — Prioritization Scoring
+   ============================================================ */
+
+.scoring-criteria-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+
+  & li {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    list-style: none;
+    margin: 0;
+    color: var(--dark-teal);
+    padding: 0.875rem 1.25rem;
+    background: var(--background-secondary);
+    border-radius: 0.75rem;
+  }
+}
+
+.scoring-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+
+  @media (width < 1024px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.scoring-criterion {
+  border: 1px solid rgba(4, 48, 59, 0.08);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  & .scoring-criterion__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--primary);
+    color: white;
+
+    & h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: 0px;
+    }
+  }
+
+  & .scoring-criterion__weight {
+    background: var(--yellow);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  & .scoring-criterion__desc {
+    font-size: 0.875rem;
+    background: var(--background-secondary);
+    line-height: 1.7;
+    color: rgba(4, 48, 59, 0.65);
+    padding: 1rem 1.5rem 0.75rem;
+    border-bottom: 1px solid rgba(4, 48, 59, 0.08);
+  }
+
+  & .table-wrapper {
+    border-radius: 0;
+    border: none;
+    flex: 1;
+  }
+
+  & .efficiency-table th {
+    background: rgba(4, 48, 59, 0.05);
+    color: var(--dark-teal);
+    font-size: 0.8125rem;
+    padding: 0.75rem 1.25rem;
+  }
+
+  & .efficiency-table td {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+    background: white;
+
+    &:first-child {
+      background: var(--background-secondary);
+      font-weight: 400;
+    }
+
+    &:last-child {
+      text-align: center;
+      font-weight: 700;
+      color: var(--primary);
+      background: rgba(116, 4, 95, 0.05);
+      width: 5rem;
+    }
+  }
+
+  & .efficiency-table tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+.scoring-formula-block {
+  background: var(--primary);
+  color: rgba(255, 255, 255, 0.75);
+  border-radius: 1.25rem;
+  padding: 2rem 2.5rem;
+
+  & p {
+    font-size: 0.9375rem;
+    line-height: 1.8;
+
+    margin-bottom: 1.25rem;
+  }
+
+  & .scoring-formula__eq {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #fff;
+  }
+}
+
+/* ============================================================
+   Case Study — Extras
+   ============================================================ */
+
+.case-study__scenario ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin-top: 0.75rem;
+
+  & li {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--dark-teal);
+    padding-left: 1.25rem;
+    position: relative;
+
+    &::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+  }
+}
+
+.case-note {
+  margin-top: 0.875rem;
+  padding: 0.75rem 1rem;
+  background: rgba(199, 145, 27, 0.06);
+  border-radius: 0.5rem;
+  border-left: 2px solid var(--yellow);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: rgba(4, 48, 59, 0.65);
+}
+
+/* ============================================================
+   Section 7 — Notes
+   ============================================================ */
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+
+  @media (width < 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.note-card {
+  background: var(--background-secondary);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  border: 1px solid rgba(4, 48, 59, 0.08);
+  & .note-card__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--primary);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+
+    & svg {
+      width: 1.125rem;
+      height: 1.125rem;
+    }
+  }
+
+  & h4 {
+    color: var(--dark-teal);
+  }
+
+  & p {
+    font-size: 0.9375rem;
+    line-height: 1.8;
+    color: rgba(4, 48, 59, 0.6);
+  }
+}

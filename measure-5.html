@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>มาตรการที่ 5 — มาตรการหรือเทคโนโลยีอื่น ที่ช่วยประหยัดพลังงาน</title>
+
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/pages/measure.css" />
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css" />
+
+    <!-- Components -->
+    <script src="./components/navbar.js"></script>
+    <script src="./components/footer.js"></script>
+
+    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
+  </head>
+  <body>
+    <navbar-component></navbar-component>
+    <main class="flex-1 w-full flex flex-col">
+
+      <!-- Section 1: Hero -->
+      <header class="measure-hero">
+        <div class="container">
+          <p class="measure-badge">มาตรการ 05</p>
+          <h1 data-text-split>มาตรการหรือเทคโนโลยีอื่น ที่ช่วยประหยัดพลังงาน</h1>
+          <p class="measure-hero__sub">หลักเกณฑ์และวิธีการคำนวณผลประหยัดพลังงาน</p>
+        </div>
+      </header>
+
+      <!-- Section 2: Overview & Examples -->
+      <section class="py-20 bg-background-secondary">
+        <div class="container space-y-8">
+          <div class="measure-overview-card" data-reveal>
+            <p>สำหรับการปรับเปลี่ยนอุปกรณ์อื่นๆ นอกเหนือจากรายการมาตรการพื้นฐานที่โครงการกำหนดไว้แล้วนั้น สถานประกอบการสามารถนำเสนอมาตรการอื่นๆ ด้านประสิทธิภาพพลังงานซึ่งส่งผลโดยตรงต่อการลดการใช้พลังงานไฟฟ้าเพิ่มเติมเพื่อให้คณะกรรมการของ กฟภ.พิจารณาเพิ่มเติม แต่อาจจำเป็นต้องมีรายละเอียดที่มากกว่ามาตรการพื้นฐานทั่วไป เช่น ข้อมูลหรือรายงานการตรวจวัดสมรรถนะด้านพลังงานก่อนการปรับปรุงแบบต่อเนื่องเป็นต้น ทั้งนี้ต้องเป็นตามหลักวิศวกรรม</p>
+          </div>
+          <div data-reveal>
+            <p class="measure-note" style="margin-bottom:1rem;">ตัวอย่างเช่น:</p>
+            <ul class="measure-examples-list">
+              <li>การเปลี่ยนเครื่องทำน้ำเย็นชนิด MAGNETIC BEARING</li>
+              <li>การเปลี่ยนหอผึ่งเย็นประสิทธิภาพสูง</li>
+              <li>การเปลี่ยนเครื่องส่งลมเย็น (AHU)</li>
+              <li>การเปลี่ยนระบบห้องแช่แข็ง หรือเครื่องทำความเย็น</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Prioritization Scoring -->
+      <section class="py-20">
+        <div class="container space-y-12">
+          <hgroup class="space-y-3">
+            <p data-reveal>PRIORITIZATION SCORING</p>
+            <h2 data-reveal data-text-split>เกณฑ์การให้คะแนนเพื่อคัดเลือก (Prioritization Scoring)</h2>
+          </hgroup>
+
+          <div data-reveal>
+            <p class="mb-4" style="font-size:1rem;color:var(--dark-teal);font-weight:500;">เกณฑ์การคัดเลือกแบ่งออกเป็น 4 ด้าน ดังนี้</p>
+            <ol class="scoring-criteria-intro">
+              <li><strong>(1) Efficiency Ratio (60%) :</strong> สัดส่วนพลังงานที่ประหยัดได้เทียบกับพลังงานที่ใช้เดิม</li>
+              <li><strong>(2) Demand Reduction (10%) :</strong> ความสามารถในการลดความต้องการใช้ไฟฟ้าสูงสุดในช่วง Peak ของเกาะสมุย</li>
+              <li><strong>(3) Technical Readiness (20%) :</strong> ความพร้อมด้านเทคนิค ความเป็นไปได้ในการติดตั้ง และระยะเวลาดำเนินการ</li>
+              <li><strong>(4) Financial Readiness (10%) :</strong> แหล่งเงินทุนและความสามารถในการจัดสรรเงินลงทุนให้การปรับปรุงประสิทธิภาพพลังงาน</li>
+            </ol>
+          </div>
+
+          <div class="scoring-grid">
+
+            <!-- E: Energy Saving -->
+            <div class="scoring-criterion" data-reveal>
+              <div class="scoring-criterion__header">
+                <h3>Energy Saving (E)</h3>
+                <span class="scoring-criterion__weight">60%</span>
+              </div>
+              <p class="scoring-criterion__desc">ปริมาณของพลังงานไฟฟ้าที่คาดการณ์ว่าจะประหยัดได้เทียบกับเป้าหมายของโครงการ</p>
+              <div class="table-wrapper">
+                <table class="efficiency-table">
+                  <thead>
+                    <tr>
+                      <th>รายละเอียดของเกณฑ์ในการพิจารณา</th>
+                      <th>ระดับคะแนน</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>ปริมาณพลังงานที่ประหยัดได้น้อยกว่า 200,000 หน่วยต่อปี</td><td>1</td></tr>
+                    <tr><td>ปริมาณพลังงานที่ประหยัดได้ 200,000 - 250,000 หน่วยต่อปี</td><td>2</td></tr>
+                    <tr><td>ปริมาณพลังงานที่ประหยัดได้ 250,000 - 300,000 หน่วยต่อปี</td><td>3</td></tr>
+                    <tr><td>ปริมาณพลังงานที่ประหยัดได้ 300,000 - 500,000 หน่วยต่อปี</td><td>4</td></tr>
+                    <tr><td>ปริมาณพลังงานที่ประหยัดได้มากกว่า 500,000 หน่วยต่อปี</td><td>5</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- D: Demand Reduction -->
+            <div class="scoring-criterion" data-reveal>
+              <div class="scoring-criterion__header">
+                <h3>Demand Reduction (D)</h3>
+                <span class="scoring-criterion__weight">10%</span>
+              </div>
+              <p class="scoring-criterion__desc">ความสามารถในการลดความต้องการใช้ไฟฟ้าของสถานประกอบการ</p>
+              <div class="table-wrapper">
+                <table class="efficiency-table">
+                  <thead>
+                    <tr>
+                      <th>รายละเอียดของเกณฑ์ในการพิจารณา</th>
+                      <th>ระดับคะแนน</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>สามารถลด Demand ได้น้อยกว่า 50 kW</td><td>1</td></tr>
+                    <tr><td>สามารถลด Demand ได้ระหว่าง 50 - 100 kW</td><td>2</td></tr>
+                    <tr><td>สามารถลด Demand ได้ระหว่าง 101 - 150 kW</td><td>3</td></tr>
+                    <tr><td>สามารถลด Demand ได้ระหว่าง 151 - 200 kW</td><td>4</td></tr>
+                    <tr><td>สามารถลด Demand ได้มากกว่า 200 kW ปี</td><td>5</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- T: Technical Readiness -->
+            <div class="scoring-criterion" data-reveal>
+              <div class="scoring-criterion__header">
+                <h3>Technical Readiness (T)</h3>
+                <span class="scoring-criterion__weight">20%</span>
+              </div>
+              <p class="scoring-criterion__desc">ความพร้อมด้านเทคนิค ความเป็นไปได้ในการติดตั้ง และระยะเวลาดำเนินการ</p>
+              <div class="table-wrapper">
+                <table class="efficiency-table">
+                  <thead>
+                    <tr>
+                      <th>รายละเอียดของเกณฑ์ในการพิจารณา</th>
+                      <th>ระดับคะแนน</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>ขาดความพร้อมด้านเทคนิคหรือความเป็นไปได้ในการติดตั้งน้อย หรือระยะเวลาดำเนินการยังไม่ชัดเจนว่าจะแล้วเสร็จภายในระยะเวลาของโครงการ</td><td>1</td></tr>
+                    <tr><td>มีความพร้อมด้านเทคนิคหรือมีความเป็นไปได้ในการติดตั้ง แต่แผนงานหรือระยะเวลาดำเนินการยังไม่ชัดเจนว่าจะแล้วเสร็จภายในระยะเวลาของโครงการ</td><td>3</td></tr>
+                    <tr><td>มีความพร้อมด้านเทคนิคหรือมีความเป็นไปได้ในการติดตั้งและมีแผนงานหรือระยะเวลาดำเนินการที่ชัดเจนว่าจะแล้วเสร็จภายในระยะเวลาของโครงการ</td><td>5</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- F: Financial Readiness -->
+            <div class="scoring-criterion" data-reveal>
+              <div class="scoring-criterion__header">
+                <h3>Financial Readiness (F)</h3>
+                <span class="scoring-criterion__weight">10%</span>
+              </div>
+              <p class="scoring-criterion__desc">แหล่งเงินทุนและความสามารถในการจัดสรรเงินลงทุนให้การปรับปรุงประสิทธิภาพพลังงานเป็นไปตามแผนงาน</p>
+              <div class="table-wrapper">
+                <table class="efficiency-table">
+                  <thead>
+                    <tr>
+                      <th>รายละเอียดของเกณฑ์ในการพิจารณา</th>
+                      <th>ระดับคะแนน</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>ยังไม่มีแหล่งเงินสำหรับการลงทุนที่ชัดเจน หรือ อยู่ระหว่างการพิจารณาจัดสรรเงินเพื่อการลงทุนฯ</td><td>1</td></tr>
+                    <tr><td>มีแหล่งเงินทุนภายในงบประมาณของสถานประกอบการเองแต่ยังไม่ตั้งงบประมาณไว้สำหรับโครงการนี้ซึ่งต้องนำเสนอทางผู้บริหารก่อน หรือ มีวงเงินงบประมาณแล้ว แต่ยังไม่ได้รับการอนุมัติเงินเนื่องจากยังไม่นำเสนอรายละเอียด</td><td>3</td></tr>
+                    <tr><td>มีแหล่งเงินทุนภายในงบประมาณของสถานประกอบการเอง และได้รับความเห็นชอบเงินลงทุนในงบประมาณการใช้จ่ายของโครงการเรียบร้อยแล้ว</td><td>5</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="scoring-formula-block" data-reveal>
+            <p>เกณฑ์การให้คะแนนเพื่อคัดเลือก (Prioritization Scoring) จะคิดจากผลรวมของคะแนนในแต่ละเกณฑ์ที่ได้รับการประเมินจากทีมผู้เชี่ยวชาญฯ และจะปรากฎผลคะแนนในรายงานสรุปผลการประเมินสถานภาพก่อนการปรับปรุงประสิทธิภาพพลังงาน</p>
+            <div class="scoring-formula__eq">ผลคะแนน = Σ (0.6E, 0.1D, 0.2T, 0.1F)</div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+    <footer-component></footer-component>
+  </body>
+</html>
