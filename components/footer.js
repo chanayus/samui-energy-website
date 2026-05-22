@@ -20,9 +20,8 @@ class Footer extends HTMLElement {
                   <p>เมนู</p>
                   <a href="" class="link">หน้าแรก</a>
                   <a href="" class="link">เกี่ยวกับ</a>
-                  <a href="" class="link">โครงการ</a>
-                  <a href="" class="link">ขั้นตอนเข้าร่วม</a>
-                  <a href="" class="link">ข่าวสารและความรู้</a>
+                  <a href="" class="link">เกี่ยวกับโครงการ</a>
+                  <a href="" class="link">ติดต่อโครงการ</a>
                 </div>
                 <div class="max-lg:flex-1 min-w-32 flex flex-col gap-3 text-lg">
                   <p>โซเชียล</p>
