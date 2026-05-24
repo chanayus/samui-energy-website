@@ -22,12 +22,35 @@
     <navbar-component></navbar-component>
     <main class="flex-1 w-full h-full flex flex-col">
       <!-- Section 1: Hero -->
-      <header id="hero-section" class="z-1 relative gap-y-10 overflow-hidden text-white bg-black min-h-180 lg:h-screen max-lg:max-h-206 flex flex-col lg:py-26 max-lg:pt-32 max-lg:pb-16">
+      <header id="hero-section" class="z-1 relative gap-y-10 overflow-hidden text-white bg-black min-h-fit lg:h-screen flex flex-col lg:pt-42 lg:pb-24 pt-32 pb-16">
         <hgroup class="container flex-1 flex flex-col justify-center space-y-4">
-          <span class="glass-element px-4 rounded-full w-fit text-sm py-0.5 text-white/75">ยิ่งประหยัดได้มาก ยิ่งได้รับการสนับสนุนมาก</span>
-          <h1 class="max-w-152 leading-[1.2] tracking-tighter">ลดค่าไฟธุรกิจของคุณ พร้อมรับเงินสนับสนุนสูงสุด 2 ล้านบาท</h1>
+          <span class="glass-element px-4 rounded-full w-fit text-sm py-0.5 text-white/75 flex items-center gap-x-1">
+            <div class="svg-icon size-4 bg-white" data-src="../icons/pin.svg"></div>
+            โครงการเฉพาะพื้นที่เกาะสมุย • จำกัด 20 แห่งเท่านั้น</span>
+          <h1 class="max-w-152 lg:text-8xl text-6xl leading-none tracking-tighter">
+            1 Unit Save <br />
+            4 Bath
+          </h1>
+          <p class="md:text-xl text-lg text-balance max-w-3xl">
+            โครงการส่งเสริมประสิทธิภาพพลังงานสำหรับสถานประกอบการในเกาะสมุย รับเงินสนับสนุน 4 บาทต่อทุกหน่วยไฟฟ้าที่ประหยัดได้ - ยิ่งประหยัดมาก ยิ่งได้มาก
+          </p>
+          <a href="./files/PEA-Application Form.zip" download class="whitespace-nowrap btn-primary max-w-fit arrow-btn"> ดาวน์โหลดใบสมัครเข้าร่วมโครงการ </a>
         </hgroup>
-        <section class="flex max-md:flex-col justify-between gap-6 md:items-end container">
+        <section class="flex max-md:flex-col-reverse justify-between gap-10 md:items-end container">
+          <div id="info" class="about-stat flex sm:justify-start justify-between w-full max-w-3xl">
+            <section class="sm:pr-8">
+              <h2>2M <span class="md:text-xl text-lg">บาท</span></h2>
+              <p class="text-sm mt-1.5 text-white/75">สนับสนุนสูงสุด / แห่ง</p>
+            </section>
+            <section class="sm:px-8 md:border-x border-white/25">
+              <h2>4 <span class="md:text-xl text-lg">บาท</span></h2>
+              <p class="text-sm mt-1.5 text-white/75">ต่อหน่วยไฟฟ้าที่ประหยัดได้</p>
+            </section>
+            <section class="sm:pl-8">
+              <h2>20 <span class="md:text-xl text-lg">ล้านบาท</span></h2>
+              <p class="text-sm mt-1.5 text-white/75">จำกัดวงเงินสนับสนุน</p>
+            </section>
+          </div>
           <div id="video-card" class="glass-element p-2.5 max-w-60 rounded-2xl">
             <video width="230" height="133" autoplay muted loop playsinline class="rounded-xl aspect-video w-full object-cover">
               <source src="./images/pages/index/oppotunity.mp4" type="video/mp4" />
@@ -35,15 +58,21 @@
             <h6 class="mt-2.5 mb-1.5">โอกาสมีจำนวนจำกัด</h6>
             <p class="max-w-64 text-background-primary">รับจำนวนจำกัดเมื่อเต็มวงเงินการสนับสนุน 20 ล้านบาท และไม่เกินจำนวน 20 แห่ง</p>
           </div>
-          <div id="info" class="md:max-w-72 space-y-5">
-            <p class="text-lg">โครงการสนับสนุนเงินลงทุนการปรับปรุงประสิทธิภาพพลังงานสำหรับสถานประกอบการในเกาะสมุย ในอัตราหน่วยไฟฟ้าที่ลดลงต่อปี หน่วยละ 4 บาท</p>
-            <a href="./files/PEA-Application Form.zip" download class="whitespace-nowrap btn-primary max-w-fit arrow-btn"> ดาวน์โหลดใบสมัครเข้าร่วมโครงการ </a>
-          </div>
         </section>
 
         <img id="hero-bg" class="absolute w-full h-full object-cover -z-1 top-0 left-0" src="./images/pages/index/hero.avif" alt="" />
         <div style="background: #061a04" class="absolute -z-1 w-full h-full top-0 left-0 opacity-45"></div>
       </header>
+
+      <section class="pt-24 bg-background-secondary">
+        <figure class="container">
+          <picture>
+            <source media="(min-width: 768px)" srcset="./images/pages/index/campaign-banner.webp" />
+            <source media="(min-width: 640px)" srcset="./images/pages/index/campaign-banner-mobile.webp" />
+            <img src="./images/pages/index/campaign-banner-mobile.webp" alt="" class="rounded-2xl" />
+          </picture>
+        </figure>
+      </section>
 
       <!-- Section 5: Process Steps -->
       <section class="bg-background-secondary py-32 space-y-12">
@@ -145,7 +174,7 @@
       </section>
 
       <!-- Section 2: About Stats -->
-      <section class="py-28 space-y-20">
+      <!-- <section class="py-28 space-y-20">
         <div class="flex container gap-5 max-lg:flex-col">
           <p data-reveal class="text-xl flex-1">เกี่ยวกับ</p>
           <div class="flex-1 space-y-4">
@@ -156,35 +185,28 @@
             </div>
           </div>
         </div>
-        <div class="about-stat grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-8 container">
+        <div class="about-stat grid grid-cols-3 gap-8 container">
           <section data-reveal class="lg:px-6">
-            <h3>2M</h3>
+            <h4>2M</h4>
             <p>สนับสนุนสูงสุด / แห่ง</p>
           </section>
           <section data-reveal class="lg:px-6">
-            <h3>4</h3>
+            <h4>4</h4>
             <p>บาท / หน่วยไฟฟ้าที่ประหยัดได้</p>
           </section>
           <section data-reveal class="lg:px-6">
-            <h3>20</h3>
+            <h4>20</h4>
             <p>ล้านบาท จำกัดวงเงินสนับสนุน</p>
           </section>
           <section data-reveal class="lg:px-6">
-            <h3>เกาะสมุย</h3>
+            <h4>เกาะสมุย</h4>
             <p>โครงการเฉพาะพื้นที่ ยกระดับธุรกิจ</p>
           </section>
         </div>
-      </section>
+      </section> -->
 
       <!-- Section 3: Business Types & Cards -->
       <section class="lg:space-y-32 space-y-24 pb-24 pt-8 bg-background-secondary">
-        <figure class="container">
-          <picture>
-            <source media="(min-width: 768px)" srcset="./images/pages/index/campaign-banner.webp" />
-            <source media="(min-width: 640px)" srcset="./images/pages/index/campaign-banner-mobile.webp" />
-            <img src="./images/pages/index/campaign-banner-mobile.webp" alt="" class="rounded-2xl" />
-          </picture>
-        </figure>
         <div class="container relative max-lg:space-y-12">
           <hgroup class="max-w-148 space-y-4 lg:absolute">
             <p data-reveal>ธุรกิจแบบไหนที่ควรเข้าร่วม</p>
