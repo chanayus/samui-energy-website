@@ -8,7 +8,7 @@
    ============================================================ */
 
 .measure-hero {
-  background-color: var(--dark-teal);
+  background-color: var(--primary);
   color: white;
   padding: 9rem 0 5rem;
   position: relative;
@@ -18,7 +18,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(199, 145, 27, 0.08) 0%, transparent 70%);
+    background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(199, 145, 27, 0.1) 0%, transparent 70%);
     pointer-events: none;
   }
 
