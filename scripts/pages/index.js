@@ -6,10 +6,7 @@ const heroSection = document.querySelector("#hero-section");
 
 const sequence = [
   [heroSection.querySelector("#hero-bg"), { scale: [1.35, 1] }, { at: "+0.5", duration: 3 }],
-  [heroSection.querySelector("hgroup span"), { opacity: [0, 1], y: [25, 0] }, { at: "<0.25" }],
-  [heroSection.querySelector("hgroup h1"), { opacity: [0, 1], y: [25, 0] }, { at: "<0.25" }],
-  [heroSection.querySelector("hgroup p"), { opacity: [0, 1], y: [25, 0] }, { at: "<0.25" }],
-  [heroSection.querySelector("hgroup a"), { opacity: [0, 1], y: [25, 0] }, { at: "<0.25" }],
+  [heroSection.querySelectorAll("hgroup > *"), { opacity: [0, 1], y: [25, 0] }, { at: "<0.25", delay: stagger(0.15) }],
   [heroSection.querySelector("#video-card"), { opacity: [0, 1], y: [25, 0] }, { at: "<0.1" }],
   [heroSection.querySelectorAll("#info"), { opacity: [0, 1], y: [25, 0] }, { at: "<0.25", delay: stagger(0.15) }],
 ];

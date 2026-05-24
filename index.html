@@ -23,25 +23,22 @@
     <navbar-component></navbar-component>
     <main class="flex-1 w-full h-full flex flex-col">
       <!-- Section 1: Hero -->
-      <header id="hero-section" class="z-1 relative gap-y-10 overflow-hidden text-white bg-black min-h-fit lg:h-screen flex flex-col lg:pt-38 pt-32 pb-24">
+      <header id="hero-section" class="z-1 relative gap-y-10 overflow-hidden text-white bg-black min-h-fit lg:h-screen flex flex-col pt-32 pb-24">
         <hgroup class="container flex-1 flex flex-col justify-center space-y-4">
           <span class="glass-element px-4 rounded-full w-fit text-sm py-0.5 text-white/75 flex items-center gap-x-1">
             <div class="svg-icon size-4 bg-white" data-src="../icons/pin.svg"></div>
             โครงการเฉพาะพื้นที่เกาะสมุย • จำกัด 20 แห่งเท่านั้น</span
           >
-          <h1 class="max-w-152 lg:text-8xl text-6xl leading-none tracking-tighter">
-            1 Unit Save <br />
-            4 Bath
-          </h1>
-          <p class="md:text-xl text-lg text-balance max-w-3xl">
-            โครงการส่งเสริมประสิทธิภาพพลังงานสำหรับสถานประกอบการในเกาะสมุย รับเงินสนับสนุน 4 บาทต่อทุกหน่วยไฟฟ้าที่ประหยัดได้ - ยิ่งประหยัดมาก ยิ่งได้มาก
-          </p>
+          <h1 class="max-w-3xl leading-tight tracking-tighter">โครงการส่งเสริมการปรับปรุงประสิทธิภาพการใช้พลังงานในพื้นที่เกาะสมุย</h1>
+          <p class="max-w-3xl lg:text-4xl text-3xl text-amber-300 border-l-2 pl-4">จังหวัดสุราษฎร์ธานี</p>
+          <div class="w-full h-px bg-white/50 max-w-xl"></div>
+          <h1><span class="text-amber-300 font-semibold">1</span> Unit Save <span class="text-amber-300 font-semibold">4</span> Baht</h1>
           <a href="./files/PEA-Application Form.zip" download class="whitespace-nowrap btn-primary max-w-fit arrow-btn"> ดาวน์โหลดใบสมัครเข้าร่วมโครงการ </a>
         </hgroup>
-        <section class="flex max-md:flex-col-reverse justify-between gap-10 md:items-end container">
+        <section class="flex max-md:flex-col-reverse relative justify-between gap-10 md:items-end container">
           <div id="info" class="about-stat flex sm:justify-start justify-between w-full max-w-3xl">
             <section class="sm:pr-8">
-              <h2>2M <span class="md:text-xl text-lg">บาท</span></h2>
+              <h2>2 <span class="md:text-xl text-lg">ล้านบาท</span></h2>
               <p class="text-sm mt-1.5 text-white/75">สนับสนุนสูงสุด / แห่ง</p>
             </section>
             <section class="sm:px-8 md:border-x border-white/25">
@@ -53,17 +50,18 @@
               <p class="text-sm mt-1.5 text-white/75">จำกัดวงเงินสนับสนุน</p>
             </section>
           </div>
-          <div id="video-card" class="glass-element p-2.5 max-w-60 rounded-2xl">
+          <a href="" id="video-card" class="lg:absolute right-0 bg-white/75 text-dark-teal border border-black/25 p-2.5 max-w-60 rounded-2xl">
             <video width="230" height="133" autoplay muted loop playsinline class="rounded-xl aspect-video w-full object-cover">
               <source src="./images/pages/index/oppotunity.mp4" type="video/mp4" />
             </video>
-            <h6 class="mt-2.5 mb-1.5">โอกาสมีจำนวนจำกัด</h6>
-            <p class="max-w-64 text-background-primary">รับจำนวนจำกัดเมื่อเต็มวงเงินการสนับสนุน 20 ล้านบาท และไม่เกินจำนวน 20 แห่ง</p>
-          </div>
+            <h6 class="mt-2.5 font-medium mb-1.5 text-primary">โอกาสมีจำนวนจำกัด</h6>
+            <p class="max-w-64">รับจำนวนจำกัดเมื่อเต็มวงเงินการสนับสนุน 20 ล้านบาท และไม่เกินจำนวน 20 แห่ง</p>
+            <button class="flex items-center justify-between mt-2 arrow-btn w-full">(คลิกเพื่อดูรายละเอียด)</button>
+          </a>
         </section>
 
         <img id="hero-bg" class="absolute w-full h-full object-cover -z-1 top-0 left-0" src="./images/pages/index/hero.avif" alt="" />
-        <div style="background: #061a04" class="absolute -z-1 w-full h-full top-0 left-0 opacity-45"></div>
+        <div style="background: #061a04" class="absolute -z-1 w-full h-full top-0 left-0 opacity-50"></div>
       </header>
 
       <section class="pt-24 bg-background-secondary">
