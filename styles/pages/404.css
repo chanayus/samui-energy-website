@@ -1,0 +1,62 @@
+.not-found-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background-color: var(--background-secondary);
+  padding-block: 8rem;
+}
+
+.not-found-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+}
+
+.not-found-eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+}
+
+.not-found-code {
+  font-size: clamp(7rem, 20vw, 13rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--primary);
+  opacity: 0.18;
+  user-select: none;
+  margin-block: -0.5rem;
+}
+
+.not-found-title {
+  max-width: 24rem;
+}
+
+.not-found-desc {
+  color: rgba(4, 48, 59, 0.6);
+  line-height: 1.8;
+  max-width: 32rem;
+  font-size: 1rem;
+}
+
+.not-found-contact-btn {
+  padding: 0.625rem 1.5rem;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(4, 48, 59, 0.2);
+  font-size: 0.9375rem;
+  color: var(--dark-teal);
+  transition: border-color 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.not-found-contact-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
