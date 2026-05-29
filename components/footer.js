@@ -12,9 +12,9 @@ class Footer extends HTMLElement {
                 <div class="flex-1 max-lg:min-w-full lg:max-w-86 flex flex-col gap-6">
                   <img src="../images/logo.webp" alt="" class="w-30" width="140" height="44" />
                   <address class="not-italic text-lg">
-                    โครงการ Samui Energy Save (1unitSave4baht) เป็นโครงการส่งเสริมการปรับปรุงประสิทธิภาพการใช้พลังงานในพื้นที่เกาะสมุย จังหวัดสุราษฎร์ธานี
+                    1 Unit Save 4 Baht โครงการส่งเสริมการปรับปรุงประสิทธิภาพการใช้พลังงานในพื้นที่เกาะสมุย จังหวัดสุราษฎร์ธานี
                   </address>
-                  <p>Samui Energy Save@mail.com</p>
+                  <p>1unitsave4baht@eqs.co.th</p>
                 </div>
                 <div class="flex-1 lg:max-w-96  flex flex-col gap-3 text-lg">
                   <p>เมนู</p>
@@ -28,7 +28,7 @@ class Footer extends HTMLElement {
                   <a href="../privacy.html" class="link">นโยบายความเป็นส่วนตัว</a>
                 </div>
               </section>
-              <p class="text-center border-t mt-8 pt-4">Samui Energy Save Ltd. All rights reserved.</p>
+              <p class="text-center border-t mt-8 pt-4">1 Unit Save 4 Baht. All rights reserved.</p>
             </div>
 
             <img src="../images/footer-bg.avif" alt="" class=" -z-1 absolute size-full top-0 left-0 object-cover" />
