@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./styles/tailwind/output.css" />
     <link rel="stylesheet" href="./styles/base.css" />
     <link rel="stylesheet" href="./styles/pages/index.css" />
+    <link rel="stylesheet" href="./styles/pages/about.css" />
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css" />
 
     <!-- Component -->
@@ -17,47 +18,27 @@
 
     <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
     <script type="module" src="./scripts/pages/index.js"></script>
+    <script type="module" src="./scripts/pages/about.js"></script>
     <script type="module" src="./scripts/main.js"></script>
   </head>
   <body>
     <navbar-component></navbar-component>
     <main class="flex-1 w-full h-full flex flex-col">
       <!-- Section 1: Hero -->
-      <header id="hero-section" class="z-1 relative gap-y-10 overflow-hidden text-white bg-black min-h-fit lg:h-screen flex flex-col pt-32 pb-24">
+      <header id="hero-section" class="z-1 relative lg:gap-y-10 gap-y-4 overflow-hidden text-white bg-black min-h-fit lg:h-screen flex flex-col pt-32 pb-24">
         <hgroup class="container flex-1 flex flex-col justify-center space-y-4">
           <span class="glass-element px-4 rounded-full w-fit text-sm py-0.5 text-white/75 flex items-center gap-x-1">
             <div class="svg-icon size-4 bg-white" data-src="../icons/pin.svg"></div>
             โครงการเฉพาะพื้นที่เกาะสมุย • จำกัด 20 แห่งเท่านั้น</span
           >
           <h1 class="max-w-3xl leading-tight tracking-tighter">โครงการส่งเสริมการปรับปรุงประสิทธิภาพการใช้พลังงานในพื้นที่เกาะสมุย</h1>
-          <p class="max-w-3xl lg:text-4xl text-3xl text-amber-300 border-l-2 pl-4">จังหวัดสุราษฎร์ธานี</p>
+          <p class="max-w-3xl lg:text-4xl text-3xl leading-normal text-amber-300 border-l-2 pl-4">จังหวัดสุราษฎร์ธานี <br/> <span class="lg:text-3xl text-2xl">12 พฤษภาคม 2569 - 30 กันยายน 2570</span></p>
           <div class="w-full h-px bg-white/50 max-w-xl"></div>
           <h1><span class="text-amber-300 font-semibold">1</span> Unit Save <span class="text-amber-300 font-semibold">4</span> Baht</h1>
           <a href="./files/PEA-Application Form.zip" download class="whitespace-nowrap btn-primary max-w-fit arrow-btn"> ดาวน์โหลดใบสมัครเข้าร่วมโครงการ </a>
         </hgroup>
-        <section class="flex max-md:flex-col-reverse relative justify-between gap-10 md:items-end container">
-          <div id="info" class="about-stat flex sm:justify-start justify-between w-full max-w-3xl">
-            <section class="sm:pr-8">
-              <h2>2 <span class="md:text-xl text-lg">ล้านบาท</span></h2>
-              <p class="text-sm mt-1.5 text-white/75">สนับสนุนสูงสุด / แห่ง</p>
-            </section>
-            <section class="sm:px-8 md:border-x border-white/25">
-              <h2>4 <span class="md:text-xl text-lg">บาท</span></h2>
-              <p class="text-sm mt-1.5 text-white/75">ต่อหน่วยไฟฟ้าที่ประหยัดได้</p>
-            </section>
-            <section class="sm:pl-8">
-              <h2>20 <span class="md:text-xl text-lg">ล้านบาท</span></h2>
-              <p class="text-sm mt-1.5 text-white/75">จำกัดวงเงินสนับสนุน</p>
-            </section>
-          </div>
-          <a href="" id="video-card" class="lg:absolute right-0 bg-white/75 text-dark-teal border border-black/25 p-2.5 max-w-60 rounded-2xl">
-            <video width="230" height="133" autoplay muted loop playsinline class="rounded-xl aspect-video w-full object-cover">
-              <source src="./images/pages/index/oppotunity.mp4" type="video/mp4" />
-            </video>
-            <h6 class="mt-2.5 font-medium mb-1.5 text-primary">โอกาสมีจำนวนจำกัด</h6>
-            <p class="max-w-64">รับจำนวนจำกัดเมื่อเต็มวงเงินการสนับสนุน 20 ล้านบาท และไม่เกินจำนวน 20 แห่ง</p>
-            <button class="flex items-center justify-between mt-2 arrow-btn w-full">(คลิกเพื่อดูรายละเอียด)</button>
-          </a>
+        <section class="flex max-md:flex-col-reverse relative justify-end gap-10 md:items-end container">
+          <a href="" id="announce-link" class="lg:absolute w-fit right-0 btn-yellow arrow-btn"> ประกาศการไฟฟ้าส่วนภูมิภาค </a>
         </section>
 
         <img id="hero-bg" class="absolute w-full h-full object-cover -z-1 top-0 left-0" src="./images/pages/index/hero.avif" alt="" />
@@ -72,105 +53,6 @@
             <img src="./images/pages/index/campaign-banner-mobile.webp" alt="" class="rounded-2xl" />
           </picture>
         </figure>
-      </section>
-
-      <!-- Section 5: Process Steps -->
-      <section class="bg-background-secondary py-32 space-y-12">
-        <hgroup class="container text-center">
-          <p data-reveal>ตั้งแต่สมัครจนได้รับเงินสนับสนุน</p>
-          <h3 data-reveal data-text-split>ขั้นตอนง่าย ชัดเจน พร้อมทีมงานดูแล</h3>
-        </hgroup>
-        <div class="grid lg:grid-cols-3 sm:grid-cols-2 gap-6 container">
-          <div data-reveal class="bg-background-primary p-6 rounded-3xl space-y-8 flex flex-col">
-            <h4>ขั้นตอนที่ 1</h4>
-            <div class="bg-white rounded-2xl p-6 space-y-4 flex-1">
-              <h5>เปิดรับสมัครผู้เข้าร่วมโครงการ</h5>
-              <p class="text-yellow">12 พฤษภาคม – 30 มิถุนายน 2569</p>
-              <p>ดาวน์โหลดเอกสารการสมัครและเอกสารประกอบการสมัคร ส่งกลับทางอีเมลของโครงการฯ</p>
-              <a href="" class="text-primary">Download เอกสารการสมัคร</a>
-            </div>
-          </div>
-          <div data-reveal class="bg-background-primary p-6 rounded-3xl space-y-8 flex flex-col">
-            <h4>ขั้นตอนที่ 2</h4>
-            <div class="bg-white rounded-2xl p-6 space-y-4 flex-1">
-              <h5>สัมมนาเปิดตัวและชี้แจงหลักเกณฑ์</h5>
-              <p class="text-yellow">16 มิถุนายน 2569</p>
-              <p>จัดสัมมนาเปิดตัวโครงการและชี้แจงหลักเกณฑ์การขอรับเงินสนับสนุน ณ เกาะสมุย</p>
-            </div>
-          </div>
-          <div data-reveal class="bg-background-primary p-6 rounded-3xl space-y-8 flex flex-col">
-            <h4>ขั้นตอนที่ 3</h4>
-            <div class="bg-white rounded-2xl p-6 space-y-4 flex-1">
-              <h5>สำรวจและประเมินสถานภาพ</h5>
-              <p class="text-yellow">กรกฎาคม – กันยายน 2569</p>
-              <p>ประเมินผลประหยัดพลังงาน ความพร้อมในการลงทุน และแผนงานปรับปรุงอุปกรณ์ ณ สถานประกอบการ</p>
-            </div>
-          </div>
-          <div data-reveal class="bg-background-primary p-6 rounded-3xl space-y-8 flex flex-col">
-            <h4>ขั้นตอนที่ 4</h4>
-            <div class="bg-white rounded-2xl p-6 space-y-4 flex-1">
-              <h5>สรุปรายงานและเสนอวงเงินสนับสนุน</h5>
-              <p class="text-yellow">ภายในเดือนกันยายน 2569</p>
-              <p>จัดทำรายงานสรุปผลการประเมินสถานภาพก่อนการปรับปรุงฯ และวงเงินขอรับการสนับสนุน เสนอต่อ กฟภ.</p>
-            </div>
-          </div>
-          <div data-reveal class="bg-background-primary p-6 rounded-3xl space-y-8 flex flex-col">
-            <h4>ขั้นตอนที่ 5</h4>
-            <div class="bg-white rounded-2xl p-6 space-y-4 flex-1">
-              <h5>ประกาศรายชื่อผู้ผ่านการคัดเลือก</h5>
-              <p class="text-yellow">ภายในวันที่ 5 ตุลาคม 2569</p>
-              <p>กฟภ. คัดเลือกและประกาศรายชื่อผู้ผ่านการคัดเลือกเข้าร่วมโครงการผ่านเว็บไซต์</p>
-            </div>
-          </div>
-          <div data-reveal class="bg-background-primary p-6 rounded-3xl space-y-8 flex flex-col">
-            <h4>ขั้นตอนที่ 6</h4>
-            <div class="bg-white rounded-2xl p-6 space-y-4 flex-1">
-              <h5>จัดทำสัญญาขอรับเงินสนับสนุน</h5>
-              <p class="text-yellow">ภายในวันที่ 5 ตุลาคม 2569</p>
-              <p>กฟภ. จัดทำสัญญากับสถานประกอบการตามกรอบวงเงินที่ได้รับความเห็นชอบ</p>
-            </div>
-          </div>
-          <div data-reveal class="bg-background-primary p-6 rounded-3xl space-y-8 flex flex-col">
-            <h4>ขั้นตอนที่ 7</h4>
-            <div class="bg-white rounded-2xl p-6 space-y-4 flex-1">
-              <h5>ดำเนินการปรับปรุงและรายงานผล</h5>
-              <p class="text-yellow">ให้แล้วเสร็จภายในเดือนกรกฎาคม 2570</p>
-              <p>สถานประกอบการดำเนินการปรับปรุงตามแผนงานที่ยื่นไว้ และรายงานความคืบหน้าทุกเดือน</p>
-            </div>
-          </div>
-          <div data-reveal class="bg-background-primary p-6 rounded-3xl space-y-8 flex flex-col">
-            <h4>ขั้นตอนที่ 8</h4>
-            <div class="bg-white rounded-2xl p-6 space-y-4 flex-1">
-              <h5>ทวนสอบผลประหยัดที่เกิดขึ้นจริง</h5>
-              <p class="text-yellow">มิถุนายน – สิงหาคม 2570</p>
-              <p>ทีมผู้เชี่ยวชาญทวนสอบผลการประหยัด และจัดทำรายงานเสนอ กฟภ. เพื่ออนุมัติจ่ายเงิน</p>
-            </div>
-          </div>
-          <div data-reveal class="bg-background-primary p-6 rounded-3xl space-y-8 flex flex-col">
-            <h4>ขั้นตอนที่ 9</h4>
-            <div class="bg-white rounded-2xl p-6 space-y-4 flex-1">
-              <h5>อนุมัติการจ่ายเงินสนับสนุน</h5>
-              <p class="text-yellow">ภายในวันที่ 31 สิงหาคม 2570</p>
-              <p>กฟภ. พิจารณาอนุมัติการจ่ายเงินสนับสนุนแก่สถานประกอบการ</p>
-            </div>
-          </div>
-          <div data-reveal class="bg-background-primary p-6 rounded-3xl space-y-8 flex flex-col">
-            <h4>ขั้นตอนที่ 10</h4>
-            <div class="bg-white rounded-2xl p-6 space-y-4 flex-1">
-              <h5>สัมมนาแถลงผลการดำเนินโครงการ</h5>
-              <p class="text-yellow">ภายในเดือนกันยายน 2570</p>
-              <p>จัดสัมมนาเพื่อแถลงผลและสรุปความสำเร็จของการดำเนินโครงการ</p>
-            </div>
-          </div>
-          <div data-reveal class="bg-background-primary p-6 rounded-3xl space-y-8 flex flex-col">
-            <h4>ขั้นตอนที่ 11</h4>
-            <div class="bg-white rounded-2xl p-6 space-y-4 flex-1">
-              <h5>สิ้นสุดโครงการ</h5>
-              <p class="text-yellow">30 กันยายน 2570</p>
-              <p>โครงการสิ้นสุดการดำเนินงาน</p>
-            </div>
-          </div>
-        </div>
       </section>
 
       <!-- Section 2: About Stats -->
@@ -206,7 +88,7 @@
       </section> -->
 
       <!-- Section 3: Business Types & Cards -->
-      <section class="lg:space-y-32 space-y-24 pb-24 pt-8 bg-background-secondary">
+      <section class="lg:space-y-32 space-y-24 pb-24 pt-32 bg-background-secondary">
         <div class="container relative max-lg:space-y-12">
           <hgroup class="max-w-148 space-y-4 lg:absolute">
             <p data-reveal>ธุรกิจแบบไหนที่ควรเข้าร่วม</p>
@@ -245,7 +127,7 @@
       </section>
 
       <!-- Section 6: News & Blog -->
-      <section class="py-28 space-y-20">
+      <!-- <section class="py-28 space-y-20">
         <hgroup class="flex container justify-between lg:items-center gap-6 max-lg:flex-col">
           <h2 data-reveal>ข่าวสารและความรู้ด้านพลังงาน</h2>
 
@@ -331,6 +213,247 @@
             <img src="./images/pages/index/campaign-banner-2-mobile.webp" alt="" class="rounded-2xl w-full" />
           </picture>
         </figure>
+      </section> -->
+
+      <!-- Section 1: Origin & Purpose -->
+      <header class="bg-background-secondary lg:pt-44 pt-32 pb-20">
+        <div class="container about-hero">
+          <div class="space-y-6">
+            <p data-reveal class="text-sm uppercase tracking-widest text-dark-teal/50">เกี่ยวกับโครงการ</p>
+            <h1 data-reveal data-delay="0.25" class="font-semibold">ที่มาและวัตถุประสงค์</h1>
+            <p data-reveal data-delay="0.25" class="leading-loose max-w-lg">
+              "การไฟฟ้าส่วนภูมิภาค (กฟภ.) มีความประสงค์ที่จะสนับสนุนและส่งเสริมให้สถานประกอบการในพื้นที่เกาะสมุย ดำเนินมาตรการ Mobile Generator ในการใช้ไฟฟ้าอย่างมีประสิทธิภาพ
+              เพื่อลดปริมาณการใช้ไฟฟ้าในช่วงเวลาที่ กฟภ. มีข้อจำกัดด้านระบบสายส่ง พร้อมทั้งยังเป็นการส่งเสริมให้สถานประกอบการ ลดต้นทุนค่าไฟฟ้าลง ในขณะเดียวกันก็ยังช่วยลดการปล่อยก๊าซเรือนกระจก (GHG)
+              เพื่อบรรลุเป้าหมายความเป็นกลางทางคาร์บอนของประเทศ โดยในโครงการจะให้เงินสนับสนุน 4 บาท โดยคาดหวังผลประหยัดไฟฟ้าในโครงการไม่น้อยกว่า 20 ล้านหน่วย หรือ 5 ล้านบาทต่อปี"
+            </p>
+          </div>
+          <figure class="about-hero__image" data-reveal data-amount="0.2" data-delay="0.5">
+            <img src="./images/pages/about/hero.jpg" alt="โครงการ 1 Unit Save 4 Baht เกาะสมุย" class="w-full h-full object-cover" />
+          </figure>
+        </div>
+      </header>
+
+      <!-- Section 2: Benefits -->
+      <section class="benefits-section">
+        <img class="absolute size-full object-cover top-0 left-0 opacity-15" src="./images/pages/eligibility/section2-bg.avif" alt="" />
+
+        <div class="container relative z-1 space-y-12">
+          <div data-reveal data-delay="1" class="text-center space-y-4">
+            <p class="text-sm uppercase tracking-widest opacity-60">ประโยชน์ที่ผู้ประกอบการจะได้รับ</p>
+            <h2 class="font-semibold max-w-2xl mx-auto leading-tight">ลดต้นทุน เพิ่มประสิทธิภาพ พร้อมยกระดับองค์กรสู่อนาคตพลังงานสะอาดอย่างยั่งยืน</h2>
+          </div>
+          <div class="benefit-cards">
+            <div data-reveal class="benefit-card">
+              <img src="./images/pages/about/card-1.avif" alt="" class="benefit-card__bg" />
+              <div class="benefit-card__body">
+                <p class="benefit-card__label">ลดค่าไฟได้มากกว่า</p>
+                <h3 class="benefit-card__title">"1 ล้านบาทต่อปี"</h3>
+                <p class="benefit-card__desc">กรณีสถานประกอบการดำเนินการปรับปรุงประสิทธิภาพพลังงาน ให้มีผลประหยัดไม่น้อยกว่า <strong>250,000 หน่วยต่อปี</strong> กฟภ.สนับสนุนในอัตรา 4 บาทต่อหน่วย</p>
+              </div>
+              <div class="benefit-card__stats">
+                <div class="benefit-card__stat">
+                  <p class="benefit-card__stat-num">250,000+</p>
+                  <p class="benefit-card__stat-desc">หน่วย / ปี</p>
+                </div>
+                <div class="benefit-card__stat">
+                  <p class="benefit-card__stat-num">1 ล้านบาท+</p>
+                  <p class="benefit-card__stat-desc">ต่อปี</p>
+                </div>
+              </div>
+            </div>
+            <div data-reveal data-delay="0.08" class="benefit-card">
+              <img src="./images/pages/about/card-2.avif" alt="" class="benefit-card__bg" />
+              <div class="benefit-card__body">
+                <p class="benefit-card__label">รับเงินสนับสนุนสูงสุด</p>
+                <h3 class="benefit-card__title">"2 ล้านบาท"</h3>
+                <p class="benefit-card__desc">กฟภ. สนับสนุนเงินช่วยเหลือแบบให้เปล่า เพื่อใช้ในการปรับปรุงอุปกรณ์ประสิทธิภาพสูงภายในสถานประกอบการ</p>
+              </div>
+              <div class="benefit-card__stats">
+                <div class="benefit-card__stat">
+                  <p class="benefit-card__stat-num">1–2 ล้านบาท</p>
+                  <p class="benefit-card__stat-desc">เงินสนับสนุนต่อแห่ง</p>
+                </div>
+              </div>
+            </div>
+            <div data-reveal data-delay="0.16" class="benefit-card">
+              <img src="./images/pages/about/card-3.avif" alt="" class="benefit-card__bg" />
+              <div class="benefit-card__body">
+                <p class="benefit-card__label">ลดการปล่อยคาร์บอน</p>
+                <h3 class="benefit-card__title">สู่เป้าหมาย Net Zero</h3>
+                <p class="benefit-card__desc">การลดการใช้พลังงานไฟฟ้า ช่วยลดการปล่อย GHG Emissions ได้โดยตรง พร้อมสนับสนุนเป้าหมายด้านความยั่งยืนขององค์กร</p>
+              </div>
+              <div class="benefit-card__stats">
+                <div class="benefit-card__stat">
+                  <p class="benefit-card__stat-num">Net Zero</p>
+                  <p class="benefit-card__stat-desc">Sustainability Goal</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Process Timeline -->
+      <section class="process-section">
+        <div class="container process-layout">
+          <!-- Left: Sticky heading -->
+          <div class="process-header">
+            <p data-reveal class="text-sm uppercase tracking-widest text-dark-teal/50">ขั้นตอนการดำเนินงานโครงการ</p>
+            <h2 data-reveal data-delay="0.2" class="font-semibold mt-4 leading-snug">ทุกขั้นตอนดำเนินงานภายใต้การกำกับและพิจารณาโดย กฟภ.</h2>
+          </div>
+
+          <!-- Right: Timeline -->
+          <div class="timeline-scroll" id="timelineScroll">
+            <div class="timeline-rail">
+              <div class="timeline-rail-fill" id="timelineRailFill"></div>
+            </div>
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <div class="timeline-dot-col">
+                  <span class="timeline-dot"></span>
+                </div>
+                <div class="timeline-content">
+                  <div class="timeline-item-header">
+                    <p class="timeline-item-name"><span class="timeline-item-num"></span> — เปิดรับสมัครผู้เข้าร่วมโครงการ</p>
+                    <time class="timeline-item-date">12 พฤษภาคม – 30 มิถุนายน 2569</time>
+                  </div>
+                  <p class="timeline-item-desc">ดาวน์โหลดเอกสารการสมัครและเอกสารประกอบการสมัคร ส่งกลับทางอีเมลของโครงการฯ</p>
+                  <!-- <a href="./files/PEA-Application Form.zip" download class="btn-primary arrow-btn w-fit text-sm mt-3 inline-flex">ดาวน์โหลดเอกสารการสมัคร</a> -->
+                </div>
+              </li>
+
+              <!-- <li class="timeline-item">
+                <div class="timeline-dot-col">
+                  <span class="timeline-dot"></span>
+                </div>
+                <div class="timeline-content">
+                  <div class="timeline-item-header">
+                    <p class="timeline-item-name"><span class="timeline-item-num"></span> — สัมมนาเปิดตัวและชี้แจงหลักเกณฑ์</p>
+                    <time class="timeline-item-date">16 มิถุนายน 2569</time>
+                  </div>
+                  <p class="timeline-item-desc">จัดสัมมนาเปิดตัวโครงการและชี้แจงหลักเกณฑ์การขอรับเงินสนับสนุน ณ เกาะสมุย</p>
+                </div>
+              </li> -->
+
+              <li class="timeline-item">
+                <div class="timeline-dot-col">
+                  <span class="timeline-dot"></span>
+                </div>
+                <div class="timeline-content">
+                  <div class="timeline-item-header">
+                    <p class="timeline-item-name"><span class="timeline-item-num"></span> — สำรวจและประเมินสถานภาพ</p>
+                    <time class="timeline-item-date">กรกฎาคม – กันยายน 2569</time>
+                  </div>
+                  <p class="timeline-item-desc">ประเมินผลประหยัดพลังงาน ความพร้อมในการลงทุน และแผนงานปรับปรุงอุปกรณ์ ณ สถานประกอบการ</p>
+                </div>
+              </li>
+
+              <!-- <li class="timeline-item">
+                <div class="timeline-dot-col">
+                  <span class="timeline-dot"></span>
+                </div>
+                <div class="timeline-content">
+                  <div class="timeline-item-header">
+                    <p class="timeline-item-name"><span class="timeline-item-num"></span> — สรุปรายงานและเสนอวงเงินสนับสนุน</p>
+                    <time class="timeline-item-date">ภายในเดือนกันยายน 2569</time>
+                  </div>
+                  <p class="timeline-item-desc">จัดทำรายงานสรุปผลการประเมินสถานภาพก่อนการปรับปรุงฯ และวงเงินขอรับการสนับสนุน เสนอต่อ กฟภ.</p>
+                </div>
+              </li> -->
+
+              <li class="timeline-item">
+                <div class="timeline-dot-col">
+                  <span class="timeline-dot"></span>
+                </div>
+                <div class="timeline-content">
+                  <div class="timeline-item-header">
+                    <p class="timeline-item-name"><span class="timeline-item-num"></span> — ประกาศรายชื่อผู้ผ่านการคัดเลือก</p>
+                    <time class="timeline-item-date">ภายในวันที่ 5 ตุลาคม 2569</time>
+                  </div>
+                  <p class="timeline-item-desc">กฟภ. คัดเลือกและประกาศรายชื่อผู้ผ่านการคัดเลือกเข้าร่วมโครงการผ่านเว็บไซต์</p>
+                </div>
+              </li>
+
+              <li class="timeline-item">
+                <div class="timeline-dot-col">
+                  <span class="timeline-dot"></span>
+                </div>
+                <div class="timeline-content">
+                  <div class="timeline-item-header">
+                    <p class="timeline-item-name"><span class="timeline-item-num"></span> — จัดทำสัญญาขอรับเงินสนับสนุน</p>
+                    <time class="timeline-item-date">ภายในวันที่ 5 ตุลาคม 2569</time>
+                  </div>
+                  <p class="timeline-item-desc">กฟภ. จัดทำสัญญากับสถานประกอบการตามกรอบวงเงินที่ได้รับความเห็นชอบ</p>
+                </div>
+              </li>
+
+              <li class="timeline-item">
+                <div class="timeline-dot-col">
+                  <span class="timeline-dot"></span>
+                </div>
+                <div class="timeline-content">
+                  <div class="timeline-item-header">
+                    <p class="timeline-item-name"><span class="timeline-item-num"></span> — ดำเนินการปรับปรุงและรายงานผล</p>
+                    <time class="timeline-item-date">ให้แล้วเสร็จภายในเดือนกรกฎาคม 2570</time>
+                  </div>
+                  <p class="timeline-item-desc">สถานประกอบการดำเนินการปรับปรุงตามแผนงานที่ยื่นไว้ และรายงานความคืบหน้าทุกเดือน</p>
+                </div>
+              </li>
+
+              <li class="timeline-item">
+                <div class="timeline-dot-col">
+                  <span class="timeline-dot"></span>
+                </div>
+                <div class="timeline-content">
+                  <div class="timeline-item-header">
+                    <p class="timeline-item-name"><span class="timeline-item-num"></span> — ทวนสอบผลประหยัดที่เกิดขึ้นจริง</p>
+                    <time class="timeline-item-date">มิถุนายน – สิงหาคม 2570</time>
+                  </div>
+                  <p class="timeline-item-desc">ทีมผู้เชี่ยวชาญทวนสอบผลการประหยัด และจัดทำรายงานเสนอ กฟภ. เพื่ออนุมัติจ่ายเงิน</p>
+                </div>
+              </li>
+
+              <li class="timeline-item">
+                <div class="timeline-dot-col">
+                  <span class="timeline-dot"></span>
+                </div>
+                <div class="timeline-content">
+                  <div class="timeline-item-header">
+                    <p class="timeline-item-name"><span class="timeline-item-num"></span> — อนุมัติการจ่ายเงินสนับสนุน</p>
+                    <time class="timeline-item-date">ภายในวันที่ 31 สิงหาคม 2570</time>
+                  </div>
+                  <p class="timeline-item-desc">กฟภ. พิจารณาอนุมัติการจ่ายเงินสนับสนุนแก่สถานประกอบการ</p>
+                </div>
+              </li>
+
+              <!-- <li class="timeline-item">
+                <div class="timeline-dot-col">
+                  <span class="timeline-dot"></span>
+                </div>
+                <div class="timeline-content">
+                  <div class="timeline-item-header">
+                    <p class="timeline-item-name"><span class="timeline-item-num"></span> — สัมมนาแถลงผลการดำเนินโครงการ</p>
+                    <time class="timeline-item-date">ภายในเดือนกันยายน 2570</time>
+                  </div>
+                  <p class="timeline-item-desc">จัดสัมมนาเพื่อแถลงผลและสรุปความสำเร็จของการดำเนินโครงการ</p>
+                </div>
+              </li> -->
+
+              <!-- <li class="timeline-item">
+                <div class="timeline-dot-col">
+                  <span class="timeline-dot"></span>
+                </div>
+                <div class="timeline-content">
+                  <div class="timeline-item-header">
+                    <p class="timeline-item-name"><span class="timeline-item-num"></span> — สิ้นสุดโครงการ</p>
+                    <time class="timeline-item-date">30 กันยายน 2570</time>
+                  </div>
+                  <p class="timeline-item-desc">โครงการสิ้นสุดการดำเนินงาน</p>
+                </div>
+              </li> -->
+            </ol>
+          </div>
+        </div>
       </section>
     </main>
     <footer-component></footer-component>

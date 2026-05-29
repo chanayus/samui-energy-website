@@ -18,17 +18,14 @@ class Footer extends HTMLElement {
                 </div>
                 <div class="flex-1 lg:max-w-96  flex flex-col gap-3 text-lg">
                   <p>เมนู</p>
-                  <a href="" class="link">หน้าแรก</a>
-                  <a href="" class="link">เกี่ยวกับ</a>
-                  <a href="" class="link">เกี่ยวกับโครงการ</a>
-                  <a href="" class="link">ติดต่อโครงการ</a>
+                  <a href="../index.html" class="link">หน้าแรก</a>
+                  <a href="../about.html" class="link">เกี่ยวกับโครงการ</a>
+                  <a href="../contact.html" class="link">ติดต่อโครงการ</a>
                 </div>
                 <div class="max-lg:flex-1 min-w-32 flex flex-col gap-3 text-lg">
-                  <p>โซเชียล</p>
-                  <a href="" class="link">Facebook</a>
-                  <a href="" class="link">Instagram</a>
-                  <a href="" class="link">Threads</a>
-                  <a href="" class="link">Pinterest</a>
+                  <a href="../eligibility.html" class="link">หลักเกณฑ์และเงื่อนไข</a>
+                  <a href="../blogs.html" class="link">คลังความรู้และเทคโนโลยี</a>
+                  <a href="../privacy.html" class="link">นโยบายความเป็นส่วนตัว</a>
                 </div>
               </section>
               <p class="text-center border-t mt-8 pt-4">Samui Energy Save Ltd. All rights reserved.</p>

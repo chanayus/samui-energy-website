@@ -239,9 +239,11 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  counter-reset: timeline-counter;
 }
 
 .timeline-item {
+  counter-increment: timeline-counter;
   display: grid;
   grid-template-columns: 1.375rem 1fr;
   gap: 0 1.5rem;
@@ -297,7 +299,8 @@
   font-size: 1.25rem;
 }
 
-.timeline-item-num {
+.timeline-item-num::before {
+  content: counter(timeline-counter, decimal-leading-zero);
   color: var(--yellow);
   font-weight: 600;
 }
