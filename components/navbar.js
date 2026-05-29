@@ -34,10 +34,9 @@ class Navbar extends HTMLElement {
 
           <section id="mobile-nav" class="text-lg lg:hidden grid">
             <div class="inner flex flex-col gap-y-4">
-                <a href="">เกี่ยวกับ</a>
-                <a href="">โครงการ</a>
-                <a href="">ขั้นตอนเข้าร่วม</a>
-                <a href="">ข่าวสารและความรู้</a>
+                <a href="../about.html" >เกี่ยวกับโครงการ</a>
+                <a href="../eligibility.html" >หลักเกณฑ์และเงื่อนไข</a>
+                <a href="../blogs.html" >คลังความรู้และเทคโนโลยี</a>
             </div>
           </section>
         </div>
