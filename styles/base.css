@@ -87,6 +87,10 @@ body {
   }
 }
 
+#announcement-bar a.arrow-btn {
+  --arrow-size: 0.875rem;
+}
+
 .mobile-nav-toggle {
   width: 1.5rem;
   aspect-ratio: 1.33;
